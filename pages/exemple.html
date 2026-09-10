@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="300">
+    <script src="https://cdn.plot.ly/plotly-3.2.0.min.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="https://aemmeci.github.io/amc01.github.io/css/styles.css">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <title>
+        Engine | Dashboard
+    </title>
+</head>
+
+<body>
+    <div class="dashboard boxshadow">
+        <div class="rope-background"
+            style="clip-path: polygon(0px 0px, 100% 0px, 100% calc(100% - 123.2px), calc(100% - 259.6px) calc(100% - 123.2px), calc(100% - 330.4px) 100%, 0px 100%); background: rgb(75, 75, 75);">
+        </div>
+        <div class="rope-selection" style="background: rgb(75, 75, 75);">
+            <span class="active" style="width: 50%;">Left rope</span>
+        </div>
+        <div class="informations-div card">
+            <h2 class="card-title">
+                Informations
+            </h2>
+            <div class="card-body">
+                <div class="generals-informations">
+                    <h3>
+                        Generals informations
+                    </h3>
+                    <hr>
+                    <div class="row">
+                        <span class="info-label">
+                            Name:
+                        </span>
+                        <span id="rope-name">Left rope</span>
+                    </div>
+                    <div class="row">
+                        <span class="info-label">
+                            Rope diameter:
+                        </span>
+                        <span id="rope-diameter">13 mm</span>
+                    </div>
+                    <div class="row">
+                        <span class="info-label">
+                            Rope construction:
+                        </span>
+                        <span id="rope-construction">6x37 XXIP IWRC</span>
+                    </div>
+                    <div class="row">
+                        <span class="info-label">
+                            Rope installation:
+                        </span>
+                        <span id="rope-installation">01/11/2025</span>
+                    </div>
+                </div>
+                <div class="last-acquisition-informations">
+                    <h3>
+                        Last acquisition
+                    </h3>
+                    <hr>
+                    <div class="row">
+                        <span class="info-label">
+                            Day:
+                        </span>
+                        <span id="acquisition-day"> - </span>
+                    </div>
+                    <div class="row">
+                        <span class="info-label">
+                            Hour:
+                        </span>
+                        <span id="acquisition-hour"> - </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="gauge-zone card">
+            <h2 class="card-title" style="width: 100%;">
+                Status
+            </h2>
+            <div class="gauge-div">
+                <div class="container-gauge">
+                    <div class="gauge-levels">
+                        <div class="gauge-background">
+                        </div>
+                        <div class="gauge-circle gauge-amount" id="gauge-max-level">
+                        </div>
+                        <div class="gauge-circle level-red">
+                        </div>
+                        <div class="gauge-circle level-orange">
+                        </div>
+                        <div class="gauge-circle level-green">
+                        </div>
+                        <div class="gauge-center">
+                        </div>
+                    </div>
+                    <div class="needle-wrapper">
+                        <img alt="" id="gauge-needle-peak" src="https://aemmeci.github.io/amc01.github.io/img/tiny_needle.svg" class="gauge-needle">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="histogram-div card">
+            <h2 class="card-title">
+                Historical datas
+            </h2>
+            <div class="card-body">
+                <div id="histogram-plot" class="js-plotly-plot">
+                    <div class="plot-container plotly" style="width: 100%; height: 100%;">
+                        <div class="user-select-none svg-container"
+                            style="position: relative; width: 100%; height: 100%;"><svg class="main-svg"
+                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                width="655.219" height="289.875" style="background: rgb(54, 54, 54);">
+                                <defs id="defs-8dc38a">
+                                    <g class="clips">
+                                        <clippath id="clip8dc38axyplot" class="plotclip">
+                                            <rect width="620" height="230"></rect>
+                                        </clippath>
+                                        <clippath class="axesclip" id="clip8dc38ax">
+                                            <rect x="20" y="0" width="620" height="289.875"></rect>
+                                        </clippath>
+                                        <clippath class="axesclip" id="clip8dc38ay">
+                                            <rect x="0" y="30" width="655.219" height="230"></rect>
+                                        </clippath>
+                                        <clippath class="axesclip" id="clip8dc38axy">
+                                            <rect x="20" y="30" width="620" height="230"></rect>
+                                        </clippath>
+                                    </g>
+                                    <g class="gradients"></g>
+                                    <g class="patterns"></g>
+                                </defs>
+                                <g class="bglayer">
+                                    <rect class="bg" x="20" y="30" width="620" height="230"
+                                        style="fill: rgb(75, 75, 75); fill-opacity: 1; stroke-width: 0;"></rect>
+                                </g>
+                                <g class="draglayer cursor-crosshair">
+                                    <g class="xy">
+                                        <rect class="nsewdrag drag" data-subplot="xy" x="20" y="30" width="620"
+                                            height="230"
+                                            style="fill: transparent; stroke-width: 0; pointer-events: all;"></rect>
+                                        <rect class="nwdrag drag cursor-nw-resize" data-subplot="xy" x="0" y="10"
+                                            width="20" height="20"
+                                            style="fill: transparent; stroke-width: 0; pointer-events: all;"></rect>
+                                        <rect class="nedrag drag cursor-ne-resize" data-subplot="xy" x="640" y="10"
+                                            width="20" height="20"
+                                            style="fill: transparent; stroke-width: 0; pointer-events: all;"></rect>
+                                        <rect class="swdrag drag cursor-sw-resize" data-subplot="xy" x="0" y="260"
+                                            width="20" height="20"
+                                            style="fill: transparent; stroke-width: 0; pointer-events: all;"></rect>
+                                        <rect class="sedrag drag cursor-se-resize" data-subplot="xy" x="640" y="260"
+                                            width="20" height="20"
+                                            style="fill: transparent; stroke-width: 0; pointer-events: all;"></rect>
+                                        <rect class="ewdrag drag cursor-ew-resize" data-subplot="xy" x="82" y="260.5"
+                                            width="496" height="20"
+                                            style="fill: transparent; stroke-width: 0; pointer-events: all;"></rect>
+                                        <rect class="wdrag drag cursor-w-resize" data-subplot="xy" x="20" y="260.5"
+                                            width="62" height="20"
+                                            style="fill: transparent; stroke-width: 0; pointer-events: all;"></rect>
+                                        <rect class="edrag drag cursor-e-resize" data-subplot="xy" x="578" y="260.5"
+                                            width="62" height="20"
+                                            style="fill: transparent; stroke-width: 0; pointer-events: all;"></rect>
+                                        <rect class="nsdrag drag cursor-ns-resize" data-subplot="xy" x="-0.5" y="53"
+                                            width="20" height="184"
+                                            style="fill: transparent; stroke-width: 0; pointer-events: all;"></rect>
+                                        <rect class="sdrag drag cursor-s-resize" data-subplot="xy" x="-0.5" y="237"
+                                            width="20" height="23"
+                                            style="fill: transparent; stroke-width: 0; pointer-events: all;"></rect>
+                                        <rect class="ndrag drag cursor-n-resize" data-subplot="xy" x="-0.5" y="30"
+                                            width="20" height="23"
+                                            style="fill: transparent; stroke-width: 0; pointer-events: all;"></rect>
+                                    </g>
+                                </g>
+                                <g class="layer-below">
+                                    <g class="imagelayer"></g>
+                                    <g class="shapelayer"></g>
+                                </g>
+                                <g class="cartesianlayer">
+                                    <g class="subplot xy">
+                                        <g class="layer-subplot">
+                                            <g class="shapelayer"></g>
+                                            <g class="imagelayer"></g>
+                                        </g>
+                                        <g class="minor-gridlayer">
+                                            <g class="x"></g>
+                                            <g class="y"></g>
+                                        </g>
+                                        <g class="gridlayer">
+                                            <g class="x">
+                                                <path class="xgrid crisp" transform="translate(29.689999999999998,0)"
+                                                    d="M0,30v230"
+                                                    style="stroke: rgb(102, 102, 102); stroke-opacity: 1; stroke-width: 1px;">
+                                                </path>
+                                                <path class="xgrid crisp" transform="translate(107.19,0)" d="M0,30v230"
+                                                    style="stroke: rgb(102, 102, 102); stroke-opacity: 1; stroke-width: 1px;">
+                                                </path>
+                                                <path class="xgrid crisp" transform="translate(184.69,0)" d="M0,30v230"
+                                                    style="stroke: rgb(102, 102, 102); stroke-opacity: 1; stroke-width: 1px;">
+                                                </path>
+                                                <path class="xgrid crisp" transform="translate(262.19,0)" d="M0,30v230"
+                                                    style="stroke: rgb(102, 102, 102); stroke-opacity: 1; stroke-width: 1px;">
+                                                </path>
+                                                <path class="xgrid crisp" transform="translate(339.69,0)" d="M0,30v230"
+                                                    style="stroke: rgb(102, 102, 102); stroke-opacity: 1; stroke-width: 1px;">
+                                                </path>
+                                                <path class="xgrid crisp" transform="translate(417.19,0)" d="M0,30v230"
+                                                    style="stroke: rgb(102, 102, 102); stroke-opacity: 1; stroke-width: 1px;">
+                                                </path>
+                                                <path class="xgrid crisp" transform="translate(494.69,0)" d="M0,30v230"
+                                                    style="stroke: rgb(102, 102, 102); stroke-opacity: 1; stroke-width: 1px;">
+                                                </path>
+                                                <path class="xgrid crisp" transform="translate(572.19,0)" d="M0,30v230"
+                                                    style="stroke: rgb(102, 102, 102); stroke-opacity: 1; stroke-width: 1px;">
+                                                </path>
+                                            </g>
+                                            <g class="y">
+                                                <path class="ygrid crisp" transform="translate(0,221.67)" d="M20,0h620"
+                                                    style="stroke: rgb(102, 102, 102); stroke-opacity: 1; stroke-width: 1px;">
+                                                </path>
+                                                <path class="ygrid crisp" transform="translate(0,183.33)" d="M20,0h620"
+                                                    style="stroke: rgb(102, 102, 102); stroke-opacity: 1; stroke-width: 1px;">
+                                                </path>
+                                                <path class="ygrid crisp" transform="translate(0,145)" d="M20,0h620"
+                                                    style="stroke: rgb(102, 102, 102); stroke-opacity: 1; stroke-width: 1px;">
+                                                </path>
+                                                <path class="ygrid crisp" transform="translate(0,106.67)" d="M20,0h620"
+                                                    style="stroke: rgb(102, 102, 102); stroke-opacity: 1; stroke-width: 1px;">
+                                                </path>
+                                                <path class="ygrid crisp" transform="translate(0,68.33)" d="M20,0h620"
+                                                    style="stroke: rgb(102, 102, 102); stroke-opacity: 1; stroke-width: 1px;">
+                                                </path>
+                                            </g>
+                                        </g>
+                                        <g class="zerolinelayer">
+                                            <path class="yzl zl crisp" transform="translate(0,260)" d="M20,0h620"
+                                                style="stroke: rgb(68, 68, 68); stroke-opacity: 1; stroke-width: 1px;">
+                                            </path>
+                                        </g>
+                                        <g class="layer-between">
+                                            <g class="shapelayer"></g>
+                                            <g class="imagelayer"></g>
+                                        </g>
+                                        <path class="xlines-below"></path>
+                                        <path class="ylines-below"></path>
+                                        <g class="overlines-below"></g>
+                                        <g class="xaxislayer-below"></g>
+                                        <g class="yaxislayer-below"></g>
+                                        <g class="overaxes-below"></g>
+                                        <g class="overplot">
+                                            <g class="xy" transform="translate(20,30)"
+                                                clip-path="url(#clip8dc38axyplot)">
+                                                <g class="barlayer mlayer">
+                                                    <g class="trace bars" style="opacity: 1;">
+                                                        <g class="points">
+                                                            <g class="point">
+                                                                <path d="M0.97,230V193.74H18.41V230Z"
+                                                                    style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0.5px; fill: rgb(255, 255, 255); fill-opacity: 1; stroke: rgb(75, 75, 75); stroke-opacity: 1;">
+                                                                </path>
+                                                            </g>
+                                                            <g class="point">
+                                                                <path d="M20.34,230V214.42H37.78V230Z"
+                                                                    style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0.5px; fill: rgb(255, 255, 255); fill-opacity: 1; stroke: rgb(75, 75, 75); stroke-opacity: 1;">
+                                                                </path>
+                                                            </g>
+                                                            <g class="point">
+                                                                <path d="M39.72,230V195.03H57.16V230Z"
+                                                                    style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0.5px; fill: rgb(255, 255, 255); fill-opacity: 1; stroke: rgb(75, 75, 75); stroke-opacity: 1;">
+                                                                </path>
+                                                            </g>
+                                                            <g class="point">
+                                                                <path d="M59.09,230V201.93H76.53V230Z"
+                                                                    style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0.5px; fill: rgb(255, 255, 255); fill-opacity: 1; stroke: rgb(75, 75, 75); stroke-opacity: 1;">
+                                                                </path>
+                                                            </g>
+                                                            <g class="point">
+                                                                <path d="M78.47,230V197.57H95.91V230Z"
+                                                                    style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0.5px; fill: rgb(255, 255, 255); fill-opacity: 1; stroke: rgb(75, 75, 75); stroke-opacity: 1;">
+                                                                </path>
+                                                            </g>
+                                                            <g class="point">
+                                                                <path d="M97.84,230V230H115.28V230Z"
+                                                                    style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0.5px; fill: rgb(255, 255, 255); fill-opacity: 1; stroke: rgb(75, 75, 75); stroke-opacity: 1;">
+                                                                </path>
+                                                            </g>
+                                                            <g class="point">
+                                                                <path d="M117.22,230V204.91H134.66V230Z"
+                                                                    style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0.5px; fill: rgb(255, 255, 255); fill-opacity: 1; stroke: rgb(75, 75, 75); stroke-opacity: 1;">
+                                                                </path>
+                                                            </g>
+                                                            <g class="point">
+                                                                <path d="M136.59,230V203.72H154.03V230Z"
+                                                                    style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0.5px; fill: rgb(255, 255, 255); fill-opacity: 1; stroke: rgb(75, 75, 75); stroke-opacity: 1;">
+                                                                </path>
+                                                            </g>
+                                                            <g class="point">
+                                                                <path d="M155.97,230V202.15H173.41V230Z"
+                                                                    style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0.5px; fill: rgb(255, 255, 255); fill-opacity: 1; stroke: rgb(75, 75, 75); stroke-opacity: 1;">
+                                                                </path>
+                                                            </g>
+                                                            <g class="point">
+                                                                <path d="M175.34,230V214.83H192.78V230Z"
+                                                                    style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0.5px; fill: rgb(255, 255, 255); fill-opacity: 1; stroke: rgb(75, 75, 75); stroke-opacity: 1;">
+                                                                </path>
+                                                            </g>
+                                                            <g class="point">
+                                                                <path d="M194.72,230V213.42H212.16V230Z"
+                                                                    style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0.5px; fill: rgb(255, 255, 255); fill-opacity: 1; stroke: rgb(75, 75, 75); stroke-opacity: 1;">
+                                                                </path>
+                                                            </g>
+                                                            <g class="point">
+                                                                <path d="M214.09,230V184.01H231.53V230Z"
+                                                                    style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0.5px; fill: rgb(255, 255, 255); fill-opacity: 1; stroke: rgb(75, 75, 75); stroke-opacity: 1;">
+                                                                </path>
+                                                            </g>
+                                                            <g class="point">
+                                                                <path d="M233.47,230V197.82H250.91V230Z"
+                                                                    style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0.5px; fill: rgb(255, 255, 255); fill-opacity: 1; stroke: rgb(75, 75, 75); stroke-opacity: 1;">
+                                                                </path>
+                                                            </g>
+                                                            <g class="point">
+                                                                <path d="M252.84,230V188.26H270.28V230Z"
+                                                                    style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0.5px; fill: rgb(255, 255, 255); fill-opacity: 1; stroke: rgb(75, 75, 75); stroke-opacity: 1;">
+                                                                </path>
+                                                            </g>
+                                                            <g class="point">
+                                                                <path d="M272.22,230V210.52H289.66V230Z"
+                                                                    style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0.5px; fill: rgb(255, 255, 255); fill-opacity: 1; stroke: rgb(75, 75, 75); stroke-opacity: 1;">
+                                                                </path>
+                                                            </g>
+                                                            <g class="point">
+                                                                <path d="M291.59,230V230H309.03V230Z"
+                                                                    style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0.5px; fill: rgb(255, 255, 255); fill-opacity: 1; stroke: rgb(75, 75, 75); stroke-opacity: 1;">
+                                                                </path>
+                                                            </g>
+                                                            <g class="point">
+                                                                <path d="M310.97,230V200.91H328.41V230Z"
+                                                                    style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0.5px; fill: rgb(255, 255, 255); fill-opacity: 1; stroke: rgb(75, 75, 75); stroke-opacity: 1;">
+                                                                </path>
+                                                            </g>
+                                                            <g class="point">
+                                                                <path d="M330.34,230V192.6H347.78V230Z"
+                                                                    style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0.5px; fill: rgb(255, 255, 255); fill-opacity: 1; stroke: rgb(75, 75, 75); stroke-opacity: 1;">
+                                                                </path>
+                                                            </g>
+                                                            <g class="point">
+                                                                <path d="M349.72,230V178.59H367.16V230Z"
+                                                                    style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0.5px; fill: rgb(255, 255, 255); fill-opacity: 1; stroke: rgb(75, 75, 75); stroke-opacity: 1;">
+                                                                </path>
+                                                            </g>
+                                                            <g class="point">
+                                                                <path d="M369.09,230V178.62H386.53V230Z"
+                                                                    style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0.5px; fill: rgb(255, 255, 255); fill-opacity: 1; stroke: rgb(75, 75, 75); stroke-opacity: 1;">
+                                                                </path>
+                                                            </g>
+                                                            <g class="point">
+                                                                <path d="M388.47,230V180.15H405.91V230Z"
+                                                                    style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0.5px; fill: rgb(255, 255, 255); fill-opacity: 1; stroke: rgb(75, 75, 75); stroke-opacity: 1;">
+                                                                </path>
+                                                            </g>
+                                                            <g class="point">
+                                                                <path d="M407.84,230V192.73H425.28V230Z"
+                                                                    style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0.5px; fill: rgb(255, 255, 255); fill-opacity: 1; stroke: rgb(75, 75, 75); stroke-opacity: 1;">
+                                                                </path>
+                                                            </g>
+                                                            <g class="point">
+                                                                <path d="M427.22,230V230H444.66V230Z"
+                                                                    style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0.5px; fill: rgb(255, 255, 255); fill-opacity: 1; stroke: rgb(75, 75, 75); stroke-opacity: 1;">
+                                                                </path>
+                                                            </g>
+                                                            <g class="point">
+                                                                <path d="M446.59,230V206.41H464.03V230Z"
+                                                                    style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0.5px; fill: rgb(255, 255, 255); fill-opacity: 1; stroke: rgb(75, 75, 75); stroke-opacity: 1;">
+                                                                </path>
+                                                            </g>
+                                                            <g class="point">
+                                                                <path d="M465.97,230V189.75H483.41V230Z"
+                                                                    style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0.5px; fill: rgb(255, 255, 255); fill-opacity: 1; stroke: rgb(75, 75, 75); stroke-opacity: 1;">
+                                                                </path>
+                                                            </g>
+                                                            <g class="point">
+                                                                <path d="M485.34,230V230H502.78V230Z"
+                                                                    style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0.5px; fill: rgb(255, 255, 255); fill-opacity: 1; stroke: rgb(75, 75, 75); stroke-opacity: 1;">
+                                                                </path>
+                                                            </g>
+                                                            <g class="point">
+                                                                <path d="M504.72,230V178.44H522.16V230Z"
+                                                                    style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0.5px; fill: rgb(255, 255, 255); fill-opacity: 1; stroke: rgb(75, 75, 75); stroke-opacity: 1;">
+                                                                </path>
+                                                            </g>
+                                                            <g class="point">
+                                                                <path d="M524.09,230V213.96H541.53V230Z"
+                                                                    style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0.5px; fill: rgb(255, 255, 255); fill-opacity: 1; stroke: rgb(75, 75, 75); stroke-opacity: 1;">
+                                                                </path>
+                                                            </g>
+                                                            <g class="point">
+                                                                <path d="M543.47,230V209.5H560.91V230Z"
+                                                                    style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0.5px; fill: rgb(255, 255, 255); fill-opacity: 1; stroke: rgb(75, 75, 75); stroke-opacity: 1;">
+                                                                </path>
+                                                            </g>
+                                                            <g class="point">
+                                                                <path d="M562.84,230V215.04H580.28V230Z"
+                                                                    style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0.5px; fill: rgb(255, 255, 255); fill-opacity: 1; stroke: rgb(75, 75, 75); stroke-opacity: 1;">
+                                                                </path>
+                                                            </g>
+                                                            <g class="point">
+                                                                <path d="M582.22,230V215.42H599.66V230Z"
+                                                                    style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0.5px; fill: rgb(255, 255, 255); fill-opacity: 1; stroke: rgb(75, 75, 75); stroke-opacity: 1;">
+                                                                </path>
+                                                            </g>
+                                                            <g class="point">
+                                                                <path d="M601.59,230V216.48H619.03V230Z"
+                                                                    style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0.5px; fill: rgb(255, 255, 255); fill-opacity: 1; stroke: rgb(75, 75, 75); stroke-opacity: 1;">
+                                                                </path>
+                                                            </g>
+                                                        </g>
+                                                    </g>
+                                                </g>
+                                                <g class="scatterlayer mlayer">
+                                                    <g class="trace scatter tracea3390c"
+                                                        style="stroke-miterlimit: 2; opacity: 1;">
+                                                        <g class="fills"></g>
+                                                        <g class="errorbars"></g>
+                                                        <g class="lines">
+                                                            <path class="js-line" d="M9.69,105.42L610.31,105.42"
+                                                                style="vector-effect: non-scaling-stroke; fill: none; stroke: rgb(180, 137, 0); stroke-opacity: 1; stroke-width: 2px; opacity: 1;">
+                                                            </path>
+                                                        </g>
+                                                        <g class="points"></g>
+                                                        <g class="text"></g>
+                                                    </g>
+                                                    <g class="trace scatter trace8c19b1"
+                                                        style="stroke-miterlimit: 2; opacity: 1;">
+                                                        <g class="fills"></g>
+                                                        <g class="errorbars"></g>
+                                                        <g class="lines">
+                                                            <path class="js-line" d="M9.69,67.08L610.31,67.08"
+                                                                style="vector-effect: non-scaling-stroke; fill: none; stroke: rgb(163, 11, 13); stroke-opacity: 1; stroke-width: 2px; opacity: 1;">
+                                                            </path>
+                                                        </g>
+                                                        <g class="points"></g>
+                                                        <g class="text"></g>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </g>
+                                        <g class="zerolinelayer-above"></g>
+                                        <path class="xlines-above crisp" d="M0,0" style="fill: none;"></path>
+                                        <path class="ylines-above crisp" d="M0,0" style="fill: none;"></path>
+                                        <g class="overlines-above"></g>
+                                        <g class="xaxislayer-above">
+                                            <g class="xtick"><text text-anchor="middle" x="0" y="268"
+                                                    data-unformatted="02/11/2025" data-math="N"
+                                                    transform="translate(29.689999999999998,0)"
+                                                    style="font-family: &quot;JetBrains Mono&quot;, monospace; font-size: 7px; fill: rgb(255, 255, 255); fill-opacity: 1; font-weight: normal; font-style: normal; font-variant: normal; white-space: pre;">02/11/2025</text>
+                                            </g>
+                                            <g class="xtick"><text text-anchor="middle" x="0" y="268"
+                                                    data-unformatted="06/11/2025" data-math="N"
+                                                    transform="translate(107.19,0)"
+                                                    style="font-family: &quot;JetBrains Mono&quot;, monospace; font-size: 7px; fill: rgb(255, 255, 255); fill-opacity: 1; font-weight: normal; font-style: normal; font-variant: normal; white-space: pre;">06/11/2025</text>
+                                            </g>
+                                            <g class="xtick"><text text-anchor="middle" x="0" y="268"
+                                                    data-unformatted="10/11/2025" data-math="N"
+                                                    transform="translate(184.69,0)"
+                                                    style="font-family: &quot;JetBrains Mono&quot;, monospace; font-size: 7px; fill: rgb(255, 255, 255); fill-opacity: 1; font-weight: normal; font-style: normal; font-variant: normal; white-space: pre;">10/11/2025</text>
+                                            </g>
+                                            <g class="xtick"><text text-anchor="middle" x="0" y="268"
+                                                    data-unformatted="14/11/2025" data-math="N"
+                                                    transform="translate(262.19,0)"
+                                                    style="font-family: &quot;JetBrains Mono&quot;, monospace; font-size: 7px; fill: rgb(255, 255, 255); fill-opacity: 1; font-weight: normal; font-style: normal; font-variant: normal; white-space: pre;">14/11/2025</text>
+                                            </g>
+                                            <g class="xtick"><text text-anchor="middle" x="0" y="268"
+                                                    data-unformatted="18/11/2025" data-math="N"
+                                                    transform="translate(339.69,0)"
+                                                    style="font-family: &quot;JetBrains Mono&quot;, monospace; font-size: 7px; fill: rgb(255, 255, 255); fill-opacity: 1; font-weight: normal; font-style: normal; font-variant: normal; white-space: pre;">18/11/2025</text>
+                                            </g>
+                                            <g class="xtick"><text text-anchor="middle" x="0" y="268"
+                                                    data-unformatted="22/11/2025" data-math="N"
+                                                    transform="translate(417.19,0)"
+                                                    style="font-family: &quot;JetBrains Mono&quot;, monospace; font-size: 7px; fill: rgb(255, 255, 255); fill-opacity: 1; font-weight: normal; font-style: normal; font-variant: normal; white-space: pre;">22/11/2025</text>
+                                            </g>
+                                            <g class="xtick"><text text-anchor="middle" x="0" y="268"
+                                                    data-unformatted="26/11/2025" data-math="N"
+                                                    transform="translate(494.69,0)"
+                                                    style="font-family: &quot;JetBrains Mono&quot;, monospace; font-size: 7px; fill: rgb(255, 255, 255); fill-opacity: 1; font-weight: normal; font-style: normal; font-variant: normal; white-space: pre;">26/11/2025</text>
+                                            </g>
+                                            <g class="xtick"><text text-anchor="middle" x="0" y="268"
+                                                    data-unformatted="30/11/2025" data-math="N"
+                                                    transform="translate(572.19,0)"
+                                                    style="font-family: &quot;JetBrains Mono&quot;, monospace; font-size: 7px; fill: rgb(255, 255, 255); fill-opacity: 1; font-weight: normal; font-style: normal; font-variant: normal; white-space: pre;">30/11/2025</text>
+                                            </g>
+                                        </g>
+                                        <g class="yaxislayer-above">
+                                            <g class="ytick"><text text-anchor="end" x="19" y="3.15"
+                                                    data-unformatted="0" data-math="N" transform="translate(0,260)"
+                                                    style="font-family: &quot;JetBrains Mono&quot;, monospace; font-size: 9px; fill: rgb(255, 255, 255); fill-opacity: 1; font-weight: normal; font-style: normal; font-variant: normal; white-space: pre;">0</text>
+                                            </g>
+                                            <g class="ytick"><text text-anchor="end" x="19" y="3.15"
+                                                    data-unformatted="0.2" data-math="N"
+                                                    style="font-family: &quot;JetBrains Mono&quot;, monospace; font-size: 9px; fill: rgb(255, 255, 255); fill-opacity: 1; font-weight: normal; font-style: normal; font-variant: normal; white-space: pre;"
+                                                    transform="translate(0,221.67)">0.2</text></g>
+                                            <g class="ytick"><text text-anchor="end" x="19" y="3.15"
+                                                    data-unformatted="0.4" data-math="N"
+                                                    style="font-family: &quot;JetBrains Mono&quot;, monospace; font-size: 9px; fill: rgb(255, 255, 255); fill-opacity: 1; font-weight: normal; font-style: normal; font-variant: normal; white-space: pre;"
+                                                    transform="translate(0,183.33)">0.4</text></g>
+                                            <g class="ytick"><text text-anchor="end" x="19" y="3.15"
+                                                    data-unformatted="0.6" data-math="N"
+                                                    style="font-family: &quot;JetBrains Mono&quot;, monospace; font-size: 9px; fill: rgb(255, 255, 255); fill-opacity: 1; font-weight: normal; font-style: normal; font-variant: normal; white-space: pre;"
+                                                    transform="translate(0,145)">0.6</text></g>
+                                            <g class="ytick"><text text-anchor="end" x="19" y="3.15"
+                                                    data-unformatted="0.8" data-math="N"
+                                                    style="font-family: &quot;JetBrains Mono&quot;, monospace; font-size: 9px; fill: rgb(255, 255, 255); fill-opacity: 1; font-weight: normal; font-style: normal; font-variant: normal; white-space: pre;"
+                                                    transform="translate(0,106.67)">0.8</text></g>
+                                            <g class="ytick"><text text-anchor="end" x="19" y="3.15"
+                                                    data-unformatted="1" data-math="N"
+                                                    style="font-family: &quot;JetBrains Mono&quot;, monospace; font-size: 9px; fill: rgb(255, 255, 255); fill-opacity: 1; font-weight: normal; font-style: normal; font-variant: normal; white-space: pre;"
+                                                    transform="translate(0,68.33)">1</text></g>
+                                            <g class="ytick"><text text-anchor="end" x="19" y="3.15"
+                                                    data-unformatted="1.2" data-math="N"
+                                                    style="font-family: &quot;JetBrains Mono&quot;, monospace; font-size: 9px; fill: rgb(255, 255, 255); fill-opacity: 1; font-weight: normal; font-style: normal; font-variant: normal; white-space: pre;"
+                                                    transform="translate(0,30)">1.2</text></g>
+                                        </g>
+                                        <g class="overaxes-above"></g>
+                                    </g>
+                                </g>
+                                <g class="polarlayer"></g>
+                                <g class="smithlayer"></g>
+                                <g class="ternarylayer"></g>
+                                <g class="geolayer"></g>
+                                <g class="funnelarealayer"></g>
+                                <g class="pielayer"></g>
+                                <g class="iciclelayer"></g>
+                                <g class="treemaplayer"></g>
+                                <g class="sunburstlayer"></g>
+                                <g class="glimages"></g>
+                            </svg>
+                            <div class="gl-container"></div><svg class="main-svg" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" width="655.219" height="289.875">
+                                <defs id="topdefs-8dc38a">
+                                    <g class="clips"></g>
+                                </defs>
+                                <g class="indicatorlayer"></g>
+                                <g class="layer-above">
+                                    <g class="imagelayer"></g>
+                                    <g class="shapelayer"></g>
+                                </g>
+                                <g class="selectionlayer"></g>
+                                <g class="infolayer">
+                                    <g class="g-gtitle"></g>
+                                    <g class="g-xtitle"></g>
+                                    <g class="g-ytitle"></g>
+                                </g>
+                                <g class="menulayer"></g>
+                                <g class="zoomlayer"></g>
+                            </svg>
+                            <div class="modebar-container"
+                                style="position: absolute; top: 0px; right: 0px; width: 100%;">
+                                <div id="modebar-8dc38a" role="toolbar" class="modebar modebar--custom">
+                                    <div class="modebar-group" style="background-color: rgba(54, 54, 54, 0.5);"><button
+                                            type="button" rel="tooltip" class="modebar-btn"
+                                            data-title="Download plot as a PNG" aria-label="Download plot as a PNG"
+                                            data-toggle="false" data-gravity="n" data-btn-style-event-added="true"><svg
+                                                viewBox="0 0 1000 1000" class="icon" height="1em" width="1em">
+                                                <path
+                                                    d="m500 450c-83 0-150-67-150-150 0-83 67-150 150-150 83 0 150 67 150 150 0 83-67 150-150 150z m400 150h-120c-16 0-34 13-39 29l-31 93c-6 15-23 28-40 28h-340c-16 0-34-13-39-28l-31-94c-6-15-23-28-40-28h-120c-55 0-100-45-100-100v-450c0-55 45-100 100-100h800c55 0 100 45 100 100v450c0 55-45 100-100 100z m-400-550c-138 0-250 112-250 250 0 138 112 250 250 250 138 0 250-112 250-250 0-138-112-250-250-250z m365 380c-19 0-35 16-35 35 0 19 16 35 35 35 19 0 35-16 35-35 0-19-16-35-35-35z"
+                                                    transform="matrix(1 0 0 -1 0 850)"
+                                                    style="fill: rgba(255, 255, 255, 0.3);"></path>
+                                            </svg></button></div>
+                                    <div class="modebar-group" style="background-color: rgba(54, 54, 54, 0.5);"><button
+                                            type="button" rel="tooltip" class="modebar-btn active" data-title="Zoom"
+                                            aria-label="Zoom" data-attr="dragmode" data-val="zoom" data-toggle="false"
+                                            data-gravity="n" data-btn-style-event-added="true"><svg
+                                                viewBox="0 0 1000 1000" class="icon" height="1em" width="1em">
+                                                <path
+                                                    d="m1000-25l-250 251c40 63 63 138 63 218 0 224-182 406-407 406-224 0-406-182-406-406s183-406 407-406c80 0 155 22 218 62l250-250 125 125z m-812 250l0 438 437 0 0-438-437 0z m62 375l313 0 0-312-313 0 0 312z"
+                                                    transform="matrix(1 0 0 -1 0 850)"
+                                                    style="fill: rgba(255, 255, 255, 0.7);"></path>
+                                            </svg></button><button type="button" rel="tooltip" class="modebar-btn"
+                                            data-title="Pan" aria-label="Pan" data-attr="dragmode" data-val="pan"
+                                            data-toggle="false" data-gravity="n" data-btn-style-event-added="true"><svg
+                                                viewBox="0 0 1000 1000" class="icon" height="1em" width="1em">
+                                                <path
+                                                    d="m1000 350l-187 188 0-125-250 0 0 250 125 0-188 187-187-187 125 0 0-250-250 0 0 125-188-188 186-187 0 125 252 0 0-250-125 0 187-188 188 188-125 0 0 250 250 0 0-126 187 188z"
+                                                    transform="matrix(1 0 0 -1 0 850)"
+                                                    style="fill: rgba(255, 255, 255, 0.3);"></path>
+                                            </svg></button></div>
+                                    <div class="modebar-group" style="background-color: rgba(54, 54, 54, 0.5);"><button
+                                            type="button" rel="tooltip" class="modebar-btn" data-title="Zoom in"
+                                            aria-label="Zoom in" data-attr="zoom" data-val="in" data-toggle="false"
+                                            data-gravity="n" data-btn-style-event-added="true"><svg
+                                                viewBox="0 0 875 1000" class="icon" height="1em" width="1em">
+                                                <path
+                                                    d="m1 787l0-875 875 0 0 875-875 0z m687-500l-187 0 0-187-125 0 0 187-188 0 0 125 188 0 0 187 125 0 0-187 187 0 0-125z"
+                                                    transform="matrix(1 0 0 -1 0 850)"
+                                                    style="fill: rgba(255, 255, 255, 0.3);"></path>
+                                            </svg></button><button type="button" rel="tooltip" class="modebar-btn"
+                                            data-title="Zoom out" aria-label="Zoom out" data-attr="zoom" data-val="out"
+                                            data-toggle="false" data-gravity="n" data-btn-style-event-added="true"><svg
+                                                viewBox="0 0 875 1000" class="icon" height="1em" width="1em">
+                                                <path
+                                                    d="m0 788l0-876 875 0 0 876-875 0z m688-500l-500 0 0 125 500 0 0-125z"
+                                                    transform="matrix(1 0 0 -1 0 850)"
+                                                    style="fill: rgba(255, 255, 255, 0.3);"></path>
+                                            </svg></button><button type="button" rel="tooltip" class="modebar-btn"
+                                            data-title="Autoscale" aria-label="Autoscale" data-attr="zoom"
+                                            data-val="auto" data-toggle="false" data-gravity="n"
+                                            data-btn-style-event-added="true"><svg viewBox="0 0 1000 1000" class="icon"
+                                                height="1em" width="1em">
+                                                <path
+                                                    d="m250 850l-187 0-63 0 0-62 0-188 63 0 0 188 187 0 0 62z m688 0l-188 0 0-62 188 0 0-188 62 0 0 188 0 62-62 0z m-875-938l0 188-63 0 0-188 0-62 63 0 187 0 0 62-187 0z m875 188l0-188-188 0 0-62 188 0 62 0 0 62 0 188-62 0z m-125 188l-1 0-93-94-156 156 156 156 92-93 2 0 0 250-250 0 0-2 93-92-156-156-156 156 94 92 0 2-250 0 0-250 0 0 93 93 157-156-157-156-93 94 0 0 0-250 250 0 0 0-94 93 156 157 156-157-93-93 0 0 250 0 0 250z"
+                                                    transform="matrix(1 0 0 -1 0 850)"
+                                                    style="fill: rgba(255, 255, 255, 0.3);"></path>
+                                            </svg></button><button type="button" rel="tooltip" class="modebar-btn"
+                                            data-title="Reset axes" aria-label="Reset axes" data-attr="zoom"
+                                            data-val="reset" data-toggle="false" data-gravity="n"
+                                            data-btn-style-event-added="true"><svg viewBox="0 0 928.6 1000" class="icon"
+                                                height="1em" width="1em">
+                                                <path
+                                                    d="m786 296v-267q0-15-11-26t-25-10h-214v214h-143v-214h-214q-15 0-25 10t-11 26v267q0 1 0 2t0 2l321 264 321-264q1-1 1-4z m124 39l-34-41q-5-5-12-6h-2q-7 0-12 3l-386 322-386-322q-7-4-13-4-7 2-12 7l-35 41q-4 5-3 13t6 12l401 334q18 15 42 15t43-15l136-114v109q0 8 5 13t13 5h107q8 0 13-5t5-13v-227l122-102q5-5 6-12t-4-13z"
+                                                    transform="matrix(1 0 0 -1 0 850)"
+                                                    style="fill: rgba(255, 255, 255, 0.3);"></path>
+                                            </svg></button></div>
+                                </div>
+                            </div><svg class="main-svg" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" width="655.219" height="289.875">
+                                <g class="hoverlayer"></g>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="histogram-buttons">
+                    <button class="histogram-btn active" data-period="last-change">
+                        Last change
+                    </button>
+                    <button class="histogram-btn" data-period="week">
+                        1 Week
+                    </button>
+                    <button class="histogram-btn" data-period="month">
+                        1 Month
+                    </button>
+                    <button class="histogram-btn" data-period="all">
+                        All
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="lf-div card">
+            <h2 class="card-title">
+                LF
+            </h2>
+            <div class="card-body">
+                <div id="lf-plot" class="js-plotly-plot">
+                    <div class="plot-container plotly" style="width: 100%; height: 100%;">
+                        <div class="user-select-none svg-container"
+                            style="position: relative; width: 100%; height: 100%;"><svg class="main-svg"
+                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                width="1219.75" height="368.031" style="background: rgb(54, 54, 54);">
+                                <defs id="defs-32ef9d">
+                                    <g class="clips">
+                                        <clippath id="clip32ef9dxyplot" class="plotclip">
+                                            <rect width="1150" height="298"></rect>
+                                        </clippath>
+                                        <clippath class="axesclip" id="clip32ef9dx">
+                                            <rect x="50" y="0" width="1150" height="368.031"></rect>
+                                        </clippath>
+                                        <clippath class="axesclip" id="clip32ef9dy">
+                                            <rect x="0" y="30" width="1219.75" height="298"></rect>
+                                        </clippath>
+                                        <clippath class="axesclip" id="clip32ef9dxy">
+                                            <rect x="50" y="30" width="1150" height="298"></rect>
+                                        </clippath>
+                                    </g>
+                                    <g class="gradients"></g>
+                                    <g class="patterns"></g>
+                                </defs>
+                                <g class="bglayer">
+                                    <rect class="bg" x="50" y="30" width="1150" height="298"
+                                        style="fill: rgb(75, 75, 75); fill-opacity: 1; stroke-width: 0;"></rect>
+                                </g>
+                                <g class="draglayer cursor-crosshair">
+                                    <g class="xy">
+                                        <rect class="nsewdrag drag" data-subplot="xy" x="50" y="30" width="1150"
+                                            height="298"
+                                            style="fill: transparent; stroke-width: 0; pointer-events: all;"></rect>
+                                        <rect class="nwdrag drag cursor-nw-resize" data-subplot="xy" x="30" y="10"
+                                            width="20" height="20"
+                                            style="fill: transparent; stroke-width: 0; pointer-events: all;"></rect>
+                                        <rect class="nedrag drag cursor-ne-resize" data-subplot="xy" x="1200" y="10"
+                                            width="20" height="20"
+                                            style="fill: transparent; stroke-width: 0; pointer-events: all;"></rect>
+                                        <rect class="swdrag drag cursor-sw-resize" data-subplot="xy" x="30" y="328"
+                                            width="20" height="20"
+                                            style="fill: transparent; stroke-width: 0; pointer-events: all;"></rect>
+                                        <rect class="sedrag drag cursor-se-resize" data-subplot="xy" x="1200" y="328"
+                                            width="20" height="20"
+                                            style="fill: transparent; stroke-width: 0; pointer-events: all;"></rect>
+                                        <rect class="ewdrag drag cursor-ew-resize" data-subplot="xy" x="165" y="328.5"
+                                            width="920" height="20"
+                                            style="fill: transparent; stroke-width: 0; pointer-events: all;"></rect>
+                                        <rect class="wdrag drag cursor-w-resize" data-subplot="xy" x="50" y="328.5"
+                                            width="115" height="20"
+                                            style="fill: transparent; stroke-width: 0; pointer-events: all;"></rect>
+                                        <rect class="edrag drag cursor-e-resize" data-subplot="xy" x="1085" y="328.5"
+                                            width="115" height="20"
+                                            style="fill: transparent; stroke-width: 0; pointer-events: all;"></rect>
+                                        <rect class="nsdrag drag cursor-ns-resize" data-subplot="xy" x="29.5" y="59.8"
+                                            width="20" height="238.4"
+                                            style="fill: transparent; stroke-width: 0; pointer-events: all;"></rect>
+                                        <rect class="sdrag drag cursor-s-resize" data-subplot="xy" x="29.5" y="298.2"
+                                            width="20" height="29.8"
+                                            style="fill: transparent; stroke-width: 0; pointer-events: all;"></rect>
+                                        <rect class="ndrag drag cursor-n-resize" data-subplot="xy" x="29.5" y="30"
+                                            width="20" height="29.8"
+                                            style="fill: transparent; stroke-width: 0; pointer-events: all;"></rect>
+                                    </g>
+                                </g>
+                                <g class="layer-below">
+                                    <g class="imagelayer"></g>
+                                    <g class="shapelayer"></g>
+                                </g>
+                                <g class="cartesianlayer">
+                                    <g class="subplot xy">
+                                        <g class="layer-subplot">
+                                            <g class="shapelayer"></g>
+                                            <g class="imagelayer"></g>
+                                        </g>
+                                        <g class="minor-gridlayer">
+                                            <g class="x"></g>
+                                            <g class="y"></g>
+                                        </g>
+                                        <g class="gridlayer">
+                                            <g class="x">
+                                                <path class="xgrid crisp" transform="translate(188.25,0)" d="M0,30v298"
+                                                    style="stroke: rgb(102, 102, 102); stroke-opacity: 1; stroke-width: 1px;">
+                                                </path>
+                                                <path class="xgrid crisp" transform="translate(326.5,0)" d="M0,30v298"
+                                                    style="stroke: rgb(102, 102, 102); stroke-opacity: 1; stroke-width: 1px;">
+                                                </path>
+                                                <path class="xgrid crisp" transform="translate(464.75,0)" d="M0,30v298"
+                                                    style="stroke: rgb(102, 102, 102); stroke-opacity: 1; stroke-width: 1px;">
+                                                </path>
+                                                <path class="xgrid crisp" transform="translate(603,0)" d="M0,30v298"
+                                                    style="stroke: rgb(102, 102, 102); stroke-opacity: 1; stroke-width: 1px;">
+                                                </path>
+                                                <path class="xgrid crisp" transform="translate(741.25,0)" d="M0,30v298"
+                                                    style="stroke: rgb(102, 102, 102); stroke-opacity: 1; stroke-width: 1px;">
+                                                </path>
+                                                <path class="xgrid crisp" transform="translate(879.5,0)" d="M0,30v298"
+                                                    style="stroke: rgb(102, 102, 102); stroke-opacity: 1; stroke-width: 1px;">
+                                                </path>
+                                                <path class="xgrid crisp" transform="translate(1017.75,0)" d="M0,30v298"
+                                                    style="stroke: rgb(102, 102, 102); stroke-opacity: 1; stroke-width: 1px;">
+                                                </path>
+                                                <path class="xgrid crisp" transform="translate(1156,0)" d="M0,30v298"
+                                                    style="stroke: rgb(102, 102, 102); stroke-opacity: 1; stroke-width: 1px;">
+                                                </path>
+                                            </g>
+                                            <g class="y">
+                                                <path class="ygrid crisp" transform="translate(0,240.35)" d="M50,0h1150"
+                                                    style="stroke: rgb(102, 102, 102); stroke-opacity: 1; stroke-width: 1px;">
+                                                </path>
+                                                <path class="ygrid crisp" transform="translate(0,152.70999999999998)"
+                                                    d="M50,0h1150"
+                                                    style="stroke: rgb(102, 102, 102); stroke-opacity: 1; stroke-width: 1px;">
+                                                </path>
+                                                <path class="ygrid crisp" transform="translate(0,65.06)" d="M50,0h1150"
+                                                    style="stroke: rgb(102, 102, 102); stroke-opacity: 1; stroke-width: 1px;">
+                                                </path>
+                                            </g>
+                                        </g>
+                                        <g class="zerolinelayer">
+                                            <path class="xzl zl crisp" transform="translate(50,0)" d="M0,30v298"
+                                                style="stroke: rgb(68, 68, 68); stroke-opacity: 1; stroke-width: 1px;">
+                                            </path>
+                                        </g>
+                                        <g class="layer-between">
+                                            <g class="shapelayer"></g>
+                                            <g class="imagelayer"></g>
+                                        </g>
+                                        <path class="xlines-below"></path>
+                                        <path class="ylines-below"></path>
+                                        <g class="overlines-below"></g>
+                                        <g class="xaxislayer-below"></g>
+                                        <g class="yaxislayer-below"></g>
+                                        <g class="overaxes-below"></g>
+                                        <g class="overplot">
+                                            <g class="xy" transform="translate(50,30)"
+                                                clip-path="url(#clip32ef9dxyplot)">
+                                                <g class="scatterlayer mlayer">
+                                                    <g class="trace scatter traceaeb063"
+                                                        style="stroke-miterlimit: 2; opacity: 1;">
+                                                        <g class="fills"></g>
+                                                        <g class="errorbars"></g>
+                                                        <g class="lines">
+                                                            <path class="js-line"
+                                                                d="M0,156.89L0.82,151.8L0.87,153.03L0.88,153.03L1.08,158.12L1.55,151.8L1.62,153.03L1.63,153.03L2,156.89L2.13,149.18L2.32,151.8L2.34,150.4L2.5,163.37L3.1,153.03L3.11,153.03L3.32,151.8L3.66,159.52L3.87,154.26L3.88,153.03L4.27,159.52L4.49,147.95L4.58,154.26L4.59,155.66L4.65,158.12L4.88,151.8L5.32,154.26L5.34,153.03L5.47,149.18L5.75,158.12L5.9,156.89L5.92,156.89L6.06,159.52L6.29,150.4L6.64,156.89L6.65,158.12L7.22,160.74L7.41,149.18L7.44,151.8L7.45,154.26L7.76,160.74L8.06,147.95L8.21,156.89L8.23,156.89L8.42,158.12L8.86,150.4L8.99,155.66L9,155.66L9.37,160.74L9.53,147.95L9.73,155.66L9.75,153.03L9.95,160.74L10.53,149.18L10.55,151.8L10.84,150.4L11.06,160.74L11.16,154.26L11.17,153.03L11.29,161.97L11.75,147.95L11.89,154.26L11.9,155.66L12.04,159.52L12.1,153.03L12.22,153.03L12.24,153.03L12.46,159.52L12.83,149.18L12.88,156.89L12.9,158.12L13.29,159.52L13.44,149.18L13.65,158.12L13.66,158.12L13.87,149.18L14.35,161.97L14.39,155.66L14.41,154.26L14.9,158.12L15.01,144.09L15.17,155.66L15.18,153.03L15.25,146.55L15.48,163.37L15.91,153.03L15.93,154.26L16.01,163.37L16.13,149.18L16.63,150.4L16.65,149.18L16.67,147.95L16.82,161.97L17.34,155.66L17.35,155.66L17.52,151.8L17.83,159.52L18.08,154.26L18.1,154.26L18.21,150.4L18.71,161.97L18.77,151.8L18.79,151.8L19,161.97L19.18,147.95L19.49,155.66L19.51,156.89L19.56,160.74L19.89,149.18L20.25,158.12L20.27,156.89L20.39,146.55L20.88,159.52L20.93,154.26L20.94,154.26L21.37,159.52L21.53,147.95L21.66,153.03L21.68,154.26L21.83,159.52L22.06,149.18L22.44,155.66L22.45,155.66L22.62,149.18L22.91,158.12L23.12,151.8L23.13,150.4L23.53,159.52L23.68,146.55L23.81,158.12L23.82,159.52L23.83,160.74L24.01,151.8L24.53,155.66L24.54,155.66L24.68,158.12L25.31,151.8L25.33,150.4L25.6,160.74L25.84,147.95L26.13,158.12L26.14,156.89L26.21,158.12L26.36,146.55L26.94,153.03L26.96,154.26L27.39,150.4L27.57,160.74L27.66,150.4L27.68,149.18L28,146.55L28.15,159.52L28.47,154.26L28.48,154.26L28.76,159.52L28.88,150.4L29.23,154.26L29.24,155.66L29.6,150.4L29.9,158.12L29.99,156.89L30,156.89L30.15,147.95L30.3,160.74L30.51,156.89L30.53,159.52L30.69,146.55L30.83,163.37L31.35,151.8L31.37,151.8L31.56,159.52L31.74,149.18L32.1,155.66L32.12,155.66L32.68,159.52L32.82,150.4L32.83,149.18L33.39,144.09L33.62,161.97L33.65,159.52L33.66,158.12L33.94,147.95L34.31,160.74L34.48,150.4L34.49,153.03L34.85,158.12L34.98,147.95L35.3,156.89L35.31,156.89L35.5,151.8L35.79,160.74L35.94,154.26L35.96,153.03L36.35,160.74L36.55,149.18L36.68,155.66L36.69,155.66L37,160.74L37.15,150.4L37.4,156.89L37.41,158.12L37.92,159.52L38.21,150.4L38.23,150.4L38.53,161.97L39.07,156.89L39.08,156.89L39.3,147.95L39.54,160.74L39.86,153.03L39.87,155.66L40.34,146.55L40.63,160.74L40.65,159.52L40.66,159.52L41.43,150.4L41.45,151.8L41.46,154.26L41.52,161.97L42,146.55L42.22,158.12L42.24,156.89L42.72,158.12L43.08,149.18L43.09,151.8L43.59,147.95L43.87,161.97L43.89,159.52L43.91,158.12L44.05,146.55L44.3,159.52L44.7,153.03L44.71,153.03L45.21,149.18L45.5,160.74L45.51,159.52L45.53,158.12L46.02,160.74L46.29,147.95L46.31,150.4L46.33,153.03L46.38,150.4L47.14,161.97L47.16,159.52L47.31,150.4L47.92,156.89L47.93,156.89L48.15,160.74L48.4,147.95L48.64,158.12L48.65,159.52L49.04,149.18L49.19,163.37L49.37,153.03L49.38,153.03L49.74,158.12L50.03,151.8L50.13,153.03L50.14,151.8L50.31,161.97L50.46,147.95L50.94,158.12L50.96,156.89L51.18,149.18L51.3,163.37L51.76,150.4L51.77,151.8L51.93,161.97L52.08,149.18L52.56,156.89L52.58,154.26L52.96,160.74L53.24,146.55L53.34,151.8L53.35,154.26L53.49,163.37L53.65,149.18L54.1,156.89L54.11,154.26L54.44,145.32L54.58,163.37L54.89,151.8L54.9,153.03L55.37,150.4L55.65,161.97L55.67,159.52L55.69,158.12L55.89,151.8L56.21,160.74L56.38,156.89L56.39,155.66L56.67,159.52L57.12,147.95L57.15,151.8L57.17,151.8L57.28,160.74L57.53,149.18L57.91,156.89L57.93,155.66L58.3,160.74L58.69,150.4L58.7,151.8L58.71,153.03L58.89,160.74L59.09,147.95L59.32,158.12L59.34,158.12L59.68,146.55L59.93,163.37L60.11,151.8L60.12,151.8L60.19,147.95L60.97,159.52L60.98,158.12L61.58,161.97L61.84,146.55L61.85,149.18L61.87,153.03L62.35,145.32L62.64,161.97L62.65,160.74L62.67,159.52L63.4,150.4L63.44,154.26L63.46,154.26L63.73,160.74L63.93,150.4L64.23,159.52L64.24,158.12L64.34,159.52L64.52,149.18L65.07,153.03L65.09,154.26L65.28,159.52L65.63,149.18L65.77,156.89L65.78,159.52L65.82,160.74L66.03,147.95L66.43,155.66L66.44,155.66L66.84,151.8L66.87,158.12L66.89,160.74L66.91,161.97L67.16,150.4L67.58,154.26L67.59,154.26L67.71,147.95L67.94,158.12L68.28,153.03L68.3,154.26L68.78,149.18L69.06,163.37L69.08,161.97L69.1,160.74L69.57,161.97L69.72,149.18L69.91,153.03L69.93,151.8L70.34,150.4L70.7,159.52L70.76,156.89L70.77,156.89L70.96,150.4L71.42,161.97L71.46,155.66L71.47,154.26L71.63,149.18L71.81,160.74L72.14,153.03L72.15,150.4L72.19,149.18L72.3,161.97L72.77,156.89L72.79,158.12L72.84,160.74L72.97,151.8L73.49,153.03L73.51,153.03L73.62,150.4L74.21,158.12L74.27,154.26L74.28,154.26L74.41,158.12L74.52,150.4L74.93,156.89L74.95,159.52L74.97,160.74L75.14,151.8L75.62,155.66L75.64,154.26L75.82,158.12L76.18,147.95L76.2,154.26L76.22,158.12L76.48,149.18L76.59,160.74L76.95,153.03L76.96,154.26L77.14,163.37L77.53,150.4L77.74,158.12L77.75,156.89L77.92,149.18L77.99,159.52L78.59,151.8L78.61,151.8L78.72,161.97L79.19,150.4L79.23,156.89L79.24,158.12L79.26,159.52L79.47,150.4L79.91,153.03L79.92,153.03L80.2,149.18L80.39,160.74L80.56,153.03L80.57,151.8L80.83,161.97L81.12,149.18L81.3,154.26L81.32,153.03L81.75,150.4L81.93,161.97L82.08,151.8L82.09,153.03L82.23,159.52L82.71,149.18L82.78,155.66L82.8,155.66L83.14,150.4L83.53,161.97L83.6,158.12L83.61,156.89L83.99,150.4L84.07,159.52L84.33,155.66L84.35,156.89L84.51,147.95L84.68,159.52L85.01,153.03L85.02,151.8L85.4,149.18L85.67,159.52L85.76,155.66L85.77,153.03L85.91,149.18L86.07,158.12L86.46,154.26L86.48,156.89L86.54,158.12L87.19,151.8L87.24,155.66L87.25,156.89L87.35,160.74L87.54,145.32L88.05,150.4L88.06,151.8L88.56,149.18L88.71,161.97L88.81,155.66L88.83,154.26L89.23,159.52L89.49,151.8L89.57,154.26L89.59,154.26L89.64,159.52L89.77,150.4L90.33,155.66L90.35,155.66L90.53,159.52L90.59,151.8L91.09,156.89L91.11,155.66L91.37,159.52L91.85,150.4L91.88,151.8L91.89,151.8L92.02,150.4L92.71,159.52L92.72,158.12L92.74,155.66L92.89,146.55L93,159.52L93.5,153.03L93.51,153.03L93.75,159.52L94.16,149.18L94.18,146.55L94.34,161.97L94.92,150.4L94.94,151.8L95.36,160.74L95.54,150.4L95.68,155.66L95.7,154.26L95.88,159.52L96.12,150.4L96.44,155.66L96.46,153.03L96.83,150.4L96.91,160.74L97.18,150.4L97.19,149.18L97.51,159.52L97.95,151.8L97.96,151.8L98.18,149.18L98.63,163.37L98.67,155.66L98.68,151.8L99.15,159.52L99.43,150.4L99.44,151.8L99.66,161.97L99.71,156.89L99.72,154.26L99.89,150.4L100.26,161.97L100.33,151.8L100.34,149.18L100.44,145.32L100.78,160.74L101.21,158.12L101.23,158.12L101.7,151.8L101.83,159.52L102.03,154.26L102.04,155.66L102.24,150.4L102.65,160.74L102.72,153.03L102.73,153.03L102.79,149.18L102.84,160.74L103.33,155.66L103.34,158.12L103.63,150.4L104.07,159.52L104.09,158.12L104.1,155.66L104.68,159.52L104.92,149.18L104.93,150.4L105.08,161.97L105.65,149.18L105.66,147.95L105.73,160.74L106.44,155.66L106.45,154.26L106.63,160.74L106.87,147.95L107.25,156.89L107.27,156.89L107.54,147.95L107.75,161.97L107.96,155.66L107.97,153.03L108.36,159.52L108.59,147.95L108.66,155.66L108.68,155.66L109.11,151.8L109.34,160.74L109.4,153.03L109.41,151.8L109.58,156.89L109.71,150.4L109.76,156.89L109.77,159.52L110.39,160.74L110.57,146.55L110.61,154.26L110.63,156.89L111.11,146.55L111.25,159.52L111.35,154.26L111.36,154.26L111.58,159.52L111.86,146.55L111.9,155.66L111.91,159.52L112.02,161.97L112.18,151.8L112.59,155.66L112.6,155.66L113.18,161.97L113.28,150.4L113.3,150.4L114.07,160.74L114.19,158.12L114.21,155.66L114.28,160.74L114.43,150.4L114.97,153.03L114.98,153.03L115.02,151.8L115.2,160.74L115.63,156.89L115.65,158.12L115.94,149.18L116.2,160.74L116.39,158.12L116.41,156.89L116.54,146.55L116.68,160.74L117.19,153.03L117.21,154.26L117.32,159.52L117.73,150.4L117.83,156.89L117.84,158.12L118.18,147.95L118.36,161.97L118.49,151.8L118.51,151.8L118.78,149.18L119.07,160.74L119.21,150.4L119.23,149.18L120.12,160.74L120.14,159.52L120.95,149.18L120.97,151.8L121.22,161.97L121.38,149.18L121.73,154.26L121.74,155.66L122.13,159.52L122.48,149.18L122.54,150.4L122.56,151.8L123.07,149.18L123.26,163.37L123.33,154.26L123.35,154.26L123.48,163.37L123.62,150.4L123.97,155.66L123.98,159.52L124.13,146.55L124.71,151.8L124.73,154.26L124.81,161.97L124.95,151.8L125.5,158.12L125.52,159.52L125.7,146.55L125.93,160.74L126.19,151.8L126.21,150.4L126.82,147.95L126.94,163.37L127.09,154.26L127.11,153.03L127.37,149.18L127.56,159.52L127.81,153.03L127.83,151.8L128.09,159.52L128.46,149.18L128.65,154.26L128.67,154.26L128.92,150.4L129.29,160.74L129.4,151.8L129.42,151.8L129.47,147.95L129.76,160.74L130.13,153.03L130.15,153.03L130.24,163.37L130.56,147.95L130.94,159.52L130.95,159.52L131.12,149.18L131.25,160.74L131.68,160.74L131.7,160.74L132.18,150.4L132.51,153.03L132.53,151.8L132.83,159.52L133.2,149.18L133.26,154.26L133.27,156.89L133.51,149.18L133.81,159.52L133.95,154.26L133.96,153.03L134.27,150.4L134.52,159.52L134.71,154.26L134.72,153.03L134.95,160.74L135.3,150.4L135.43,153.03L135.44,155.66L135.55,159.52L135.73,147.95L136.2,158.12L136.22,156.89L136.49,150.4L136.56,160.74L136.96,154.26L136.98,155.66L137.18,159.52L137.45,147.95L137.72,154.26L137.74,154.26L138.12,158.12L138.51,149.18L138.53,149.18L138.72,161.97L139.27,155.66L139.29,154.26L139.38,147.95L139.77,160.74L140.03,154.26L140.05,154.26L140.54,150.4L140.74,160.74L140.79,155.66L140.81,154.26L141.21,147.95L141.36,160.74L141.58,153.03L141.6,154.26L142,160.74L142.27,149.18L142.33,154.26L142.34,156.89L142.49,161.97L142.8,149.18L143.07,155.66L143.09,154.26L143.35,146.55L143.65,161.97L143.77,154.26L143.78,151.8L144.04,159.52L144.43,149.18L144.48,156.89L144.5,158.12L144.58,161.97L144.94,147.95L145.22,156.89L145.23,154.26L145.42,151.8L145.58,160.74L145.85,151.8L145.87,151.8L146.14,150.4L146.23,159.52L146.65,155.66L146.67,154.26L146.86,151.8L146.96,159.52L147.43,156.89L147.44,156.89L147.72,158.12L148.11,149.18L148.16,154.26L148.18,155.66L148.26,160.74L148.6,149.18L148.62,149.18L148.87,163.37L149.24,147.95L149.31,154.26L149.32,155.66L149.43,161.97L149.79,150.4L150.04,156.89L150.06,156.89L150.5,161.97L150.87,149.18L150.89,150.4L150.9,153.03L151.24,150.4L151.56,160.74L151.65,154.26L151.66,153.03L151.77,151.8L152.09,159.52L152.39,151.8L152.41,151.8L152.99,149.18L153.14,161.97L153.22,156.89L153.24,155.66L153.36,159.52L153.53,151.8L153.98,153.03L154,154.26L154.12,158.12L154.49,151.8L154.63,156.89L154.65,158.12L155.46,151.8L155.48,153.03L155.49,155.66L155.83,159.52L156.07,149.18L156.22,154.26L156.24,156.89L156.71,150.4L156.93,159.52L156.98,156.89L157,155.66L157.34,161.97L157.8,147.95L157.81,149.18L157.83,151.8L157.96,161.97L158.21,149.18L158.6,158.12L158.61,158.12L159.32,151.8L159.36,154.26L159.37,155.66L159.47,159.52L159.86,150.4L160.07,156.89L160.08,156.89L160.31,160.74L160.47,146.55L160.84,153.03L160.85,154.26L161.1,161.97L161.46,149.18L161.63,156.89L161.64,156.89L161.72,161.97L162.01,149.18L162.43,151.8L162.44,154.26L162.82,159.52L162.95,150.4L163.16,151.8L163.18,150.4L163.37,161.97L163.52,147.95L163.96,155.66L163.98,155.66L164.38,158.12L164.71,151.8L164.74,154.26L164.75,154.26L164.97,159.52L165.04,150.4L165.33,150.4L165.35,149.18L165.5,161.97L166.12,155.66L166.13,155.66L166.31,149.18L166.49,159.52L166.89,151.8L166.91,151.8L167.09,160.74L167.45,149.18L167.68,154.26L167.7,154.26L167.82,151.8L168.18,158.12L168.3,151.8L168.32,150.4L168.69,163.37L169.09,153.03L169.11,151.8L169.42,150.4L169.8,161.97L169.85,156.89L169.87,155.66L170.32,161.97L170.61,147.95L170.68,150.4L170.7,151.8L171.15,150.4L171.39,161.97L171.48,155.66L171.5,154.26L171.89,159.52L172.11,149.18L172.26,153.03L172.27,154.26L172.74,150.4L172.99,161.97L173.06,158.12L173.07,156.89L173.28,150.4L173.6,159.52L173.79,153.03L173.81,151.8L174.03,160.74L174.17,149.18L174.51,156.89L174.53,156.89L174.91,149.18L175.15,161.97L175.31,151.8L175.33,153.03L175.44,147.95L175.66,158.12L176.06,151.8L176.07,150.4L176.27,161.97L176.43,147.95L176.82,156.89L176.83,155.66L177.07,149.18L177.21,159.52L177.61,153.03L177.62,154.26L177.97,151.8L178.41,160.74L178.42,159.52L178.44,156.89L178.84,160.74L179.2,150.4L179.21,151.8L179.36,161.97L179.6,150.4L180,158.12L180.01,158.12L180.29,150.4L180.46,161.97L180.47,161.97L181.24,147.95L181.29,151.8L181.3,153.03L181.51,161.97L181.76,147.95L182.01,156.89L182.02,156.89L182.28,150.4L182.66,161.97L182.75,154.26L182.77,154.26L182.88,149.18L183.11,159.52L183.43,156.89L183.44,158.12L183.73,167.23L183.89,145.32L184.16,155.66L184.18,155.66L184.59,149.18L184.83,161.97L184.89,156.89L184.91,155.66L185.35,160.74L185.53,149.18L185.56,154.26L185.57,158.12L185.74,146.55L185.89,167.23L186.3,156.89L186.32,155.66L186.89,160.74L187.09,150.4L187.11,151.8L187.49,161.97L187.66,149.18L187.81,156.89L187.83,156.89L188.03,163.37L188.2,146.55L188.59,154.26L188.6,153.03L188.77,161.97L188.89,150.4L189.19,153.03L189.21,151.8L189.64,159.52L189.72,149.18L189.77,150.4L189.79,147.95L190.18,161.97L190.62,159.52L190.63,158.12L190.69,159.52L191.41,149.18L191.46,153.03L191.48,154.26L191.64,150.4L191.7,161.97L192.19,158.12L192.21,160.74L192.33,164.6L192.48,146.55L192.89,154.26L192.9,153.03L193.12,149.18L193.37,159.52L193.63,153.03L193.65,151.8L193.99,147.95L194.45,164.6L194.49,159.52L194.5,155.66L194.63,144.09L194.89,159.52L195.3,149.18L195.32,151.8L195.51,159.52L195.65,150.4L196.11,155.66L196.12,153.03L196.4,161.97L196.76,147.95L196.83,156.89L196.84,156.89L197.12,160.74L197.31,149.18L197.57,155.66L197.59,156.89L198.15,163.37L198.36,149.18L198.37,149.18L198.68,167.23L198.82,147.95L199.2,154.26L199.22,154.26L199.29,161.97L199.45,145.32L199.99,147.95L200.01,150.4L200.38,161.97L200.48,149.18L200.77,153.03L200.78,154.26L201.04,146.55L201.13,160.74L201.53,154.26L201.54,153.03L201.87,159.52L202.11,146.55L202.19,156.89L202.2,156.89L202.33,158.12L202.63,149.18L202.65,149.18L203.38,159.52L203.42,155.66L203.43,153.03L203.72,146.55L204.13,161.97L204.18,155.66L204.19,154.26L204.43,149.18L204.57,159.52L204.94,151.8L204.95,154.26L205.11,161.97L205.23,150.4L205.74,159.52L205.76,160.74L205.88,146.55L206.52,156.89L206.53,155.66L206.93,149.18L207.35,160.74L207.37,159.52L207.39,156.89L207.48,146.55L207.68,158.12L208.13,156.89L208.15,155.66L208.4,159.52L208.7,149.18L208.89,156.89L208.91,158.12L209.52,160.74L209.67,150.4L209.71,154.26L209.72,155.66L210.01,160.74L210.15,149.18L210.5,153.03L210.51,154.26L210.61,150.4L210.8,159.52L211.27,155.66L211.29,155.66L211.66,160.74L211.89,149.18L212.02,154.26L212.03,158.12L212.07,161.97L212.6,149.18L212.74,153.03L212.75,153.03L213.18,160.74L213.36,147.95L213.55,158.12L213.57,156.89L213.86,146.55L214.04,160.74L214.31,158.12L214.33,155.66L214.44,146.55L214.63,160.74L215.07,151.8L215.09,154.26L215.35,161.97L215.46,147.95L215.85,156.89L215.86,155.66L215.97,151.8L216.46,161.97L216.5,154.26L216.51,151.8L216.58,146.55L216.75,158.12L217.23,155.66L217.25,156.89L217.4,147.95L217.85,161.97L217.96,160.74L217.98,160.74L218.13,144.09L218.35,163.37L218.74,154.26L218.75,155.66L218.9,158.12L219.21,149.18L219.37,155.66L219.39,156.89L219.73,149.18L219.91,160.74L220.15,158.12L220.16,158.12L220.29,149.18L220.63,155.66L220.65,158.12L221.19,161.97L221.34,147.95L221.45,150.4L221.46,153.03L221.85,149.18L222.03,159.52L222.15,154.26L222.17,151.8L222.18,150.4L222.76,159.52L222.91,151.8L222.93,151.8L223.38,158.12L223.48,147.95L223.69,154.26L223.7,153.03L223.85,160.74L224.3,151.8L224.35,156.89L224.36,160.74L224.39,163.37L224.56,146.55L225.01,156.89L225.03,154.26L225.51,159.52L225.61,149.18L225.76,153.03L225.78,155.66L226.15,145.32L226.33,163.37L226.45,146.55L226.47,146.55L227.06,161.97L227.21,151.8L227.23,150.4L227.77,149.18L227.95,160.74L227.99,151.8L228,150.4L228.32,144.09L228.48,163.37L228.68,156.89L228.69,158.12L228.86,149.18L229.02,160.74L229.38,156.89L229.4,154.26L229.67,161.97L229.96,147.95L230.09,159.52L230.1,160.74L230.49,163.37L230.66,150.4L230.82,156.89L230.84,158.12L231.11,161.97L231.6,150.4L231.66,151.8L231.68,153.03L231.8,161.97L232,149.18L232.3,156.89L232.31,154.26L232.38,149.18L232.88,159.52L233.02,154.26L233.03,154.26L233.14,147.95L233.36,161.97L233.71,153.03L233.72,154.26L234.11,149.18L234.24,160.74L234.51,151.8L234.53,151.8L234.76,160.74L235.07,150.4L235.31,154.26L235.33,153.03L235.87,158.12L236.07,153.03L236.09,151.8L236.21,149.18L236.48,158.12L236.71,156.89L236.72,158.12L237.53,149.18L237.57,150.4L237.58,151.8L238.02,159.52L238.22,149.18L238.27,149.18L238.29,149.18L238.91,159.52L239.21,154.26L239.23,154.26L239.66,151.8L239.97,156.89L240.06,155.66L240.07,155.66L240.35,153.03L240.83,156.89L240.84,155.66L240.89,156.89L241.41,153.03L241.48,153.03L241.49,153.03L241.87,153.03L241.88,154.26L242.12,153.03L242.24,155.66L242.57,154.26L242.59,155.66L243.33,154.26L243.35,155.66L244.09,154.26L244.11,155.66L244.91,154.26L244.92,155.66L245.68,154.26L245.7,155.66L246.46,154.26L246.47,155.66L247.23,154.26L247.25,155.66L247.99,154.26L248.01,155.66L248.81,154.26L248.82,154.26L249.68,156.89L249.69,155.66L249.91,156.89L250.22,154.26L250.41,154.26L250.42,154.26L250.58,155.66L251.17,154.26L251.19,154.26L251.7,154.26L251.71,155.66L252.47,154.26L252.48,154.26L253.23,155.66L253.25,154.26L253.51,155.66L253.99,154.26L254.01,154.26L254.19,154.26L254.2,155.66L254.96,154.26L254.97,154.26L255.79,155.66L255.8,154.26L256.56,155.66L256.58,155.66L257.32,154.26L257.34,155.66L258.08,154.26L258.1,155.66L258.84,154.26L258.86,155.66L259.6,154.26L259.62,155.66L260.38,154.26L260.39,155.66L261.11,154.26L261.14,155.66L261.15,155.66L261.91,154.26L261.93,154.26L262.67,155.66L262.69,154.26L263.23,155.66L263.31,149.18L263.32,150.4L263.34,149.18L263.49,146.55L263.79,154.26L263.86,154.26L263.88,154.26L264.08,153.03L264.19,156.89L264.62,154.26L264.64,154.26L264.76,147.95L265.13,161.97L265.41,153.03L265.43,153.03L265.6,150.4L265.83,159.52L266.17,154.26L266.19,153.03L266.57,151.8L267.01,161.97L267.11,156.89L267.13,156.89L267.26,150.4L267.57,159.52L267.89,155.66L267.9,156.89L268.26,147.95L268.6,159.52L268.65,158.12L268.66,156.89L268.76,147.95L268.94,159.52L269.41,155.66L269.42,156.89L269.49,160.74L269.71,147.95L270.04,153.03L270.06,153.03L270.44,151.8L270.55,159.52L270.72,153.03L270.73,151.8L271,159.52L271.07,151.8L271.08,149.18L271.11,147.95L271.29,158.12L271.6,158.12L271.62,159.52L271.73,150.4L272.27,161.97L272.3,158.12L272.31,156.89L272.45,150.4L272.95,160.74L273.04,156.89L273.06,156.89L273.17,146.55L273.36,163.37L273.82,153.03L273.83,153.03L274.01,160.74L274.41,144.09L274.54,160.74L274.55,163.37L274.95,147.95L275.39,153.03L275.41,154.26L275.78,149.18L276.08,161.97L276.1,160.74L276.11,161.97L276.6,146.55L276.72,158.12L276.73,159.52L276.91,150.4L277.26,161.97L277.38,155.66L277.4,154.26L277.77,158.12L278.16,149.18L278.17,150.4L278.19,151.8L278.32,161.97L278.49,147.95L278.81,155.66L278.82,156.89L278.92,160.74L279.51,151.8L279.57,156.89L279.58,156.89L279.71,150.4L280.05,159.52L280.34,155.66L280.36,156.89L280.48,158.12L280.94,151.8L280.98,156.89L280.99,159.52L281.34,149.18L281.56,161.97L281.64,155.66L281.66,154.26L281.74,146.55L281.9,158.12L282.39,155.66L282.4,155.66L282.73,150.4L282.91,159.52L283.05,151.8L283.07,150.4L283.47,149.18L283.83,161.97L283.87,156.89L283.88,155.66L284.23,159.52L284.59,146.55L284.67,151.8L284.68,153.03L284.84,163.37L285.01,146.55L285.39,153.03L285.4,151.8L285.42,150.4L285.55,158.12L286.07,156.89L286.08,156.89L286.36,163.37L286.63,149.18L286.84,154.26L286.85,158.12L287.1,150.4L287.43,163.37L287.52,153.03L287.53,153.03L287.86,159.52L288.24,149.18L288.29,151.8L288.31,151.8L288.49,164.6L288.87,147.95L288.98,158.12L289,160.74L289.01,161.97L289.18,150.4L289.67,154.26L289.69,151.8L289.78,149.18L290.1,158.12L290.39,154.26L290.41,156.89L290.64,158.12L290.9,149.18L291.04,154.26L291.06,156.89L291.17,160.74L291.32,150.4L291.82,158.12L291.83,156.89L292.19,150.4L292.27,158.12L292.58,156.89L292.59,156.89L292.78,160.74L292.96,149.18L293.35,153.03L293.37,151.8L294.22,160.74L294.24,159.52L294.25,156.89L294.33,158.12L294.51,149.18L295.01,154.26L295.02,155.66L295.45,161.97L295.6,150.4L295.72,153.03L295.73,151.8L295.77,150.4L295.96,159.52L296.43,153.03L296.45,154.26L296.92,150.4L297.07,161.97L297.19,153.03L297.21,151.8L297.69,160.74L297.84,151.8L297.86,150.4L298.38,149.18L298.48,161.97L298.56,153.03L298.58,154.26L298.87,147.95L299.24,163.37L299.32,155.66L299.34,153.03L299.39,146.55L299.77,160.74L300.06,153.03L300.07,155.66L300.69,147.95L300.86,161.97L300.87,160.74L301.09,149.18L301.65,154.26L301.66,156.89L301.76,146.55L302.43,161.97L302.45,159.52L302.59,147.95L303.24,153.03L303.25,154.26L303.36,147.95L303.47,161.97L303.98,154.26L304,155.66L304.07,164.6L304.2,142.86L304.73,151.8L304.74,150.4L304.77,149.18L305.05,158.12L305.39,154.26L305.41,155.66L305.81,145.32L306.21,161.97L306.22,159.52L306.55,149.18L306.69,160.74L307.02,153.03L307.04,155.66L307.45,147.95L307.59,160.74L307.67,156.89L307.69,158.12L308.16,149.18L308.34,164.6L308.42,154.26L308.43,154.26L308.49,144.09L308.66,160.74L309.14,154.26L309.15,155.66L309.33,158.12L309.57,149.18L309.71,156.89L309.72,159.52L310.11,149.18L310.45,161.97L310.47,160.74L310.48,159.52L311.16,144.09L311.24,155.66L311.25,156.89L311.53,160.74L311.64,149.18L311.93,153.03L311.95,151.8L312.26,149.18L312.51,160.74L312.69,150.4L312.71,151.8L312.79,147.95L313.16,163.37L313.4,155.66L313.41,155.66L313.56,150.4L314.03,161.97L314.07,154.26L314.09,151.8L314.41,150.4L314.68,164.6L314.79,158.12L314.81,154.26L315.31,160.74L315.44,147.95L315.54,155.66L315.55,156.89L315.87,160.74L315.97,147.95L316.22,155.66L316.23,153.03L316.45,149.18L316.92,161.97L316.95,153.03L316.96,149.18L317.06,146.55L317.2,161.97L317.67,153.03L317.68,154.26L318.08,146.55L318.32,161.97L318.35,158.12L318.36,153.03L318.91,146.55L319.01,164.6L319.02,165.83L319.19,144.09L319.2,142.86L319.34,161.97L320.03,156.89L320.05,158.12L320.21,147.95L320.6,159.52L320.7,155.66L320.71,153.03L320.79,147.95L321.15,161.97L321.47,150.4L321.49,151.8L321.71,161.97L321.84,150.4L322.3,159.52L322.31,158.12L322.72,160.74L322.9,149.18L323.08,154.26L323.09,155.66L323.49,147.95L323.85,160.74L323.86,158.12L323.88,156.89L324.04,149.18L324.31,155.66L324.32,158.12L324.36,160.74L324.5,150.4L325.02,153.03L325.04,153.03L325.38,160.74L325.62,149.18L325.8,159.52L325.81,156.89L326.16,151.8L326.48,159.52L326.49,159.52L326.68,149.18L327.19,154.26L327.21,155.66L327.42,159.52L327.69,149.18L327.91,156.89L327.93,158.12L328.11,151.8L328.66,158.12L328.67,158.12L328.9,149.18L329.14,159.52L329.2,153.03L329.21,151.8L329.56,159.52L329.72,150.4L329.93,151.8L329.95,150.4L330.82,159.52L330.83,158.12L331.25,159.52L331.47,147.95L331.61,154.26L331.62,154.26L331.98,149.18L332.23,160.74L332.38,155.66L332.39,154.26L332.75,159.52L333.06,149.18L333.07,149.18L333.1,147.95L333.51,160.74L333.53,159.52L333.54,160.74L334.22,150.4L334.31,154.26L334.33,155.66L334.49,161.97L334.63,151.8L335.05,154.26L335.06,153.03L335.19,159.52L335.3,149.18L335.79,153.03L335.81,153.03L335.99,159.52L336.36,149.18L336.51,158.12L336.53,158.12L336.62,159.52L336.9,147.95L337.34,150.4L337.36,150.4L337.77,159.52L338.21,158.12L338.23,158.12L338.35,160.74L338.84,153.03L339,155.66L339.02,155.66L339.29,160.74L339.46,150.4L339.76,155.66L339.78,155.66L340.34,149.18L340.51,158.12L340.52,156.89L340.54,155.66L340.91,163.37L341.08,147.95L341.3,154.26L341.31,155.66L341.43,161.97L341.53,151.8L341.96,156.89L341.97,154.26L342.26,149.18L342.33,158.12L342.39,158.12L342.4,160.74L342.9,150.4L343.04,158.12L343.05,159.52L343.43,150.4L343.78,156.89L343.8,156.89L344.12,160.74L344.41,150.4L344.55,154.26L344.56,156.89L344.85,149.18L345.1,160.74L345.26,151.8L345.28,153.03L345.47,149.18L345.73,159.52L346.02,154.26L346.04,154.26L346.52,151.8L346.78,159.52L346.81,158.12L346.83,158.12L347.09,150.4L347.61,153.03L347.63,153.03L347.78,159.52L348.11,151.8L348.4,155.66L348.42,153.03L348.79,158.12L348.94,151.8L349.16,155.66L349.18,154.26L349.37,158.12L349.77,151.8L349.85,158.12L349.87,159.52L349.91,160.74L350.23,153.03L350.59,156.89L350.6,156.89L350.92,161.97L351.32,150.4L351.37,151.8L351.39,153.03L351.58,159.52L351.89,149.18L352.16,155.66L352.18,155.66L352.38,150.4L352.69,159.52L352.88,151.8L352.9,151.8L353.42,149.18L353.59,159.52L353.67,155.66L353.68,153.03L353.86,161.97L354.04,147.95L354.37,155.66L354.39,156.89L354.65,149.18L354.8,158.12L355.15,154.26L355.16,155.66L355.45,151.8L355.7,160.74L355.84,154.26L355.85,151.8L355.88,149.18L355.99,156.89L356.5,154.26L356.52,156.89L356.6,149.18L356.72,159.52L357.29,153.03L357.31,154.26L357.71,153.03L357.97,159.52L358.08,155.66L358.09,154.26L358.3,149.18L358.49,159.52L358.62,149.18L358.63,147.95L359.03,160.74L359.34,147.95L359.35,146.55L359.5,161.97L360.13,156.89L360.14,155.66L360.46,149.18L360.73,160.74L360.91,150.4L360.93,151.8L361.15,159.52L361.52,149.18L361.77,155.66L361.78,154.26L361.85,147.95L362.02,161.97L362.5,155.66L362.52,155.66L362.96,158.12L363.06,150.4L363.26,154.26L363.28,156.89L363.67,151.8L363.96,159.52L364,159.52L364.01,159.52L364.23,149.18L364.4,160.74L364.78,153.03L364.8,155.66L365.25,150.4L365.43,159.52L365.53,155.66L365.55,154.26L366.17,158.12L366.22,147.95L366.28,151.8L366.29,155.66L366.43,161.97L366.6,151.8L367,154.26L367.01,151.8L367.18,159.52L367.77,154.26L367.78,154.26L368.38,149.18L368.57,161.97L368.6,159.52L368.61,158.12L369.28,150.4L369.36,156.89L369.37,158.12L369.57,147.95L369.69,159.52L370.05,155.66L370.07,153.03L370.14,147.95L370.27,160.74L370.78,158.12L370.8,156.89L370.88,150.4L371.08,158.12L371.53,153.03L371.55,154.26L371.85,161.97L372.22,149.18L372.26,153.03L372.28,155.66L372.68,146.55L372.93,160.74L373.02,156.89L373.04,156.89L373.37,160.74L373.67,146.55L373.78,154.26L373.8,155.66L373.99,160.74L374.3,149.18L374.5,160.74L374.52,160.74L374.81,147.95L375.37,151.8L375.39,150.4L375.94,147.95L376.14,160.74L376.18,156.89L376.19,154.26L376.44,149.18L376.61,159.52L376.63,159.52L376.65,160.74L376.81,151.8L377.21,163.37L377.35,155.66L377.37,155.66L377.68,159.52L378.14,150.4L378.15,151.8L378.67,147.95L378.82,159.52L378.86,154.26L378.87,151.8L379.33,159.52L379.4,149.18L379.59,153.03L379.61,151.8L379.69,149.18L379.84,159.52L380.32,154.26L380.34,156.89L380.46,160.74L380.6,149.18L381.08,155.66L381.1,154.26L381.58,159.52L381.87,151.8L381.89,153.03L382.43,150.4L382.72,159.52L382.73,158.12L382.74,156.89L382.85,147.95L383.03,160.74L383.52,150.4L383.53,151.8L383.75,161.97L384,149.18L384.31,155.66L384.32,154.26L384.54,149.18L384.96,158.12L385.04,151.8L385.05,151.8L385.77,159.52L385.81,153.03L385.83,151.8L385.85,150.4L385.99,159.52L386.56,154.26L386.57,154.26L386.74,151.8L387.04,158.12L387.22,151.8L387.24,151.8L387.28,147.95L387.62,159.52L387.94,158.12L387.96,156.89L388.08,149.18L388.43,158.12L388.73,154.26L388.74,155.66L388.83,151.8L388.92,158.12L389.45,158.12L389.46,158.12L389.64,161.97L389.81,149.18L390.25,153.03L390.26,154.26L390.33,149.18L390.55,159.52L390.94,149.18L390.96,146.55L391.58,159.52L391.73,153.03L391.74,153.03L391.9,160.74L392.26,149.18L392.49,154.26L392.5,154.26L392.56,150.4L392.82,159.52L393.25,154.26L393.26,153.03L393.44,158.12L393.98,150.4L394,151.8L394.01,154.26L394.22,147.95L394.36,161.97L394.78,159.52L394.8,159.52L394.85,161.97L395.24,146.55L395.56,156.89L395.57,156.89L395.95,149.18L396.2,159.52L396.25,154.26L396.26,153.03L396.73,158.12L396.76,154.26L396.78,151.8L397.02,160.74L397.16,146.55L397.56,155.66L397.58,155.66L397.69,147.95L398.02,158.12L398.1,155.66L398.12,156.89L398.55,161.97L398.93,147.95L398.95,150.4L398.96,153.03L399.28,158.12L399.43,150.4L399.71,153.03L399.72,150.4L400.18,159.52L400.55,155.66L400.56,154.26L401.01,159.52L401.16,151.8L401.2,155.66L401.21,158.12L401.81,150.4L401.93,158.12L401.95,158.12L402.55,161.97L402.76,149.18L402.78,150.4L403.29,147.95L403.55,161.97L403.56,160.74L403.58,158.12L404.17,160.74L404.35,150.4L404.37,150.4L404.61,149.18L404.97,159.52L405.11,149.18L405.13,149.18L405.31,160.74L405.91,155.66L405.93,153.03L406.29,147.95L406.52,159.52L406.67,150.4L406.69,153.03L406.99,151.8L407.42,160.74L407.46,158.12L407.48,154.26L407.64,158.12L407.89,147.95L408.21,155.66L408.22,156.89L408.62,150.4L408.75,158.12L408.8,150.4L408.82,150.4L409.48,159.52L409.59,154.26L409.61,154.26L409.79,160.74L409.92,149.18L410.32,155.66L410.34,155.66L410.68,149.18L410.82,159.52L411.1,153.03L411.11,154.26L411.29,150.4L411.4,159.52L411.87,155.66L411.89,154.26L412.12,159.52L412.18,150.4L412.58,154.26L412.59,153.03L412.83,149.18L413.17,158.12L413.21,154.26L413.23,151.8L413.61,147.95L414.04,160.74L414.06,160.74L414.37,161.97L414.54,150.4L414.82,158.12L414.83,158.12L415.43,161.97L415.59,149.18L415.63,154.26L415.65,156.89L415.67,159.52L415.74,150.4L416.35,151.8L416.37,151.8L417.06,158.12L417.15,154.26L417.17,153.03L417.46,161.97L417.73,147.95L417.8,156.89L417.82,156.89L418.22,149.18L418.45,159.52L418.54,154.26L418.55,154.26L418.66,159.52L418.79,151.8L419.16,158.12L419.17,159.52L419.34,147.95L419.71,161.97L419.96,151.8L419.97,153.03L420.04,149.18L420.24,160.74L420.65,151.8L420.67,154.26L420.9,149.18L421.2,160.74L421.4,151.8L421.41,151.8L421.85,161.97L422.02,149.18L422.08,156.89L422.09,156.89L422.56,149.18L422.66,160.74L422.9,153.03L422.92,154.26L423.1,149.18L423.46,160.74L423.67,155.66L423.68,155.66L423.79,158.12L424.15,150.4L424.37,158.12L424.38,158.12L424.47,159.52L424.84,149.18L424.98,156.89L424.99,158.12L425.14,149.18L425.37,161.97L425.59,154.26L425.6,153.03L425.93,161.97L426.2,145.32L426.29,159.52L426.31,159.52L426.37,161.97L426.51,145.32L426.98,155.66L427,155.66L427.25,150.4L427.67,159.52L427.7,156.89L427.72,154.26L427.81,149.18L428.41,159.52L428.42,159.52L428.43,159.52L428.46,160.74L428.55,151.8L429.02,154.26L429.03,153.03L429.46,150.4L429.8,158.12L429.82,156.89L429.83,155.66L430.29,159.52L430.49,147.95L430.58,155.66L430.59,156.89L430.83,160.74L431.01,147.95L431.38,153.03L431.39,154.26L431.82,160.74L432.07,147.95L432.14,153.03L432.15,154.26L432.26,161.97L432.62,150.4L432.89,155.66L432.9,154.26L433.52,163.37L433.67,146.55L433.69,147.95L433.7,149.18L434.03,160.74L434.52,156.89L434.53,155.66L435.14,161.97L435.28,144.09L435.33,151.8L435.35,154.26L435.71,159.52L435.82,146.55L436.09,154.26L436.11,154.26L436.59,147.95L436.76,160.74L436.85,156.89L436.87,153.03L437.16,158.12L437.42,146.55L437.61,154.26L437.63,155.66L437.86,149.18L438.32,160.74L438.36,155.66L438.38,154.26L438.85,160.74L439.05,145.32L439.11,155.66L439.12,156.89L439.54,150.4L439.83,163.37L439.85,158.12L439.87,155.66L440.09,144.09L440.46,164.6L440.53,155.66L440.55,154.26L440.96,163.37L441.14,149.18L441.24,155.66L441.25,156.89L441.71,150.4L441.96,159.52L441.97,160.74L442.22,146.55L442.65,159.52L442.66,159.52L443.12,161.97L443.34,149.18L443.42,156.89L443.43,156.89L443.66,159.52L443.85,147.95L444.18,155.66L444.2,156.89L444.36,147.95L444.71,159.52L444.96,154.26L444.97,155.66L445.41,145.32L445.62,161.97L445.72,155.66L445.73,155.66L446.34,160.74L446.5,145.32L446.55,151.8L446.56,154.26L446.77,159.52L447.02,146.55L447.03,145.32L447.9,160.74L447.91,160.74L448.14,142.86L448.27,163.37L448.7,153.03L448.72,153.03L449.16,146.55L449.53,160.74L449.55,158.12L449.67,147.95L450.02,160.74L450.33,154.26L450.35,154.26L450.62,164.6L450.79,145.32L451.09,154.26L451.11,154.26L451.37,147.95L451.56,160.74L451.85,154.26L451.87,154.26L452.21,160.74L452.41,147.95L452.55,155.66L452.56,156.89L452.92,147.95L453.29,160.74L453.35,158.12L453.36,156.89L453.44,144.09L453.8,161.97L454.07,149.18L454.08,153.03L454.32,160.74L454.47,147.95L454.83,153.03L454.84,151.8L455.06,150.4L455.42,161.97L455.52,151.8L455.53,149.18L455.59,142.86L455.93,161.97L456.21,156.89L456.22,159.52L456.43,161.97L456.64,145.32L457,154.26L457.01,156.89L457.2,149.18L457.56,161.97L457.69,150.4L457.7,147.95L457.72,146.55L457.92,159.52L458.35,154.26L458.37,154.26L458.59,164.6L458.82,149.18L459.04,156.89L459.06,159.52L459.91,150.4L459.96,153.03L459.97,154.26L460.23,159.52L460.36,151.8L460.73,155.66L460.74,154.26L460.87,149.18L461.02,161.97L461.5,153.03L461.52,154.26L461.85,159.52L461.99,149.18L462.15,153.03L462.17,150.4L462.36,163.37L462.51,147.95L462.97,156.89L462.98,154.26L463.07,147.95L463.38,159.52L463.7,155.66L463.72,154.26L464.13,146.55L464.37,160.74L464.42,158.12L464.44,158.12L464.49,159.52L465.15,146.55L465.24,151.8L465.25,151.8L466.04,159.52L466.05,158.12L466.07,158.12L466.12,161.97L466.77,145.32L466.79,145.32L467.63,158.12L467.64,156.89L467.82,149.18L468.03,158.12L468.43,153.03L468.44,154.26L468.93,149.18L469.27,160.74L469.29,158.12L469.8,160.74L469.97,146.55L470.06,153.03L470.08,155.66L470.49,151.8L470.81,160.74L470.84,158.12L470.85,156.89L470.92,159.52L471.07,147.95L471.54,156.89L471.55,154.26L471.68,147.95L471.91,160.74L472.32,151.8L472.33,153.03L473.06,160.74L473.1,155.66L473.12,154.26L473.21,146.55L473.35,156.89L473.57,156.89L473.59,158.12L473.74,150.4L474.15,159.52L474.29,154.26L474.31,153.03L474.44,147.95L474.87,158.12L475.07,151.8L475.08,153.03L475.2,161.97L475.36,149.18L475.84,154.26L475.85,153.03L476.05,147.95L476.28,159.52L476.46,147.95L476.48,147.95L477.22,159.52L477.25,155.66L477.26,154.26L477.5,147.95L477.94,158.12L477.97,153.03L477.98,150.4L478.04,149.18L478.2,158.12L478.7,150.4L478.72,151.8L479.49,159.52L479.5,158.12L479.52,156.89L479.73,147.95L479.84,159.52L480.25,151.8L480.26,154.26L480.72,146.55L480.9,161.97L481,154.26L481.01,151.8L481.26,150.4L481.63,159.52L481.73,155.66L481.74,155.66L481.88,145.32L482.02,163.37L482.49,151.8L482.5,154.26L482.86,146.55L483.04,161.97L483.26,156.89L483.28,156.89L483.5,146.55L483.65,160.74L483.98,151.8L484,151.8L484.66,159.52L484.74,151.8L484.76,151.8L485.49,159.52L485.52,156.89L485.53,154.26L485.66,147.95L485.75,159.52L486.25,155.66L486.26,156.89L486.4,150.4L486.78,163.37L486.93,153.03L486.94,150.4L487.04,144.09L487.33,163.37L487.51,159.52L487.52,159.52L487.67,149.18L488.32,153.03L488.34,154.26L488.44,159.52L488.81,146.55L488.89,159.52L488.91,160.74L488.95,164.6L489.21,151.8L489.65,159.52L489.67,160.74L489.83,149.18L490.47,153.03L490.48,155.66L490.61,160.74L490.98,149.18L491.21,155.66L491.23,154.26L491.49,160.74L491.97,150.4L491.99,151.8L492,153.03L492.57,150.4L492.72,160.74L492.8,156.89L492.82,155.66L492.96,149.18L493.19,158.12L493.58,154.26L493.59,154.26L493.84,147.95L494.12,159.52L494.14,154.26L494.16,151.8L494.52,158.12L494.7,147.95L494.89,154.26L494.91,156.89L495.18,150.4L495.33,161.97L495.61,151.8L495.62,150.4L495.85,161.97L496.11,149.18L496.47,158.12L496.48,158.12L496.65,150.4L497.26,154.26L497.27,156.89L497.37,146.55L497.49,159.52L497.93,154.26L497.95,156.89L498.25,150.4L498.53,161.97L498.64,151.8L498.65,150.4L498.85,159.52L498.98,147.95L499.45,156.89L499.47,155.66L499.74,160.74L499.92,149.18L500.17,160.74L500.19,159.52L500.41,150.4L500.97,154.26L500.99,154.26L501.38,161.97L501.56,149.18L501.67,155.66L501.68,158.12L501.87,149.18L502.32,161.97L502.41,154.26L502.43,154.26L502.58,149.18L503.03,159.52L503.14,156.89L503.16,156.89L503.39,158.12L503.84,147.95L503.89,156.89L503.91,158.12L504.35,147.95L504.49,161.97L504.6,150.4L504.61,149.18L504.79,159.52L505.4,154.26L505.41,154.26L505.54,159.52L506.02,149.18L506.13,154.26L506.14,156.89L506.44,149.18L506.77,161.97L506.82,155.66L506.84,154.26L507.1,149.18L507.36,158.12L507.58,153.03L507.6,154.26L508,150.4L508.4,159.52L508.41,158.12L508.88,159.52L509.03,151.8L509.21,154.26L509.23,154.26L509.81,149.18L510,159.52L510.02,159.52L510.36,151.8L510.79,155.66L510.8,155.66L511.11,156.89L511.55,153.03L511.58,154.26L511.59,155.66L511.74,159.52L512.37,153.03L512.38,153.03L512.59,156.89L512.74,150.4L513.15,155.66L513.17,155.66L513.31,154.26L513.8,161.97L513.9,155.66L513.91,154.26L514.03,149.18L514.59,156.89L514.61,155.66L514.62,156.89L514.88,159.52L515.45,151.8L515.46,153.03L515.84,150.4L516.03,158.12L516.11,158.12L516.13,158.12L516.47,150.4L516.91,154.26L516.93,154.26L517,158.12L517.14,151.8L517.67,154.26L517.69,154.26L518.1,159.52L518.46,150.4L518.48,151.8L519.29,159.52L519.31,159.52L519.79,147.95L519.94,156.89L519.96,159.52L520.36,151.8L520.74,154.26L520.76,156.89L521.08,149.18L521.27,160.74L521.46,151.8L521.48,151.8L521.92,159.52L522.02,149.18L522.24,153.03L522.25,153.03L522.43,158.12L523.01,149.18L523.03,150.4L523.04,153.03L523.26,164.6L523.43,147.95L523.8,158.12L523.81,158.12L524.41,160.74L524.55,149.18L524.57,151.8L524.59,151.8L524.84,158.12L525.15,151.8L525.17,150.4L525.69,160.74L525.97,158.12L525.98,155.66L526.05,142.86L526.25,159.52L526.7,156.89L526.72,155.66L526.76,150.4L527.23,161.97L527.48,153.03L527.49,153.03L527.59,158.12L528.2,147.95L528.24,153.03L528.25,154.26L528.35,160.74L528.5,151.8L528.68,153.03L528.69,151.8L528.73,149.18L528.89,161.97L529.38,154.26L529.4,154.26L529.72,160.74L529.85,147.95L530.14,153.03L530.16,154.26L530.52,159.52L530.67,149.18L530.91,153.03L530.92,155.66L531.11,150.4L531.31,163.37L531.67,156.89L531.68,155.66L531.94,161.97L532.12,146.55L532.44,153.03L532.45,155.66L532.67,147.95L533.09,163.37L533.19,156.89L533.2,154.26L533.27,147.95L533.42,163.37L533.93,155.66L533.95,155.66L534.31,156.89L534.68,151.8L534.72,153.03L534.73,154.26L534.83,149.18L535.14,158.12L535.15,158.12L535.16,159.52L535.47,147.95L535.67,160.74L535.98,155.66L535.99,156.89L536.09,158.12L536.26,151.8L536.32,153.03L536.34,151.8L536.41,149.18L536.86,160.74L536.88,160.74L536.89,160.74L537.15,150.4L537.75,154.26L537.76,154.26L537.89,158.12L538.25,151.8L538.45,156.89L538.47,156.89L538.73,146.55L539.06,158.12L539.23,155.66L539.24,156.89L539.56,150.4L540.02,159.52L540.03,156.89L540.17,150.4L540.65,159.52L540.67,159.52L541.32,149.18L541.54,155.66L541.55,156.89L541.91,159.52L542.28,151.8L542.32,153.03L542.34,153.03L543.42,156.89L543.43,155.66L543.47,156.89L543.96,153.03L544.12,154.26L544.14,153.03L544.58,155.66L544.9,154.26L544.91,154.26L545.63,155.66L545.66,154.26L545.67,154.26L546.44,155.66L546.46,154.26L547.22,155.66L547.23,155.66L547.95,154.26L547.98,155.66L547.99,155.66L548.73,154.26L548.74,155.66L548.75,155.66L549.53,154.26L549.54,155.66L550.3,154.26L550.32,155.66L551.08,154.26L551.09,154.26L551.85,155.66L551.86,154.26L552.56,156.89L552.64,155.66L552.65,155.66L552.98,156.89L553.09,154.26L553.36,155.66L553.37,154.26L553.92,153.03L554.12,155.66L554.13,154.26L554.39,154.26L554.41,155.66L555.17,154.26L555.18,154.26L555.35,154.26L555.36,155.66L556.12,154.26L556.14,154.26L556.92,160.74L556.94,160.74L557.13,161.97L557.59,158.12L557.6,158.12L557.62,158.12L557.86,151.8L558.35,159.52L558.36,159.52L558.43,160.74L558.67,153.03L558.69,153.03L558.71,151.8L559,149.18L559.51,158.12L559.52,158.12L559.59,159.52L560.05,151.8L560.24,158.12L560.26,156.89L560.7,150.4L560.96,154.26L560.97,156.89L561.1,161.97L561.36,153.03L561.65,154.26L561.67,153.03L561.91,150.4L562.22,159.52L562.37,153.03L562.38,155.66L562.59,158.12L563.05,149.18L563.12,155.66L563.13,156.89L563.28,160.74L563.73,149.18L563.88,156.89L563.89,156.89L564.2,160.74L564.58,149.18L564.68,151.8L564.69,151.8L564.94,158.12L565.47,155.66L565.48,154.26L565.85,149.18L566.09,163.37L566.16,154.26L566.17,154.26L566.55,147.95L566.68,159.52L566.86,153.03L566.88,155.66L566.95,160.74L567.09,147.95L567.6,153.03L567.61,151.8L567.67,147.95L567.82,160.74L568.16,159.52L568.18,159.52L568.29,147.95L568.88,161.97L568.9,161.97L569.64,150.4L569.68,155.66L569.7,156.89L570.2,160.74L570.33,150.4L570.44,154.26L570.46,154.26L570.71,150.4L570.86,160.74L571.23,153.03L571.25,153.03L571.3,149.18L571.5,159.52L571.85,154.26L571.87,155.66L572.3,158.12L572.42,150.4L572.62,155.66L572.63,154.26L572.84,160.74L573.06,151.8L573.36,151.8L573.38,151.8L573.56,167.23L573.94,147.95L574.12,153.03L574.14,153.03L574.4,158.12L574.8,149.18L574.88,153.03L574.9,153.03L575.03,163.37L575.16,150.4L575.64,154.26L575.66,153.03L575.92,146.55L576.28,164.6L576.4,151.8L576.42,151.8L576.53,147.95L576.75,167.23L577.19,154.26L577.21,153.03L577.59,160.74L577.84,150.4L577.91,156.89L577.92,159.52L578.41,149.18L578.64,156.89L578.66,158.12L579.1,150.4L579.44,151.8L579.46,151.8L579.61,159.52L579.93,149.18L580.12,153.03L580.14,153.03L580.52,149.18L580.81,158.12L580.85,153.03L580.87,150.4L581.13,159.52L581.74,156.89L581.75,155.66L582.03,159.52L582.2,149.18L582.47,156.89L582.49,156.89L582.71,147.95L583.08,164.6L583.15,153.03L583.16,151.8L583.23,146.55L583.5,163.37L583.85,156.89L583.87,158.12L583.98,150.4L584.23,161.97L584.6,155.66L584.62,155.66L584.95,161.97L585.09,150.4L585.32,154.26L585.33,156.89L585.36,160.74L585.74,150.4L586.08,156.89L586.09,155.66L586.3,158.12L586.61,149.18L586.81,155.66L586.83,156.89L587.02,147.95L587.32,160.74L587.53,153.03L587.55,151.8L587.56,150.4L587.62,159.52L588.25,155.66L588.27,156.89L588.86,150.4L588.97,159.52L588.98,159.52L589,161.97L589.18,146.55L589.74,156.89L589.76,160.74L590.6,151.8L590.63,153.03L590.64,154.26L591.03,153.03L591.24,159.52L591.31,153.03L591.32,151.8L591.38,145.32L591.78,163.37L592.07,150.4L592.08,150.4L592.25,161.97L592.43,149.18L592.9,156.89L592.91,155.66L593.09,156.89L593.52,150.4L593.66,154.26L593.67,155.66L594.04,150.4L594.44,158.12L594.46,158.12L594.76,149.18L595.01,161.97L595.34,151.8L595.36,153.03L595.77,151.8L596.17,158.12L596.19,158.12L596.27,159.52L596.73,151.8L596.89,155.66L596.91,155.66L597.58,151.8L597.67,154.26L597.68,156.89L597.79,158.12L598.21,153.03L598.22,153.03L598.23,151.8L598.7,158.12L598.83,150.4L598.84,150.4L598.85,149.18L599.23,163.37L599.71,158.12L599.73,156.89L600.1,151.8L600.35,159.52L600.51,154.26L600.53,155.66L601,159.52L601.25,149.18L601.3,154.26L601.32,155.66L601.61,153.03L601.95,158.12L602.03,154.26L602.05,153.03L602.19,149.18L602.45,158.12L602.7,155.66L602.71,156.89L602.85,150.4L603.06,159.52L603.4,154.26L603.42,153.03L603.9,160.74L604.11,150.4L604.14,153.03L604.15,155.66L604.44,160.74L604.74,149.18L604.91,158.12L604.92,156.89L605.12,159.52L605.56,151.8L605.67,154.26L605.68,155.66L606.07,160.74L606.21,147.95L606.4,155.66L606.42,154.26L606.64,160.74L607.19,151.8L607.21,150.4L607.97,161.97L608.05,158.12L608.06,156.89L608.27,159.52L608.44,147.95L608.81,156.89L608.82,158.12L609.51,150.4L609.54,154.26L609.56,156.89L609.85,150.4L609.98,159.52L610.08,150.4L610.09,149.18L610.38,160.74L610.85,154.26L610.87,154.26L610.95,147.95L611.02,163.37L611.6,155.66L611.62,155.66L611.7,144.09L612.17,163.37L612.38,153.03L612.39,151.8L612.67,163.37L612.72,153.03L612.74,153.03L613.19,159.52L613.33,147.95L613.37,154.26L613.38,156.89L613.5,160.74L613.65,151.8L614.1,156.89L614.12,154.26L614.5,159.52L614.88,150.4L614.89,151.8L614.91,153.03L615.35,161.97L615.49,147.95L615.68,159.52L615.69,156.89L615.83,146.55L616.21,159.52L616.41,155.66L616.43,155.66L616.88,159.52L617.03,147.95L617.05,146.55L617.53,159.52L617.85,154.26L617.86,154.26L618.04,160.74L618.2,149.18L618.56,155.66L618.57,156.89L618.87,158.12L619.27,149.18L619.32,155.66L619.33,158.12L619.79,149.18L620.1,154.26L620.12,156.89L620.3,146.55L620.45,160.74L620.82,154.26L620.84,153.03L620.99,151.8L621.29,158.12L621.61,155.66L621.62,154.26L621.94,149.18L622.33,159.52L622.37,155.66L622.38,154.26L622.61,159.52L622.98,147.95L623.06,155.66L623.08,155.66L623.3,151.8L623.82,160.74L623.85,158.12L623.86,155.66L624.13,160.74L624.6,146.55L624.62,151.8L624.64,155.66L625.12,150.4L625.38,159.52L625.4,158.12L625.41,156.89L625.77,158.12L626.2,150.4L626.21,150.4L626.71,149.18L626.91,160.74L627.03,154.26L627.04,154.26L627.28,146.55L627.42,163.37L627.83,151.8L627.85,154.26L628.07,159.52L628.36,150.4L628.56,154.26L628.58,155.66L629.08,151.8L629.27,160.74L629.31,154.26L629.33,154.26L629.42,150.4L629.48,159.52L629.77,158.12L629.78,159.52L629.95,145.32L630.21,161.97L630.42,154.26L630.43,153.03L630.53,147.95L630.68,158.12L630.87,158.12L630.89,159.52L630.9,160.74L631.54,149.18L631.55,147.95L632.35,160.74L632.37,159.52L632.38,156.89L632.62,149.18L632.93,161.97L633.17,151.8L633.18,151.8L633.56,160.74L633.69,150.4L633.9,153.03L633.91,151.8L634.37,149.18L634.51,159.52L634.65,155.66L634.66,155.66L634.8,149.18L635.08,160.74L635.35,155.66L635.37,156.89L635.57,159.52L635.82,147.95L636.07,159.52L636.09,160.74L636.89,146.55L636.94,151.8L636.96,154.26L637.16,160.74L637.52,151.8L637.56,151.8L637.58,150.4L638.03,161.97L638.38,158.12L638.39,155.66L638.52,146.55L638.68,160.74L638.92,150.4L638.93,150.4L638.95,149.18L639.25,159.52L639.62,153.03L639.64,155.66L640.11,149.18L640.4,161.97L640.41,159.52L640.65,147.95L641.2,153.03L641.21,154.26L641.33,150.4L642,159.52L642.02,158.12L642.03,156.89L642.53,160.74L642.79,147.95L642.8,149.18L642.82,153.03L642.89,150.4L643.04,163.37L643.69,159.52L643.7,158.12L643.88,150.4L644.42,155.66L644.44,156.89L644.66,159.52L644.92,147.95L645.13,156.89L645.14,158.12L645.33,150.4L645.69,163.37L645.87,154.26L645.89,154.26L646.21,159.52L646.54,151.8L646.62,154.26L646.63,153.03L646.8,161.97L646.97,149.18L647.31,155.66L647.33,156.89L647.68,149.18L647.81,163.37L648.1,154.26L648.11,154.26L648.42,164.6L648.57,150.4L648.96,159.52L648.97,156.89L649.44,159.52L649.73,145.32L649.77,149.18L649.79,150.4L649.97,161.97L650.15,149.18L650.45,154.26L650.46,156.89L650.92,145.32L651.09,161.97L651.18,158.12L651.2,155.66L651.33,146.55L651.49,159.52L651.98,150.4L652,150.4L652.12,161.97L652.77,156.89L652.79,154.26L652.98,147.95L653.16,159.52L653.53,154.26L653.55,151.8L653.59,147.95L653.73,160.74L654.27,154.26L654.28,155.66L654.51,150.4L654.75,159.52L655.04,154.26L655.05,154.26L655.36,160.74L655.52,146.55L655.83,156.89L655.84,156.89L656.12,147.95L656.38,163.37L656.5,151.8L656.52,151.8L656.64,147.95L656.88,158.12L657.25,151.8L657.27,153.03L657.72,150.4L658.03,160.74L658.07,159.52L658.08,158.12L658.55,161.97L658.79,146.55L658.81,151.8L658.83,154.26L658.92,150.4L659.08,161.97L659.59,156.89L659.6,158.12L659.81,149.18L660.17,160.74L660.27,153.03L660.28,151.8L660.62,159.52L660.93,147.95L660.96,154.26L660.97,154.26L661.61,150.4L661.66,159.52L661.74,158.12L661.76,156.89L662.19,160.74L662.44,147.95L662.53,153.03L662.55,155.66L663.03,151.8L663.29,161.97L663.33,159.52L663.35,159.52L663.89,160.74L664.12,149.18L664.15,151.8L664.16,151.8L665.01,159.52L665.02,158.12L665.03,155.66L665.44,163.37L665.86,149.18L665.88,149.18L665.98,161.97L666.64,153.03L666.65,153.03L666.86,150.4L667.03,158.12L667.04,159.52L667.33,150.4L667.74,158.12L667.76,160.74L667.8,163.37L668.02,149.18L668.45,155.66L668.46,154.26L668.56,147.95L668.68,161.97L669.11,153.03L669.13,154.26L669.21,160.74L669.35,151.8L669.85,154.26L669.86,151.8L669.98,150.4L670.56,159.52L670.63,154.26L670.65,154.26L670.86,151.8L671.24,159.52L671.26,160.74L672.07,150.4L672.09,151.8L672.1,154.26L672.46,147.95L672.87,159.52L672.89,159.52L673.22,149.18L673.4,161.97L673.65,156.89L673.66,156.89L673.97,159.52L674.2,149.18L674.45,153.03L674.46,154.26L674.81,150.4L674.99,161.97L675.18,155.66L675.2,155.66L675.56,159.52L675.75,150.4L675.96,154.26L675.97,155.66L676.3,159.52L676.5,149.18L676.51,147.95L677.13,163.37L677.28,151.8L677.3,151.8L677.37,147.95L677.68,159.52L677.7,159.52L677.71,159.52L678.21,161.97L678.4,151.8L678.49,154.26L678.5,158.12L679,149.18L679.26,160.74L679.27,160.74L679.81,161.97L680.03,150.4L680.09,154.26L680.1,154.26L680.38,159.52L680.77,150.4L680.78,149.18L681.58,159.52L681.6,158.12L681.61,156.89L681.92,159.52L682.18,149.18L682.34,158.12L682.36,158.12L682.69,151.8L683.12,156.89L683.13,156.89L683.62,161.97L683.8,146.55L683.92,154.26L683.93,155.66L684.07,159.52L684.32,150.4L684.58,158.12L684.6,159.52L684.62,161.97L684.82,149.18L685.3,153.03L685.32,151.8L685.88,159.52L686.01,150.4L686.1,155.66L686.12,154.26L686.44,151.8L686.77,160.74L686.86,154.26L686.88,154.26L687.45,150.4L687.62,159.52L687.64,156.89L687.65,156.89L687.82,158.12L688.27,150.4L688.37,154.26L688.39,155.66L688.91,159.52L689.08,149.18L689.09,147.95L689.1,145.32L689.23,159.52L689.81,154.26L689.82,155.66L689.96,159.52L690.2,151.8L690.21,150.4L690.39,147.95L690.56,161.97L691.01,158.12L691.03,159.52L691.58,160.74L691.77,150.4L691.81,151.8L691.83,153.03L692.1,159.52L692.34,149.18L692.6,158.12L692.62,156.89L693.13,160.74L693.42,150.4L693.43,153.03L693.71,160.74L693.9,150.4L694.22,159.52L694.23,159.52L694.81,164.6L694.99,150.4L695.04,154.26L695.05,155.66L695.3,159.52L695.6,150.4L695.78,156.89L695.8,159.52L696.06,150.4L696.43,161.97L696.49,154.26L696.5,151.8L696.62,146.55L696.96,160.74L697.23,151.8L697.25,154.26L697.65,150.4L697.98,159.52L698.01,158.12L698.02,156.89L698.63,151.8L698.75,155.66L698.77,156.89L699.02,160.74L699.15,149.18L699.47,151.8L699.49,151.8L699.79,149.18L700.23,159.52L700.25,158.12L700.26,156.89L700.36,150.4L700.83,159.52L701.02,151.8L701.04,151.8L701.23,160.74L701.81,147.95L701.82,147.95L701.89,160.74L702.58,154.26L702.6,154.26L702.78,160.74L703.01,149.18L703.41,156.89L703.43,155.66L703.72,147.95L703.91,161.97L704.13,154.26L704.15,153.03L704.53,159.52L704.75,147.95L704.88,156.89L704.89,158.12L705.09,153.03L705.53,160.74L705.57,154.26L705.58,154.26L705.94,160.74L706.36,149.18L706.39,150.4L706.4,150.4L706.58,160.74L706.72,147.95L707.19,156.89L707.2,155.66L707.31,146.55L707.38,159.52L707.75,159.52L707.77,159.52L708.03,146.55L708.18,161.97L708.54,154.26L708.56,154.26L708.8,158.12L708.93,151.8L709.29,154.26L709.3,155.66L709.34,161.97L709.44,150.4L710.02,155.66L710.04,155.66L710.23,160.74L710.62,149.18L710.78,156.89L710.8,156.89L710.96,159.52L711.18,150.4L711.58,154.26L711.6,154.26L712.11,149.18L712.37,161.97L712.4,159.52L712.41,158.12L712.74,146.55L712.86,156.89L712.87,159.52L712.9,160.74L713.05,151.8L713.56,153.03L713.57,153.03L713.91,150.4L714.09,159.52L714.31,153.03L714.32,151.8L714.38,147.95L714.53,161.97L715.01,155.66L715.03,156.89L715.25,160.74L715.4,149.18L715.81,153.03L715.83,154.26L715.99,151.8L716.28,160.74L716.52,151.8L716.53,150.4L716.66,159.52L717.11,149.18L717.14,153.03L717.15,156.89L717.39,160.74L717.56,149.18L717.83,153.03L717.85,153.03L718.1,150.4L718.52,159.52L718.59,155.66L718.61,154.26L718.79,158.12L719.26,149.18L719.34,156.89L719.35,156.89L719.66,163.37L719.78,150.4L719.88,153.03L719.89,151.8L720.17,159.52L720.31,147.95L720.69,156.89L720.71,156.89L720.94,161.97L721.12,150.4L721.45,155.66L721.47,156.89L721.69,161.97L721.84,146.55L722.17,156.89L722.19,159.52L723,147.95L723.03,151.8L723.04,155.66L723.1,163.37L723.54,147.95L723.8,159.52L723.82,159.52L723.83,160.74L723.98,151.8L724.51,153.03L724.52,151.8L725.05,150.4L725.42,161.97L725.44,159.52L725.45,158.12L725.62,149.18L725.89,159.52L726.25,151.8L726.27,153.03L726.38,161.97L726.72,146.55L727.03,156.89L727.04,156.89L727.23,147.95L727.41,159.52L727.74,151.8L727.76,151.8L728.35,149.18L728.52,160.74L728.55,155.66L728.56,154.26L728.77,149.18L729.03,160.74L729.27,155.66L729.28,153.03L729.51,160.74L729.71,149.18L730,155.66L730.01,158.12L730.48,150.4L730.72,159.52L730.74,158.12L730.76,156.89L730.97,149.18L731.16,159.52L731.59,153.03L731.6,154.26L731.71,160.74L731.96,149.18L732.25,158.12L732.27,158.12L732.71,150.4L732.78,160.74L733.04,155.66L733.05,155.66L733.65,149.18L733.83,160.74L733.84,159.52L733.86,158.12L734.21,151.8L734.63,153.03L734.64,153.03L734.75,149.18L734.91,161.97L735.32,156.89L735.33,158.12L735.61,147.95L735.98,160.74L736.18,153.03L736.19,154.26L736.34,151.8L736.97,160.74L736.99,156.89L737.01,155.66L737.44,149.18L737.59,161.97L737.77,153.03L737.78,153.03L738.13,160.74L738.38,149.18L738.45,150.4L738.46,149.18L738.68,163.37L739.26,156.89L739.27,155.66L739.54,146.55L739.62,160.74L740.06,151.8L740.08,154.26L740.64,150.4L740.73,159.52L740.74,160.74L740.84,161.97L740.95,154.26L740.98,155.66L740.99,154.26L741.21,149.18L741.35,155.66L741.36,156.89L741.82,150.4L741.97,160.74L742.1,155.66L742.11,155.66L742.62,151.8L742.69,159.52L742.87,153.03L742.88,153.03L743.12,150.4L743.55,159.52L743.66,156.89L743.67,154.26L743.99,158.12L744.38,150.4L744.39,153.03L744.4,155.66L744.86,150.4L745.05,161.97L745.15,158.12L745.16,156.89L745.51,149.18L745.72,161.97L745.73,161.97L746.12,149.18L746.57,153.03L746.59,153.03L746.8,158.12L747.13,149.18L747.22,155.66L747.24,158.12L747.35,160.74L747.49,151.8L747.63,151.8L747.64,151.8L747.69,149.18L748.43,160.74L748.44,158.12L748.45,158.12L748.84,159.52L749.24,150.4L749.27,151.8L749.28,153.03L749.38,159.52L749.84,149.18L749.95,155.66L749.96,158.12L750,161.97L750.29,150.4L750.63,154.26L750.64,154.26L750.85,151.8L751.01,158.12L751.33,153.03L751.34,151.8L751.37,150.4L751.51,159.52L752.02,154.26L752.04,155.66L752.52,151.8L752.69,159.52L752.78,156.89L752.8,156.89L752.92,149.18L753.14,159.52L753.6,150.4L753.61,151.8L754.03,150.4L754.22,161.97L754.34,153.03L754.36,153.03L754.65,146.55L754.84,160.74L755.05,151.8L755.06,150.4L755.08,149.18L755.42,159.52L755.75,153.03L755.77,153.03L756.07,151.8L756.33,159.52L756.53,156.89L756.54,155.66L757.14,160.74L757.32,147.95L757.33,150.4L757.34,151.8L757.94,161.97L758.06,154.26L758.08,154.26L758.3,149.18L758.63,160.74L758.8,150.4L758.81,149.18L758.82,147.95L759.31,158.12L759.5,155.66L759.51,156.89L759.79,149.18L760.19,161.97L760.23,156.89L760.25,156.89L760.36,149.18L760.61,159.52L761.01,153.03L761.02,155.66L761.52,151.8L761.7,159.52L761.73,158.12L761.74,158.12L761.86,150.4L762.32,161.97L762.38,154.26L762.39,154.26L762.72,160.74L763.12,149.18L763.16,151.8L763.18,151.8L763.19,150.4L763.34,160.74L763.86,159.52L763.87,160.74L764.26,150.4L764.74,153.03L764.75,155.66L765.13,149.18L765.43,159.52L765.45,159.52L765.49,161.97L765.63,149.18L766.12,151.8L766.14,151.8L766.57,161.97L766.87,147.95L766.94,149.18L766.95,149.18L767.1,161.97L767.38,147.95L767.74,156.89L767.75,155.66L768.14,161.97L768.39,149.18L768.53,153.03L768.54,154.26L768.86,149.18L769.15,159.52L769.27,156.89L769.29,155.66L769.72,160.74L770.02,149.18L770.06,150.4L770.08,150.4L770.09,149.18L770.74,160.74L770.75,160.74L770.91,150.4L771.45,156.89L771.46,159.52L771.63,149.18L771.87,161.97L772.12,153.03L772.14,149.18L772.16,147.95L772.37,158.12L772.84,151.8L772.86,153.03L772.99,161.97L773.16,149.18L773.63,155.66L773.64,153.03L773.77,149.18L774.04,159.52L774.2,151.8L774.21,151.8L774.43,158.12L774.98,154.26L775,155.66L775.27,150.4L775.63,160.74L775.7,150.4L775.72,151.8L775.79,150.4L776.06,161.97L776.46,151.8L776.48,151.8L776.98,149.18L777.2,161.97L777.25,155.66L777.27,154.26L777.79,161.97L777.96,149.18L778.04,150.4L778.05,151.8L778.21,161.97L778.45,147.95L778.86,159.52L778.87,158.12L779.34,161.97L779.57,149.18L779.67,150.4L779.69,151.8L780.29,146.55L780.45,167.23L780.49,160.74L780.5,156.89L780.6,145.32L780.96,160.74L781.26,151.8L781.28,151.8L781.51,161.97L781.86,149.18L781.99,159.52L782.01,159.52L782.06,160.74L782.22,147.95L782.39,150.4L782.41,147.95L782.44,146.55L782.59,167.23L783.1,155.66L783.11,155.66L783.21,160.74L783.39,149.18L783.86,154.26L783.87,155.66L784.21,161.97L784.37,149.18L784.5,154.26L784.51,155.66L784.73,163.37L784.91,146.55L785.15,159.52L785.16,160.74L785.95,150.4L785.96,151.8L785.98,154.26L786.33,159.52L786.4,149.18L786.74,155.66L786.75,156.89L786.87,161.97L787.15,147.95L787.47,154.26L787.48,153.03L787.91,159.52L788.1,149.18L788.16,154.26L788.17,154.26L788.41,160.74L788.75,150.4L788.86,154.26L788.88,155.66L789.03,163.37L789.18,145.32L789.6,153.03L789.61,153.03L789.82,149.18L790.07,159.52L790.34,153.03L790.36,151.8L790.68,149.18L791.16,163.37L791.17,161.97L791.19,158.12L791.31,144.09L791.57,159.52L791.98,147.95L791.99,149.18L792.2,160.74L792.79,155.66L792.81,153.03L793.1,161.97L793.45,147.95L793.55,151.8L793.57,151.8L793.81,161.97L793.97,149.18L794.35,154.26L794.37,154.26L794.81,163.37L795.04,149.18L795.14,153.03L795.16,154.26L795.35,167.23L795.49,147.95L795.89,154.26L795.9,153.03L795.98,161.97L796.11,145.32L796.58,154.26L796.59,153.03L797.04,161.97L797.19,147.95L797.24,155.66L797.26,158.12L797.31,159.52L797.73,146.55L798.03,156.89L798.04,156.89L798.24,151.8L798.6,159.52L798.69,151.8L798.71,151.8L798.78,146.55L798.92,158.12L799.41,154.26L799.43,154.26L799.51,160.74L799.87,150.4L800.13,158.12L800.15,158.12L800.37,146.55L800.8,161.97L800.86,154.26L800.88,153.03L801.09,149.18L801.22,159.52L801.61,154.26L801.63,156.89L801.89,151.8L802.39,161.97L802.4,160.74L802.54,146.55L803.17,155.66L803.19,155.66L803.59,147.95L803.99,160.74L804.02,159.52L804.03,156.89L804.13,146.55L804.74,158.12L804.79,155.66L804.81,154.26L805.05,159.52L805.33,150.4L805.61,158.12L805.62,158.12L805.81,159.52L806.31,150.4L806.41,153.03L806.42,153.03L806.69,159.52L806.78,149.18L807.18,156.89L807.2,156.89L807.27,150.4L807.43,159.52L807.96,154.26L807.97,155.66L808.26,159.52L808.52,149.18L808.66,159.52L808.68,161.97L809.44,150.4L809.48,154.26L809.49,155.66L809.78,161.97L809.95,149.18L810.2,155.66L810.21,151.8L810.46,147.95L810.67,160.74L810.94,153.03L810.96,151.8L811.03,146.55L811.23,160.74L811.69,153.03L811.7,154.26L811.95,161.97L812.08,147.95L812.46,155.66L812.48,155.66L812.57,151.8L813.04,163.37L813.11,153.03L813.13,150.4L813.2,146.55L813.34,158.12L813.82,155.66L813.83,156.89L814,147.95L814.43,155.66L814.44,159.52L814.73,145.32L814.97,164.6L815.13,154.26L815.15,154.26L815.27,149.18L815.52,159.52L815.88,153.03L815.89,151.8L816.17,160.74L816.34,149.18L816.47,158.12L816.49,160.74L816.65,149.18L817.28,154.26L817.29,155.66L817.83,161.97L817.95,149.18L817.98,149.18L817.99,149.18L818.37,159.52L818.75,156.89L818.77,154.26L818.81,150.4L819.38,160.74L819.51,153.03L819.53,153.03L819.78,159.52L820.11,149.18L820.23,155.66L820.25,156.89L820.47,161.97L820.75,151.8L820.94,154.26L820.95,156.89L821.01,163.37L821.16,149.18L821.63,156.89L821.64,155.66L822.11,158.12L822.25,150.4L822.39,155.66L822.4,155.66L822.75,145.32L822.93,163.37L823.03,149.18L823.04,147.95L823.1,145.32L823.66,161.97L823.72,155.66L823.73,156.89L824.38,149.18L824.42,155.66L824.44,156.89L824.92,142.86L825.09,163.37L825.18,156.89L825.2,155.66L825.46,149.18L825.61,160.74L825.94,156.89L825.96,156.89L826.28,161.97L826.55,147.95L826.66,158.12L826.68,158.12L827.09,161.97L827.24,149.18L827.38,153.03L827.4,153.03L827.53,150.4L827.73,163.37L828.13,155.66L828.14,153.03L828.36,161.97L828.6,147.95L828.81,156.89L828.82,158.12L828.97,149.18L829.5,159.52L829.52,156.89L829.54,155.66L829.73,147.95L829.97,163.37L830.3,153.03L830.31,154.26L830.73,149.18L830.82,159.52L830.84,160.74L830.87,161.97L831.06,151.8L831.49,156.89L831.5,156.89L831.71,150.4L832.26,154.26L832.28,155.66L832.44,159.52L832.66,153.03L832.68,151.8L832.8,149.18L833.08,158.12L833.38,156.89L833.4,156.89L834.11,149.18L834.2,154.26L834.21,155.66L834.63,159.52L834.83,149.18L834.9,149.18L834.92,150.4L835.51,159.52L835.77,154.26L835.79,154.26L835.94,154.26L835.95,155.66L836.3,151.8L836.51,156.89L836.7,155.66L836.71,155.66L836.99,153.03L837.29,156.89L837.4,155.66L837.42,156.89L838.26,151.8L838.32,153.03L838.33,153.03L839.1,155.66L839.13,154.26L839.15,154.26L839.93,155.66L839.95,155.66L840.11,155.66L840.13,156.89L840.83,154.26L840.89,155.66L840.9,155.66L841.68,154.26L841.69,154.26L842.88,154.26L842.89,155.66L843.65,154.26L843.67,154.26L843.93,154.26L843.94,155.66L844.7,154.26L844.72,154.26L845.49,155.66L845.51,154.26L846.27,155.66L846.28,154.26L847,155.66L847.03,154.26L847.04,154.26L847.8,155.66L847.81,154.26L848.55,155.66L848.56,154.26L848.57,154.26L848.75,154.26L848.77,155.66L849.5,154.26L849.51,155.66L849.53,155.66L850.29,154.26L850.3,155.66L851.05,154.26L851.06,155.66L851.82,154.26L851.84,155.66L852.6,154.26L852.61,155.66L853.33,154.26L853.36,155.66L853.37,155.66L854.15,154.26L854.16,155.66L854.89,154.26L854.91,155.66L854.92,155.66L855.68,154.26L855.69,154.26L856.46,155.66L856.47,154.26L857.27,155.66L857.28,154.26L858.03,155.66L858.04,154.26L858.78,155.66L858.79,154.26L858.81,154.26L859.37,155.66L859.41,150.4L859.43,150.4L859.65,146.55L859.91,154.26L860.05,154.26L860.06,154.26L860.34,156.89L860.93,149.18L860.95,150.4L861.32,163.37L861.71,151.8L861.72,151.8L861.76,150.4L861.92,159.52L862.4,154.26L862.41,154.26L862.79,150.4L863.16,160.74L863.2,158.12L863.22,158.12L863.42,150.4L863.69,159.52L863.99,155.66L864,156.89L864.38,149.18L864.74,159.52L864.75,156.89L864.9,147.95L865.04,159.52L865.36,155.66L865.37,156.89L865.61,160.74L865.81,147.95L866.1,156.89L866.12,155.66L866.66,159.52L866.84,151.8L866.88,153.03L866.89,153.03L867.03,159.52L867.22,147.95L867.6,153.03L867.61,154.26L867.85,149.18L868.39,161.97L868.4,159.52L868.41,156.89L868.58,150.4L869.06,160.74L869.16,155.66L869.17,155.66L869.26,146.55L869.45,161.97L869.93,154.26L869.95,153.03L870.53,144.09L870.65,161.97L870.67,163.37L871.07,149.18L871.5,154.26L871.51,154.26L871.68,159.52L871.87,149.18L872.17,156.89L872.19,158.12L872.69,145.32L872.85,161.97L872.93,156.89L872.95,155.66L873.02,149.18L873.36,160.74L873.69,155.66L873.71,155.66L874.26,149.18L874.41,160.74L874.43,161.97L874.59,149.18L875.2,151.8L875.22,154.26L875.4,150.4L875.53,160.74L875.92,155.66L875.93,155.66L876.13,159.52L876.31,150.4L876.65,155.66L876.67,156.89L877.12,159.52L877.47,149.18L877.48,150.4L877.68,161.97L877.84,146.55L878.22,155.66L878.23,151.8L878.38,149.18L878.73,158.12L878.96,154.26L878.98,154.26L879.2,147.95L879.36,159.52L879.72,154.26L879.74,154.26L879.96,161.97L880.12,147.95L880.4,155.66L880.41,153.03L880.72,145.32L881.01,163.37L881.12,151.8L881.13,147.95L881.16,146.55L881.62,156.89L881.67,156.89L881.69,158.12L882.39,151.8L882.42,155.66L882.43,158.12L882.52,164.6L882.68,149.18L883.15,159.52L883.16,156.89L883.47,149.18L883.59,163.37L883.91,153.03L883.93,154.26L884.4,149.18L884.67,164.6L884.7,160.74L884.71,159.52L885.05,146.55L885.17,160.74L885.53,153.03L885.54,154.26L885.76,160.74L885.94,147.95L886.22,155.66L886.23,155.66L886.34,153.03L886.93,158.12L886.94,154.26L886.99,149.18L887.31,160.74L887.69,154.26L887.7,155.66L887.93,159.52L888.38,151.8L888.42,155.66L888.43,158.12L888.96,160.74L889.12,147.95L889.26,154.26L889.28,154.26L889.4,159.52L889.95,151.8L889.98,155.66L889.99,156.89L890.13,151.8L890.38,160.74L890.64,153.03L890.66,151.8L891.13,158.12L891.46,155.66L891.47,154.26L891.57,160.74L891.81,149.18L892.1,155.66L892.11,158.12L892.61,151.8L892.62,155.66L892.63,158.12L893.1,149.18L893.23,161.97L893.42,151.8L893.44,153.03L893.63,150.4L893.87,160.74L894.18,151.8L894.2,149.18L894.67,160.74L894.93,151.8L894.94,150.4L895.4,164.6L895.55,146.55L895.72,154.26L895.73,153.03L895.93,160.74L896.08,149.18L896.4,154.26L896.41,156.89L896.87,147.95L897.05,160.74L897.14,156.89L897.16,154.26L897.54,160.74L897.93,147.95L897.94,149.18L897.96,153.03L898.46,147.95L898.59,161.97L898.69,151.8L898.7,150.4L898.75,147.95L899.09,159.52L899.35,151.8L899.37,154.26L899.52,147.95L899.6,161.97L900.03,154.26L900.05,151.8L900.24,164.6L900.36,144.09L900.82,160.74L900.83,158.12L900.92,149.18L901.58,155.66L901.59,158.12L901.98,145.32L902.3,155.66L902.31,156.89L902.35,163.37L902.51,150.4L903.02,153.03L903.03,153.03L903.6,149.18L903.76,161.97L903.87,160.74L903.89,159.52L904.48,164.6L904.65,144.09L904.68,147.95L904.69,149.18L904.81,161.97L905.45,154.26L905.46,154.26L905.71,147.95L905.89,160.74L906.22,155.66L906.24,151.8L906.63,161.97L906.81,146.55L906.96,155.66L906.97,155.66L907.32,142.86L907.7,160.74L907.73,158.12L907.75,156.89L907.83,147.95L908.04,159.52L908.53,150.4L908.55,154.26L908.93,149.18L909.34,163.37L909.35,161.97L909.36,161.97L909.99,149.18L910.12,158.12L910.14,159.52L910.26,150.4L910.83,164.6L910.88,159.52L910.9,160.74L910.99,147.95L911.45,159.52L911.46,160.74L912.11,146.55L912.25,153.03L912.27,154.26L912.6,149.18L913.07,164.6L913.08,161.97L913.19,145.32L913.83,154.26L913.84,155.66L914.23,145.32L914.46,161.97L914.59,155.66L914.6,155.66L914.96,159.52L915.03,146.55L915.05,144.09L915.2,165.83L915.34,142.86L915.82,156.89L915.83,155.66L916.12,159.52L916.39,147.95L916.55,155.66L916.57,156.89L916.97,147.95L917.23,160.74L917.28,160.74L917.3,160.74L917.6,149.18L917.82,159.52L917.84,161.97L918.58,150.4L918.67,151.8L918.68,153.03L918.89,160.74L919.04,150.4L919.5,156.89L919.51,155.66L919.65,147.95L919.99,160.74L920.26,153.03L920.27,154.26L920.51,160.74L920.64,150.4L921.03,155.66L921.05,154.26L921.46,151.8L921.54,160.74L921.75,151.8L921.76,150.4L921.78,149.18L921.93,160.74L922.44,153.03L922.46,154.26L922.61,159.52L922.83,149.18L923.22,153.03L923.23,154.26L923.58,159.52L923.84,149.18L923.96,153.03L923.98,151.8L924.18,159.52L924.24,150.4L924.63,155.66L924.64,154.26L924.87,159.52L925.05,149.18L925.28,156.89L925.29,159.52L926.09,150.4L926.11,151.8L926.15,150.4L926.33,159.52L926.81,153.03L926.82,154.26L927.09,151.8L927.53,159.52L927.57,155.66L927.58,151.8L927.63,149.18L927.85,160.74L928.3,155.66L928.32,155.66L928.64,150.4L928.99,160.74L929.09,158.12L929.11,158.12L929.64,160.74L929.77,149.18L929.88,155.66L929.89,156.89L930.34,149.18L930.61,161.97L930.65,158.12L930.67,156.89L930.76,151.8L931.33,158.12L931.37,154.26L931.39,153.03L931.81,158.12L931.87,149.18L932.09,156.89L932.11,158.12L932.49,149.18L932.75,159.52L932.8,155.66L932.81,154.26L933.03,146.55L933.39,159.52L933.5,150.4L933.52,150.4L933.92,159.52L934.36,156.89L934.37,156.89L934.5,159.52L934.98,151.8L935.08,155.66L935.09,156.89L935.42,160.74L935.69,151.8L935.87,155.66L935.88,156.89L936.05,158.12L936.47,149.18L936.63,156.89L936.64,159.52L937.04,163.37L937.22,149.18L937.41,153.03L937.43,154.26L937.57,161.97L937.83,151.8L938.17,154.26L938.19,154.26L938.41,149.18L938.58,160.74L938.91,156.89L938.92,154.26L939.09,158.12L939.56,150.4L939.63,155.66L939.64,155.66L940.01,151.8L940.28,160.74L940.34,155.66L940.36,154.26L940.44,149.18L940.72,159.52L940.81,159.52L940.83,160.74L941.62,147.95L941.66,151.8L941.67,153.03L941.85,159.52L942.02,150.4L942.39,154.26L942.4,153.03L942.67,151.8L942.93,159.52L943.11,153.03L943.12,151.8L943.22,150.4L943.26,156.89L943.55,154.26L943.57,156.89L943.91,159.52L944.16,151.8L944.24,153.03L944.26,151.8L944.91,158.12L945.05,154.26L945.06,153.03L945.5,159.52L945.81,150.4L945.82,151.8L945.83,153.03L945.89,150.4L946.04,161.97L946.52,155.66L946.54,155.66L946.83,150.4L947.05,161.97L947.17,154.26L947.19,153.03L947.45,149.18L947.73,159.52L947.93,154.26L947.95,153.03L948,150.4L948.39,160.74L948.75,159.52L948.76,159.52L949.64,149.18L949.65,150.4L950.01,161.97L950.19,146.55L950.44,159.52L950.45,156.89L950.8,149.18L950.87,158.12L951.24,153.03L951.25,153.03L951.49,151.8L951.86,160.74L951.97,155.66L951.99,153.03L952.17,158.12L952.75,149.18L952.76,151.8L952.88,159.52L953.4,150.4L953.56,158.12L953.58,156.89L954.09,159.52L954.45,149.18L954.46,150.4L954.47,151.8L954.76,149.18L955.17,160.74L955.23,156.89L955.25,154.26L955.51,147.95L955.64,161.97L955.99,153.03L956.01,153.03L956.13,159.52L956.59,149.18L956.73,155.66L956.74,156.89L956.87,160.74L957.02,150.4L957.49,156.89L957.5,155.66L957.99,147.95L958.15,160.74L958.26,154.26L958.28,154.26L958.32,150.4L958.48,158.12L958.98,154.26L958.99,155.66L959.17,151.8L959.63,158.12L959.7,153.03L959.71,153.03L960.28,149.18L960.53,160.74L960.56,159.52L960.57,155.66L960.94,158.12L961.33,151.8L961.34,153.03L961.52,159.52L961.73,149.18L961.99,155.66L962.01,156.89L962.35,147.95L962.42,154.26L962.44,155.66L962.56,161.97L962.71,151.8L963,153.03L963.02,151.8L963.71,158.12L963.81,156.89L963.82,156.89L964.26,158.12L964.52,147.95L964.59,154.26L964.61,155.66L964.72,160.74L965.13,149.18L965.34,155.66L965.35,154.26L965.52,159.52L965.67,147.95L966.07,156.89L966.09,155.66L966.31,149.18L966.43,160.74L966.82,158.12L966.83,158.12L966.93,159.52L967.01,153.03L967.3,153.03L967.32,151.8L967.98,161.97L968.04,156.89L968.05,154.26L968.52,161.97L968.84,146.55L968.85,147.95L968.87,150.4L969.28,146.55L969.61,161.97L969.71,156.89L969.72,156.89L969.81,146.55L970.14,160.74L970.47,153.03L970.48,153.03L970.66,160.74L970.94,147.95L971.27,156.89L971.28,155.66L971.67,159.52L972.11,147.95L972.13,149.18L972.82,163.37L972.9,156.89L972.92,154.26L973.33,160.74L973.59,150.4L973.66,154.26L973.68,155.66L973.81,159.52L974.27,150.4L974.42,156.89L974.44,155.66L974.8,149.18L974.92,159.52L975.21,150.4L975.23,151.8L975.43,160.74L975.52,149.18L976.03,158.12L976.04,156.89L976.55,160.74L976.72,149.18L976.79,156.89L976.8,156.89L976.94,151.8L977.06,158.12L977.56,154.26L977.58,155.66L977.89,150.4L978.35,158.12L978.36,156.89L978.61,158.12L978.97,149.18L979.11,155.66L979.12,159.52L979.62,150.4L979.87,161.97L979.88,159.52L980.69,149.18L980.7,151.8L981.29,159.52L981.42,154.26L981.43,153.03L981.65,151.8L982.14,159.52L982.19,155.66L982.21,154.26L982.3,151.8L982.48,160.74L982.94,153.03L982.95,151.8L983.38,149.18L983.63,158.12L983.67,154.26L983.69,154.26L984.05,159.52L984.2,149.18L984.43,153.03L984.45,154.26L984.57,159.52L984.71,151.8L985.19,155.66L985.21,154.26L985.76,161.97L985.82,151.8L985.88,154.26L985.9,151.8L985.93,149.18L986.29,160.74L986.58,156.89L986.59,158.12L986.7,159.52L987.07,146.55L987.32,158.12L987.34,156.89L987.79,147.95L988,159.52L988.12,153.03L988.14,154.26L988.39,147.95L988.54,159.52L988.9,156.89L988.91,156.89L989.4,150.4L989.55,159.52L989.66,156.89L989.67,156.89L990.14,159.52L990.31,147.95L990.36,156.89L990.38,156.89L990.6,150.4L990.96,161.97L991.08,153.03L991.1,151.8L991.33,146.55L991.57,161.97L991.84,151.8L991.86,153.03L992.02,147.95L992.49,158.12L992.59,155.66L992.6,154.26L993.11,160.74L993.24,147.95L993.25,147.95L993.27,147.95L993.54,159.52L994.03,151.8L994.04,151.8L994.64,161.97L994.84,159.52L994.86,158.12L995.01,147.95L995.34,159.52L995.63,153.03L995.64,154.26L995.81,150.4L996.09,160.74L996.34,151.8L996.35,151.8L996.46,150.4L997.08,159.52L997.12,155.66L997.14,153.03L997.29,158.12L997.88,151.8L997.9,153.03L998.11,159.52L998.45,149.18L998.58,155.66L998.59,155.66L998.66,161.97L998.84,149.18L999.29,151.8L999.31,151.8L999.38,147.95L999.64,160.74L999.94,154.26L999.96,155.66L1000.26,161.97L1000.7,150.4L1000.76,151.8L1000.77,154.26L1001.2,149.18L1001.4,160.74L1001.49,154.26L1001.51,151.8L1001.53,149.18L1001.78,158.12L1002.24,154.26L1002.25,155.66L1002.36,147.95L1002.65,159.52L1003,155.66L1003.01,155.66L1003.51,161.97L1003.68,151.8L1003.72,155.66L1003.73,158.12L1003.98,147.95L1004.34,159.52L1004.53,154.26L1004.55,156.89L1004.81,158.12L1004.88,149.18L1005.24,156.89L1005.25,156.89L1005.87,161.97L1006.03,150.4L1006.04,153.03L1006.05,154.26L1006.19,159.52L1006.76,149.18L1006.77,149.18L1007.49,159.52L1007.56,153.03L1007.58,153.03L1007.67,150.4L1007.77,158.12L1008.18,156.89L1008.2,158.12L1008.21,159.52L1008.47,151.8L1008.9,151.8L1008.92,150.4L1009.48,159.52L1009.68,151.8L1009.69,147.95L1010.46,161.97L1010.53,154.26L1010.55,153.03L1010.63,150.4L1010.91,158.12L1011.25,156.89L1011.27,158.12L1011.34,147.95L1011.5,159.52L1012,156.89L1012.01,156.89L1012.08,158.12L1012.46,151.8L1012.79,154.26L1012.8,155.66L1013.04,159.52L1013.3,150.4L1013.33,154.26L1013.34,156.89L1013.55,161.97L1013.82,149.18L1013.92,158.12L1013.93,159.52L1014.32,149.18L1014.72,155.66L1014.74,158.12L1015.28,159.52L1015.4,147.95L1015.41,149.18L1015.43,149.18L1015.82,161.97L1016.13,150.4L1016.15,150.4L1016.34,160.74L1016.93,156.89L1016.95,155.66L1017.02,149.18L1017.31,160.74L1017.68,156.89L1017.7,156.89L1017.96,161.97L1018.12,149.18L1018.44,156.89L1018.46,156.89L1018.62,149.18L1018.76,160.74L1019.12,154.26L1019.13,153.03L1019.23,149.18L1019.46,159.52L1019.48,159.52L1019.56,161.97L1019.69,151.8L1019.7,150.4L1020.54,158.12L1020.56,156.89L1020.74,150.4L1021.18,159.52L1021.22,153.03L1021.23,151.8L1021.5,161.97L1021.87,147.95L1021.91,155.66L1021.93,155.66L1022.13,161.97L1022.34,149.18L1022.35,146.55L1022.52,161.97L1022.71,145.32L1022.93,156.89L1022.95,158.12L1023,161.97L1023.43,150.4L1023.61,156.89L1023.63,155.66L1023.86,159.52L1024.01,149.18L1024.37,156.89L1024.39,159.52L1024.65,161.97L1024.84,151.8L1025.15,156.89L1025.16,156.89L1025.66,150.4L1025.8,158.12L1025.92,155.66L1025.93,155.66L1026.1,150.4L1026.54,159.52L1026.58,151.8L1026.6,151.8L1027,160.74L1027.17,146.55L1027.3,158.12L1027.32,159.52L1027.99,160.74L1028.24,147.95L1028.27,149.18L1028.29,149.18L1028.44,161.97L1029.07,154.26L1029.09,153.03L1029.68,161.97L1029.86,146.55L1029.88,146.55L1030.23,159.52L1030.65,155.66L1030.66,154.26L1030.93,153.03L1031.33,161.97L1031.4,153.03L1031.41,151.8L1031.46,144.09L1031.88,160.74L1032.11,156.89L1032.13,156.89L1032.21,158.12L1032.79,149.18L1032.88,156.89L1032.89,158.12L1032.94,160.74L1033.1,147.95L1033.58,150.4L1033.59,147.95L1033.62,146.55L1033.87,160.74L1034.22,154.26L1034.23,155.66L1034.38,160.74L1034.64,147.95L1035,158.12L1035.02,159.52L1035.21,145.32L1035.6,160.74L1035.7,153.03L1035.71,151.8L1036.01,161.97L1036.29,144.09L1036.46,151.8L1036.47,151.8L1036.86,149.18L1037.16,164.6L1037.24,159.52L1037.26,155.66L1037.33,147.95L1037.63,158.12L1038,153.03L1038.02,154.26L1038.18,160.74L1038.41,146.55L1038.79,159.52L1038.81,159.52L1039.01,149.18L1039.3,161.97L1039.57,155.66L1039.58,156.89L1039.7,147.95L1040.19,160.74L1040.33,156.89L1040.34,155.66L1040.55,149.18L1040.91,160.74L1040.98,154.26L1040.99,153.03L1041.64,144.09L1041.76,161.97L1041.79,160.74L1041.81,160.74L1042.26,149.18L1042.52,160.74L1042.54,160.74L1043.23,145.32L1043.33,154.26L1043.34,156.89L1043.91,151.8L1044.13,161.97L1044.14,160.74L1044.34,142.86L1044.47,163.37L1044.72,156.89L1044.74,156.89L1045.22,160.74L1045.37,145.32L1045.48,153.03L1045.5,155.66L1045.61,160.74L1045.88,147.95L1046.2,156.89L1046.22,159.52L1046.4,149.18L1046.84,164.6L1046.89,155.66L1046.91,151.8L1046.99,145.32L1047.36,160.74L1047.63,151.8L1047.64,154.26L1048.33,149.18L1048.43,160.74L1048.44,160.74L1048.62,147.95L1048.95,154.26L1048.97,156.89L1049.13,147.95L1049.52,159.52L1049.63,149.18L1049.64,146.55L1049.67,144.09L1050.03,161.97L1050.31,155.66L1050.32,155.66L1050.5,159.52L1050.7,147.95L1051.1,153.03L1051.11,154.26L1051.65,163.37L1051.79,146.55L1051.8,144.09L1052.66,163.37L1052.71,161.97L1052.73,159.52L1052.91,146.55L1053.27,160.74L1053.47,151.8L1053.49,153.03L1053.79,161.97L1053.93,147.95L1054.33,159.52L1054.35,156.89L1054.84,164.6L1055.08,149.18L1055.11,151.8L1055.12,153.03L1055.19,151.8L1055.34,160.74L1055.88,154.26L1055.89,154.26L1056.13,149.18L1056.47,160.74L1056.61,153.03L1056.63,153.03L1057.12,149.18L1057.26,160.74L1057.39,151.8L1057.4,151.8L1057.66,150.4L1058.11,159.52L1058.16,155.66L1058.17,155.66L1058.62,163.37L1058.8,147.95L1058.89,155.66L1058.91,155.66L1059.11,158.12L1059.34,147.95L1059.64,158.12L1059.65,158.12L1059.88,149.18L1060.25,159.52L1060.26,156.89L1060.28,154.26L1060.65,161.97L1060.94,145.32L1061.02,154.26L1061.04,156.89L1061.41,146.55L1061.78,159.52L1061.8,156.89L1062.36,161.97L1062.56,147.95L1062.57,150.4L1062.58,153.03L1062.86,161.97L1063.03,150.4L1063.04,147.95L1063.19,159.52L1063.9,158.12L1063.91,158.12L1064.09,149.18L1064.7,154.26L1064.71,155.66L1065.05,160.74L1065.21,147.95L1065.43,156.89L1065.45,158.12L1065.7,150.4L1066.07,160.74L1066.14,156.89L1066.15,154.26L1066.23,146.55L1066.39,159.52L1066.82,151.8L1066.83,154.26L1067.06,160.74L1067.34,146.55L1067.59,156.89L1067.6,155.66L1067.94,146.55L1068.17,160.74L1068.29,155.66L1068.31,154.26L1068.41,159.52L1068.56,149.18L1069.05,154.26L1069.07,154.26L1069.3,160.74L1069.47,147.95L1069.8,154.26L1069.82,155.66L1069.91,160.74L1070,150.4L1070.55,155.66L1070.56,153.03L1070.81,158.12L1071.29,149.18L1071.32,151.8L1071.34,153.03L1071.47,161.97L1071.64,149.18L1072.1,156.89L1072.11,154.26L1072.48,159.52L1072.73,147.95L1072.79,155.66L1072.8,156.89L1072.98,159.52L1073.26,149.18L1073.48,159.52L1073.49,159.52L1074.29,149.18L1074.31,150.4L1075.08,158.12L1075.1,158.12L1075.76,159.52L1075.9,151.8L1075.91,151.8L1076.01,147.95L1076.15,159.52L1076.71,154.26L1076.73,154.26L1077.02,146.55L1077.2,161.97L1077.31,150.4L1077.32,149.18L1077.92,159.52L1078.06,153.03L1078.07,151.8L1078.17,145.32L1078.3,163.37L1078.77,151.8L1078.79,154.26L1079.16,146.55L1079.31,161.97L1079.55,158.12L1079.56,159.52L1079.76,147.95L1079.91,161.97L1080.21,156.89L1080.23,154.26L1080.52,158.12L1080.99,150.4L1081,151.8L1081.75,159.52L1081.77,156.89L1081.79,153.03L1081.9,147.95L1082.02,160.74L1082.49,156.89L1082.51,156.89L1082.67,150.4L1083.02,163.37L1083.18,153.03L1083.2,151.8L1083.31,144.09L1083.58,163.37L1083.94,149.18L1083.96,151.8L1084.26,149.18L1084.73,159.52L1084.75,156.89L1085.06,146.55L1085.2,164.6L1085.52,154.26L1085.53,154.26L1085.94,160.74L1086.1,147.95L1086.23,154.26L1086.24,156.89L1086.53,151.8L1086.86,160.74L1086.97,155.66L1086.99,154.26L1087.26,149.18L1087.36,160.74L1087.66,154.26L1087.68,156.89L1088.09,159.52L1088.24,150.4L1088.42,156.89L1088.44,156.89L1088.85,150.4L1089.02,160.74L1089.16,154.26L1089.17,153.03L1089.27,149.18L1089.52,158.12L1089.82,155.66L1089.83,156.89L1090.18,147.95L1090.43,160.74L1090.59,154.26L1090.61,155.66L1091.01,147.95L1091.16,159.52L1091.34,154.26L1091.35,154.26L1091.66,161.97L1091.96,150.4L1092.09,154.26L1092.1,155.66L1092.18,161.97L1092.42,149.18L1092.83,154.26L1092.85,154.26L1092.96,150.4L1093.62,158.12L1093.64,156.89L1093.65,155.66L1093.69,146.55L1093.83,159.52L1094.4,155.66L1094.41,155.66L1094.84,161.97L1094.99,149.18L1095.13,155.66L1095.14,158.12L1095.31,147.95L1095.46,159.52L1095.79,155.66L1095.81,151.8L1096.06,160.74L1096.23,149.18L1096.54,156.89L1096.55,156.89L1096.73,150.4L1096.8,158.12L1097.31,154.26L1097.33,154.26L1097.7,161.97L1097.88,149.18L1098.02,160.74L1098.03,161.97L1098.52,149.18L1098.9,150.4L1098.92,151.8L1099.61,150.4L1099.72,158.12L1099.73,158.12L1100.13,147.95L1100.26,160.74L1100.49,154.26L1100.51,155.66L1100.67,146.55L1100.81,161.97L1101.21,151.8L1101.23,151.8L1101.86,159.52L1101.96,155.66L1101.97,153.03L1102.28,149.18L1102.54,159.52L1102.68,153.03L1102.69,151.8L1102.87,147.95L1103.01,161.97L1103.42,153.03L1103.44,155.66L1103.7,159.52L1103.85,151.8L1104.14,151.8L1104.16,151.8L1104.28,150.4L1104.68,159.52L1104.92,153.03L1104.93,151.8L1105.19,159.52L1105.29,150.4L1105.66,153.03L1105.68,153.03L1106.09,150.4L1106.31,159.52L1106.51,156.89L1106.52,155.66L1106.96,156.89L1107.25,151.8L1107.28,153.03L1107.29,153.03L1107.78,159.52L1108.08,156.89L1108.1,155.66L1108.61,156.89L1108.75,151.8L1108.8,151.8L1108.82,151.8L1108.94,150.4L1109.24,156.89L1109.49,154.26L1109.51,155.66L1109.84,161.97L1110.02,149.18L1110.21,153.03L1110.23,151.8L1110.46,150.4L1110.96,159.52L1111.01,156.89L1111.03,156.89L1111.14,159.52L1111.33,151.8L1111.72,155.66L1111.73,155.66L1112.12,159.52L1112.37,150.4L1112.42,153.03L1112.44,153.03L1112.99,159.52L1113.13,151.8L1113.18,153.03L1113.2,153.03L1113.85,156.89L1113.89,151.8L1113.96,154.26L1113.97,154.26L1114.11,159.52L1114.5,151.8L1114.69,155.66L1114.7,155.66L1114.88,153.03L1115.12,156.89L1115.15,154.26L1115.16,151.8L1115.34,160.74L1115.8,147.95L1115.89,153.03L1115.91,154.26L1116.34,151.8L1116.57,159.52L1116.6,155.66L1116.61,154.26L1117.06,150.4L1117.25,161.97L1117.36,155.66L1117.37,154.26L1117.57,158.12L1118.01,149.18L1118.09,155.66L1118.11,156.89L1118.48,158.12L1118.58,151.8L1118.67,156.89L1118.69,158.12L1118.91,147.95L1119.23,163.37L1119.46,155.66L1119.47,155.66L1119.7,159.52L1119.85,149.18L1120.21,154.26L1120.22,154.26L1120.5,159.52L1120.57,149.18L1120.97,154.26L1120.98,153.03L1121.19,150.4L1121.71,160.74L1121.76,156.89L1121.77,155.66L1121.98,160.74L1122.06,142.86L1122.52,155.66L1122.53,155.66L1122.79,150.4L1123.22,160.74L1123.23,160.74L1123.25,161.97L1124.08,151.8L1124.09,151.8L1124.22,147.95L1124.89,161.97L1124.92,158.12L1124.94,156.89L1125.32,158.12L1125.45,151.8L1125.65,158.12L1125.67,159.52L1125.75,160.74L1125.86,147.95L1126.48,149.18L1126.5,150.4L1126.69,147.95L1127.29,161.97L1127.3,161.97L1127.33,163.37L1127.76,147.95L1128,158.12L1128.02,156.89L1128.13,146.55L1128.54,161.97L1128.68,147.95L1128.7,147.95L1129.1,163.37L1129.28,146.55L1129.5,155.66L1129.51,153.03L1129.66,149.18L1129.75,159.52L1130.24,154.26L1130.26,154.26L1130.56,156.89L1130.82,150.4L1130.84,149.18L1131.45,147.95L1131.68,160.74L1131.7,160.74L1132.43,149.18L1132.48,154.26L1132.5,155.66L1132.87,159.52L1133.18,150.4L1133.23,154.26L1133.24,155.66L1133.38,159.52L1133.73,151.8L1133.96,156.89L1133.98,156.89L1134.07,158.12L1134.23,151.8L1134.68,153.03L1134.7,151.8L1134.78,146.55L1135.12,159.52L1135.43,156.89L1135.44,155.66L1135.58,150.4L1135.98,160.74L1136.2,154.26L1136.22,154.26L1136.41,153.03L1136.73,159.52L1136.98,156.89L1136.99,156.89L1137.32,149.18L1137.78,154.26L1137.79,155.66L1138,158.12L1138.23,151.8L1138.48,154.26L1138.5,153.03L1139.27,156.89L1139.29,156.89L1140.07,153.03L1140.09,154.26L1140.12,153.03L1140.53,155.66L1140.81,154.26L1140.82,155.66L1141.58,154.26L1141.59,154.26L1141.83,154.26L1141.84,155.66L1142.6,154.26L1142.62,155.66L1143.36,154.26L1143.38,155.66L1144.17,154.26L1144.18,154.26L1144.91,155.66L1144.93,154.26L1144.94,154.26L1145.7,155.66L1145.71,154.26L1146.42,155.66L1146.46,154.26L1146.47,154.26L1147.22,155.66L1147.24,154.26L1147.41,154.26L1147.43,155.66L1148.15,154.26L1148.18,155.66L1148.19,155.66L1148.92,154.26L1148.94,155.66L1148.95,155.66L1149.72,154.26L1149.74,154.26L1149.97,155.66L1150,154.26"
+                                                                style="vector-effect: non-scaling-stroke; fill: none; stroke: rgb(0, 211, 53); stroke-opacity: 1; stroke-width: 1.5px; opacity: 1;">
+                                                            </path>
+                                                        </g>
+                                                        <g class="points"></g>
+                                                        <g class="text"></g>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </g>
+                                        <g class="zerolinelayer-above"></g>
+                                        <path class="xlines-above crisp" d="M0,0" style="fill: none;"></path>
+                                        <path class="ylines-above crisp" d="M0,0" style="fill: none;"></path>
+                                        <g class="overlines-above"></g>
+                                        <g class="xaxislayer-above">
+                                            <g class="xtick"><text text-anchor="middle" x="0" y="338"
+                                                    data-unformatted="0" data-math="N" transform="translate(50,0)"
+                                                    style="font-family: &quot;JetBrains Mono&quot;, monospace; font-size: 9px; fill: rgb(255, 255, 255); fill-opacity: 1; font-weight: normal; font-style: normal; font-variant: normal; white-space: pre;">0</text>
+                                            </g>
+                                            <g class="xtick"><text text-anchor="middle" x="0" y="338"
+                                                    data-unformatted="10k" data-math="N"
+                                                    style="font-family: &quot;JetBrains Mono&quot;, monospace; font-size: 9px; fill: rgb(255, 255, 255); fill-opacity: 1; font-weight: normal; font-style: normal; font-variant: normal; white-space: pre;"
+                                                    transform="translate(188.25,0)">10k</text></g>
+                                            <g class="xtick"><text text-anchor="middle" x="0" y="338"
+                                                    data-unformatted="20k" data-math="N"
+                                                    style="font-family: &quot;JetBrains Mono&quot;, monospace; font-size: 9px; fill: rgb(255, 255, 255); fill-opacity: 1; font-weight: normal; font-style: normal; font-variant: normal; white-space: pre;"
+                                                    transform="translate(326.5,0)">20k</text></g>
+                                            <g class="xtick"><text text-anchor="middle" x="0" y="338"
+                                                    data-unformatted="30k" data-math="N"
+                                                    style="font-family: &quot;JetBrains Mono&quot;, monospace; font-size: 9px; fill: rgb(255, 255, 255); fill-opacity: 1; font-weight: normal; font-style: normal; font-variant: normal; white-space: pre;"
+                                                    transform="translate(464.75,0)">30k</text></g>
+                                            <g class="xtick"><text text-anchor="middle" x="0" y="338"
+                                                    data-unformatted="40k" data-math="N"
+                                                    style="font-family: &quot;JetBrains Mono&quot;, monospace; font-size: 9px; fill: rgb(255, 255, 255); fill-opacity: 1; font-weight: normal; font-style: normal; font-variant: normal; white-space: pre;"
+                                                    transform="translate(603,0)">40k</text></g>
+                                            <g class="xtick"><text text-anchor="middle" x="0" y="338"
+                                                    data-unformatted="50k" data-math="N"
+                                                    style="font-family: &quot;JetBrains Mono&quot;, monospace; font-size: 9px; fill: rgb(255, 255, 255); fill-opacity: 1; font-weight: normal; font-style: normal; font-variant: normal; white-space: pre;"
+                                                    transform="translate(741.25,0)">50k</text></g>
+                                            <g class="xtick"><text text-anchor="middle" x="0" y="338"
+                                                    data-unformatted="60k" data-math="N"
+                                                    style="font-family: &quot;JetBrains Mono&quot;, monospace; font-size: 9px; fill: rgb(255, 255, 255); fill-opacity: 1; font-weight: normal; font-style: normal; font-variant: normal; white-space: pre;"
+                                                    transform="translate(879.5,0)">60k</text></g>
+                                            <g class="xtick"><text text-anchor="middle" x="0" y="338"
+                                                    data-unformatted="70k" data-math="N"
+                                                    style="font-family: &quot;JetBrains Mono&quot;, monospace; font-size: 9px; fill: rgb(255, 255, 255); fill-opacity: 1; font-weight: normal; font-style: normal; font-variant: normal; white-space: pre;"
+                                                    transform="translate(1017.75,0)">70k</text></g>
+                                            <g class="xtick"><text text-anchor="middle" x="0" y="338"
+                                                    data-unformatted="80k" data-math="N"
+                                                    style="font-family: &quot;JetBrains Mono&quot;, monospace; font-size: 9px; fill: rgb(255, 255, 255); fill-opacity: 1; font-weight: normal; font-style: normal; font-variant: normal; white-space: pre;"
+                                                    transform="translate(1156,0)">80k</text></g>
+                                        </g>
+                                        <g class="yaxislayer-above">
+                                            <g class="ytick"><text text-anchor="end" x="49" y="3.15"
+                                                    data-unformatted="1.5" data-math="N" transform="translate(0,328)"
+                                                    style="font-family: &quot;JetBrains Mono&quot;, monospace; font-size: 9px; fill: rgb(255, 255, 255); fill-opacity: 1; font-weight: normal; font-style: normal; font-variant: normal; white-space: pre;">1.5</text>
+                                            </g>
+                                            <g class="ytick"><text text-anchor="end" x="49" y="3.15"
+                                                    data-unformatted="2" data-math="N"
+                                                    style="font-family: &quot;JetBrains Mono&quot;, monospace; font-size: 9px; fill: rgb(255, 255, 255); fill-opacity: 1; font-weight: normal; font-style: normal; font-variant: normal; white-space: pre;"
+                                                    transform="translate(0,240.35)">2</text></g>
+                                            <g class="ytick"><text text-anchor="end" x="49" y="3.15"
+                                                    data-unformatted="2.5" data-math="N"
+                                                    style="font-family: &quot;JetBrains Mono&quot;, monospace; font-size: 9px; fill: rgb(255, 255, 255); fill-opacity: 1; font-weight: normal; font-style: normal; font-variant: normal; white-space: pre;"
+                                                    transform="translate(0,152.70999999999998)">2.5</text></g>
+                                            <g class="ytick"><text text-anchor="end" x="49" y="3.15"
+                                                    data-unformatted="3" data-math="N"
+                                                    style="font-family: &quot;JetBrains Mono&quot;, monospace; font-size: 9px; fill: rgb(255, 255, 255); fill-opacity: 1; font-weight: normal; font-style: normal; font-variant: normal; white-space: pre;"
+                                                    transform="translate(0,65.06)">3</text></g>
+                                        </g>
+                                        <g class="overaxes-above"></g>
+                                    </g>
+                                </g>
+                                <g class="polarlayer"></g>
+                                <g class="smithlayer"></g>
+                                <g class="ternarylayer"></g>
+                                <g class="geolayer"></g>
+                                <g class="funnelarealayer"></g>
+                                <g class="pielayer"></g>
+                                <g class="iciclelayer"></g>
+                                <g class="treemaplayer"></g>
+                                <g class="sunburstlayer"></g>
+                                <g class="glimages"></g>
+                            </svg>
+                            <div class="gl-container"></div><svg class="main-svg" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" width="1219.75" height="368.031">
+                                <defs id="topdefs-32ef9d">
+                                    <g class="clips"></g>
+                                </defs>
+                                <g class="indicatorlayer"></g>
+                                <g class="layer-above">
+                                    <g class="imagelayer"></g>
+                                    <g class="shapelayer"></g>
+                                </g>
+                                <g class="selectionlayer"></g>
+                                <g class="infolayer">
+                                    <g class="g-gtitle"></g>
+                                    <g class="g-xtitle" transform="translate(0,-2.968999999999994)"><text class="xtitle"
+                                            x="625" y="368" text-anchor="middle" data-unformatted="Index" data-math="N"
+                                            style="opacity: 1; font-family: &quot;JetBrains Mono&quot;, monospace; font-size: 10px; fill: rgb(255, 255, 255); fill-opacity: 1; font-weight: normal; font-style: normal; font-variant: normal; white-space: pre;">Index</text>
+                                    </g>
+                                    <g class="g-ytitle"><text class="ytitle" transform="rotate(-90,20,179)" x="20"
+                                            y="179" text-anchor="middle" data-unformatted="Voltage (V)" data-math="N"
+                                            style="opacity: 1; font-family: &quot;JetBrains Mono&quot;, monospace; font-size: 10px; fill: rgb(255, 255, 255); fill-opacity: 1; font-weight: normal; font-style: normal; font-variant: normal; white-space: pre;">Voltage
+                                            (V)</text></g>
+                                </g>
+                                <g class="menulayer"></g>
+                                <g class="zoomlayer"></g>
+                            </svg>
+                            <div class="modebar-container"
+                                style="position: absolute; top: 0px; right: 0px; width: 100%;">
+                                <div id="modebar-32ef9d" role="toolbar" class="modebar modebar--custom">
+                                    <div class="modebar-group" style="background-color: rgba(54, 54, 54, 0.5);"><button
+                                            type="button" rel="tooltip" class="modebar-btn"
+                                            data-title="Download plot as a PNG" aria-label="Download plot as a PNG"
+                                            data-toggle="false" data-gravity="n" data-btn-style-event-added="true"><svg
+                                                viewBox="0 0 1000 1000" class="icon" height="1em" width="1em">
+                                                <path
+                                                    d="m500 450c-83 0-150-67-150-150 0-83 67-150 150-150 83 0 150 67 150 150 0 83-67 150-150 150z m400 150h-120c-16 0-34 13-39 29l-31 93c-6 15-23 28-40 28h-340c-16 0-34-13-39-28l-31-94c-6-15-23-28-40-28h-120c-55 0-100-45-100-100v-450c0-55 45-100 100-100h800c55 0 100 45 100 100v450c0 55-45 100-100 100z m-400-550c-138 0-250 112-250 250 0 138 112 250 250 250 138 0 250-112 250-250 0-138-112-250-250-250z m365 380c-19 0-35 16-35 35 0 19 16 35 35 35 19 0 35-16 35-35 0-19-16-35-35-35z"
+                                                    transform="matrix(1 0 0 -1 0 850)"
+                                                    style="fill: rgba(255, 255, 255, 0.3);"></path>
+                                            </svg></button></div>
+                                    <div class="modebar-group" style="background-color: rgba(54, 54, 54, 0.5);"><button
+                                            type="button" rel="tooltip" class="modebar-btn active" data-title="Zoom"
+                                            aria-label="Zoom" data-attr="dragmode" data-val="zoom" data-toggle="false"
+                                            data-gravity="n" data-btn-style-event-added="true"><svg
+                                                viewBox="0 0 1000 1000" class="icon" height="1em" width="1em">
+                                                <path
+                                                    d="m1000-25l-250 251c40 63 63 138 63 218 0 224-182 406-407 406-224 0-406-182-406-406s183-406 407-406c80 0 155 22 218 62l250-250 125 125z m-812 250l0 438 437 0 0-438-437 0z m62 375l313 0 0-312-313 0 0 312z"
+                                                    transform="matrix(1 0 0 -1 0 850)"
+                                                    style="fill: rgba(255, 255, 255, 0.7);"></path>
+                                            </svg></button><button type="button" rel="tooltip" class="modebar-btn"
+                                            data-title="Pan" aria-label="Pan" data-attr="dragmode" data-val="pan"
+                                            data-toggle="false" data-gravity="n" data-btn-style-event-added="true"><svg
+                                                viewBox="0 0 1000 1000" class="icon" height="1em" width="1em">
+                                                <path
+                                                    d="m1000 350l-187 188 0-125-250 0 0 250 125 0-188 187-187-187 125 0 0-250-250 0 0 125-188-188 186-187 0 125 252 0 0-250-125 0 187-188 188 188-125 0 0 250 250 0 0-126 187 188z"
+                                                    transform="matrix(1 0 0 -1 0 850)"
+                                                    style="fill: rgba(255, 255, 255, 0.3);"></path>
+                                            </svg></button></div>
+                                    <div class="modebar-group" style="background-color: rgba(54, 54, 54, 0.5);"><button
+                                            type="button" rel="tooltip" class="modebar-btn" data-title="Zoom in"
+                                            aria-label="Zoom in" data-attr="zoom" data-val="in" data-toggle="false"
+                                            data-gravity="n" data-btn-style-event-added="true"><svg
+                                                viewBox="0 0 875 1000" class="icon" height="1em" width="1em">
+                                                <path
+                                                    d="m1 787l0-875 875 0 0 875-875 0z m687-500l-187 0 0-187-125 0 0 187-188 0 0 125 188 0 0 187 125 0 0-187 187 0 0-125z"
+                                                    transform="matrix(1 0 0 -1 0 850)"
+                                                    style="fill: rgba(255, 255, 255, 0.3);"></path>
+                                            </svg></button><button type="button" rel="tooltip" class="modebar-btn"
+                                            data-title="Zoom out" aria-label="Zoom out" data-attr="zoom" data-val="out"
+                                            data-toggle="false" data-gravity="n" data-btn-style-event-added="true"><svg
+                                                viewBox="0 0 875 1000" class="icon" height="1em" width="1em">
+                                                <path
+                                                    d="m0 788l0-876 875 0 0 876-875 0z m688-500l-500 0 0 125 500 0 0-125z"
+                                                    transform="matrix(1 0 0 -1 0 850)"
+                                                    style="fill: rgba(255, 255, 255, 0.3);"></path>
+                                            </svg></button><button type="button" rel="tooltip" class="modebar-btn"
+                                            data-title="Autoscale" aria-label="Autoscale" data-attr="zoom"
+                                            data-val="auto" data-toggle="false" data-gravity="n"
+                                            data-btn-style-event-added="true"><svg viewBox="0 0 1000 1000" class="icon"
+                                                height="1em" width="1em">
+                                                <path
+                                                    d="m250 850l-187 0-63 0 0-62 0-188 63 0 0 188 187 0 0 62z m688 0l-188 0 0-62 188 0 0-188 62 0 0 188 0 62-62 0z m-875-938l0 188-63 0 0-188 0-62 63 0 187 0 0 62-187 0z m875 188l0-188-188 0 0-62 188 0 62 0 0 62 0 188-62 0z m-125 188l-1 0-93-94-156 156 156 156 92-93 2 0 0 250-250 0 0-2 93-92-156-156-156 156 94 92 0 2-250 0 0-250 0 0 93 93 157-156-157-156-93 94 0 0 0-250 250 0 0 0-94 93 156 157 156-157-93-93 0 0 250 0 0 250z"
+                                                    transform="matrix(1 0 0 -1 0 850)"
+                                                    style="fill: rgba(255, 255, 255, 0.3);"></path>
+                                            </svg></button><button type="button" rel="tooltip" class="modebar-btn"
+                                            data-title="Reset axes" aria-label="Reset axes" data-attr="zoom"
+                                            data-val="reset" data-toggle="false" data-gravity="n"
+                                            data-btn-style-event-added="true"><svg viewBox="0 0 928.6 1000" class="icon"
+                                                height="1em" width="1em">
+                                                <path
+                                                    d="m786 296v-267q0-15-11-26t-25-10h-214v214h-143v-214h-214q-15 0-25 10t-11 26v267q0 1 0 2t0 2l321 264 321-264q1-1 1-4z m124 39l-34-41q-5-5-12-6h-2q-7 0-12 3l-386 322-386-322q-7-4-13-4-7 2-12 7l-35 41q-4 5-3 13t6 12l401 334q18 15 42 15t43-15l136-114v109q0 8 5 13t13 5h107q8 0 13-5t5-13v-227l122-102q5-5 6-12t-4-13z"
+                                                    transform="matrix(1 0 0 -1 0 850)"
+                                                    style="fill: rgba(255, 255, 255, 0.3);"></path>
+                                            </svg></button></div>
+                                </div>
+                            </div><svg class="main-svg" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" width="1219.75" height="368.031">
+                                <g class="hoverlayer"></g>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="logo-div">
+            <img src="https://aemmeci.github.io/amc01.github.io/img/RopeWatcher-ByAMC-White.png" alt="AMC white transparent logo">
+        </div>
+        <div class="check-div card">
+            <div class="card-title">
+                Data Check
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <i class="bi bi-check-lg" id="check-icon">
+                    </i>
+                    <h3>
+                        Last Data integrity
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script id="ropes-datas" type="application/json"></script>
+    <svg id="js-plotly-tester" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+        style="position: absolute; left: -10000px; top: -10000px; width: 9000px; height: 9000px; z-index: 1;">
+        <path class="js-reference-point" d="M0,0H1V1H0Z" style="stroke-width: 0; fill: black;"></path>
+    </svg>
+    <script>
+        // Charge les scripts un par un, en attendant que chacun soit exécuté avant de charger le suivant
+        function loadScriptsSequentially(urls, onDone) {
+            let i = 0;
+            function next() {
+                if (i >= urls.length) {
+                    if (onDone) onDone();
+                    return;
+                }
+                const script = document.createElement('script');
+                script.src = urls[i++];
+                script.charset = 'utf-8';
+                script.onload = next;
+                document.body.appendChild(script);
+            }
+            next();
+        }
+
+        fetch("https://aemmeci.github.io/amc01.github.io/DATA/exemple.json")
+        .then(response => response.json())
+        .then(data => {
+            const ropesData = data;
+
+            // Fonction pour convertir une date DD/MM/YYYY en objet Date
+            function parseDate(dateStr) {
+                const [day, month, year] = dateStr.split('/').map(Number);
+                return new Date(year, month - 1, day);
+            }
+
+            // Fonction pour formater un objet Date en DD/MM/YYYY
+            function formatDate(date) {
+                const day = String(date.getDate()).padStart(2, '0');
+                const month = String(date.getMonth() + 1).padStart(2, '0');
+                const year = date.getFullYear();
+                return `${day}/${month}/${year}`;
+            }
+
+            // Fonction pour calculer la nouvelle date basée sur le delta
+            function calculateNewDate(oldDateStr, baseDate, today) {
+                const oldDate = parseDate(oldDateStr);
+                const deltaDays = Math.floor((baseDate - oldDate) / (1000 * 60 * 60 * 24));
+                const newDate = new Date(today.getTime() - (deltaDays * 1000 * 60 * 60 * 24));
+                return formatDate(newDate);
+            }
+
+            // Dates de référence
+            const BASE_DATE = parseDate("01/11/2025");
+            const today = new Date();
+            const dateString = today.toLocaleDateString('fr-FR'); // Format DD/MM/YYYY
+            const TODAY = parseDate(dateString);
+
+            function getRandomRecentTime() {
+                const now = new Date();
+                const randomDelay = Math.floor(Math.random() * 60 * 1000); // Retard aléatoire entre 0 et 60 secondes
+                const pastTime = new Date(now.getTime() - (5 * 60 * 1000) - 3000 + randomDelay);
+
+                const hours = String(pastTime.getHours()).padStart(2, '0');
+                const minutes = String(pastTime.getMinutes()).padStart(2, '0');
+                const seconds = String(pastTime.getSeconds()).padStart(2, '0');
+
+                return `${hours}:${minutes}:${seconds}`;
+            }
+
+            // Générer une seule fois le day et hour pour toutes les ropes
+            const currentDay = formatDate(TODAY);
+            const currentHour = getRandomRecentTime();
+
+            // Fonction pour mettre à jour l'historique d'une rope
+            function updateHistorical(rope, sharedDay, sharedHour) {
+                const oldHistorical = rope.historical;
+                const newHistorical = {};
+
+                for (const [oldDate, value] of Object.entries(oldHistorical)) {
+                    const newDate = calculateNewDate(oldDate, BASE_DATE, TODAY);
+                    newHistorical[newDate] = value;
+                }
+
+                rope.historical = newHistorical;
+
+                // Mettre à jour aussi la date d'installation si elle existe
+                if (rope.installation) {
+                    rope.installation = calculateNewDate(rope.installation, BASE_DATE, TODAY);
+                }
+
+                // Mettre à jour last_acquisition avec la date et l'heure partagées
+                if (rope.last_acquisition) {
+                    rope.last_acquisition.day = sharedDay;
+                    rope.last_acquisition.hour = sharedHour;
+                }
+            }
+
+            // Appliquer la transformation aux deux ropes avec les mêmes day et hour
+            if (ropesData.rope_1) {
+                updateHistorical(ropesData.rope_1, currentDay, currentHour);
+            }
+            if (ropesData.rope_2) {
+                updateHistorical(ropesData.rope_2, currentDay, currentHour);
+            }
+
+            // Rendre les données disponibles globalement pour les scripts externes
+            window.jsonDatas = ropesData;
+
+            // Refléter les données dans le DOM pour référence/debug
+            document.getElementById("ropes-datas").textContent = JSON.stringify(ropesData, null, 4);
+
+            // Les scripts suivants dépendent de window.jsonDatas : on ne les charge qu'une fois les données prêtes
+            loadScriptsSequentially([
+                "https://aemmeci.github.io/amc01.github.io/scripts/dashboard-gauge.js",
+                "https://aemmeci.github.io/amc01.github.io/scripts/dashboard-lf-graph.js",
+                "https://aemmeci.github.io/amc01.github.io/scripts/dashboard-histogram.js",
+                "https://aemmeci.github.io/amc01.github.io/scripts/graphics.js"
+            ]);
+        })
+        .catch(err => console.error("Failed to load rope data:", err));
+    </script>
+</body>
+
+</html>

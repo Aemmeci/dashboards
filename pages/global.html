@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="../style copy.css"> -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Orbitron:wght@400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+    </style>
+    <link rel="stylesheet" href="https://aemmeci.github.io/amc01.github.io/css/styles.css">
+    <!-- Bootstrap Icons -->
+    <title>Arcelormital | Rope Watcher</title>
+</head>
+
+<body class="panel-dashboard">
+    <div class="dashboard boxshadow">
+        <h1>Arcelormital</h1>
+        <button class="open-modal-btn" id="openSettingsModalBtn">
+            <i class="bi bi-list"></i>
+        </button>
+        <div class="engine engine-div">
+            <h2 class="engine-title">Engines</h2>
+            <div class="engines-menu" id="engines-menu"></div>
+        </div>
+        <div class="rope-background">
+            <div class="iframe-container">
+                <div class="iframe" style="width: 100%;">
+                    <div class="loader">Loading...</div>
+                    <iframe src="https://aemmeci.github.io/amc01.github.io/pages/example.html"></iframe>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="card">
+            <h2 class="card-title">Zero Line Layer</h2>
+            <div class="zerolinelayer-gauge" id="zerolinelayer-gauge"></div>
+        </div> -->
+        
+    </div>
+    <script id="datas" type="engines">
+        {
+            "arcelormittal": "https://aemmeci.github.io/amc01.github.io/pages/arcelormittal",
+            "burgo": "https://aemmeci.github.io/amc01.github.io/pages/burgo",
+            "cassioli": "https://aemmeci.github.io/amc01.github.io/pages/cassioli",
+            "certex | Denmark": "https://aemmeci.github.io/amc01.github.io/pages/certex/denmark",
+            "certex | Norway": "https://aemmeci.github.io/amc01.github.io/pages/certex/norway",
+            "certex | Sweden": "https://aemmeci.github.io/amc01.github.io/pages/certex/sweden",
+            "certex | UK": "https://aemmeci.github.io/amc01.github.io/pages/certex/uk",
+            "cogne acciai": "https://aemmeci.github.io/amc01.github.io/pages/cogne_acciai",
+            "e80": "https://aemmeci.github.io/amc01.github.io/pages/e80",
+            "eps service": "https://aemmeci.github.io/amc01.github.io/pages/eps_service",
+            "kajima": "https://aemmeci.github.io/amc01.github.io/pages/kajima",
+            "novelis": "https://aemmeci.github.io/amc01.github.io/pages/novelis",
+            "nucor": "https://aemmeci.github.io/amc01.github.io/pages/nucor",
+            "plan | aggregato": "https://aemmeci.github.io/amc01.github.io/pages/plan/aggregato",
+            "plan | celle mat": "https://aemmeci.github.io/amc01.github.io/pages/plan/celle_mat",
+            "speira": "https://aemmeci.github.io/amc01.github.io/pages/speira",
+            "sud africa": "https://aemmeci.github.io/amc01.github.io/pages/sud_africa",
+            "volvo": "https://aemmeci.github.io/amc01.github.io/pages/volvo"
+        }
+    </script>
+    <script>
+        engines = JSON.parse(document.getElementById('datas').textContent);
+        const engineMenu = document.getElementById('engines-menu');
+        const iframeContainer = document.querySelector('.iframe');
+        const iframe = document.querySelector('iframe');
+        const title = document.querySelector('title');
+        const h1 = document.querySelector('h1');
+        const defaultEngine = 0;
+        let refreshInterval = null;
+
+        // Hide loader and show iframe when fully loaded
+        iframe.addEventListener('load', () => {
+            const loader = document.querySelector('.loader');
+            loader.style.display = 'none';
+            iframe.style.opacity = '1';
+        });
+
+        function startAutoRefresh() {
+            // Clear existing interval if any
+            if (refreshInterval) {
+                clearInterval(refreshInterval);
+            }
+            // Start new interval
+            refreshInterval = setInterval(() => {
+                const loader = document.querySelector('.loader');
+                loader.style.display = 'block';
+                iframe.style.opacity = '0';
+                const currentSrc = iframe.src;
+                iframe.src = currentSrc;
+            }, 300000); // 60000 ms = 60 seconds
+        }
+
+        function updateRopeSelected(engine_index) {
+            const loader = document.querySelector('.loader')
+            loader.style.display = 'block';
+            iframe.style.opacity = '0';
+            iframe.src = engines[engine_index];
+            h1.textContent = engine_index.toUpperCase();
+            title.textContent = engine_index.toUpperCase() + " | Rope Watcher";
+            // Restart the auto-refresh timer
+            startAutoRefresh();
+        }
+
+        function setActiveSpan(selectedSpan) {
+            const spans = engineMenu.querySelectorAll('span');
+            spans.forEach(span => {
+                span.classList.remove('active');
+            });
+            selectedSpan.classList.add('active');
+        }
+
+        Object.keys(engines).forEach(key => {
+            const span = document.createElement('span');
+            span.onclick = () => {
+                updateRopeSelected(key);
+                setActiveSpan(span);
+            }
+            span.textContent = key.toUpperCase()
+            engineMenu.appendChild(span);
+        });
+        // Set default rope
+        updateRopeSelected((Object.keys(engines))[defaultEngine]);
+        setActiveSpan(engineMenu.querySelectorAll('span')[defaultEngine]);
+
+    </script>
+
+</body>
+
+</html>

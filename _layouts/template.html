@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="300">
+    <script src="https://cdn.plot.ly/plotly-3.2.0.min.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="https://aemmeci.github.io/amc01.github.io/css/styles.css">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <title>{{ page.engine_name }} | Dashboard</title>
+</head>
+<body>
+    <div class="dashboard boxshadow">
+        <div class="rope-background">
+            
+        </div>
+        <div class="rope-selection">
+            <span class="active"> - </span>
+        </div>
+        <div class="informations-div card">
+            <h2 class="card-title">Informations</h2>
+            <div class="card-body">
+                <div class="generals-informations">
+                    <h3>Generals informations</h3>
+                    <hr>
+                    <div class="row">
+                        <span class="info-label">Name:</span>
+                        <span id="rope-name"> - </span>
+                    </div>
+                    <div class="row">
+                        <span class="info-label">Rope diameter:</span>
+                        <span id="rope-diameter"> - </span>
+                    </div>
+                    <div class="row">
+                        <span class="info-label">Rope construction:</span>
+                        <span id="rope-construction"> - </span>
+                    </div>
+                    <div class="row">
+                        <span class="info-label">Rope installation:</span>
+                        <span id="rope-installation"> - </span>
+                    </div>
+                </div>
+                <div class="last-acquisition-informations">
+                    <h3>Last acquisition</h3>
+                    <hr>
+                    <div class="row">
+                        <span class="info-label">Day:</span>
+                        <span id="acquisition-day"> - </span>
+                    </div>
+                    <div class="row">
+                        <span class="info-label">Time:</span>
+                        <span id="acquisition-hour"> - </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="gauge-zone card">
+            <h2 class="card-title" style="width: 100%;">
+                Status
+            </h2>
+            <div class="gauge-div">
+                <div class="container-gauge">
+                    <div class="gauge-levels">
+                        <div class="gauge-background">
+                        </div>
+                        <div class="gauge-circle gauge-amount" id="gauge-max-level">
+                        </div>
+                        <div class="gauge-circle level-red">
+                        </div>
+                        <div class="gauge-circle level-orange">
+                        </div>
+                        <div class="gauge-circle level-green">
+                        </div>
+                        <div class="gauge-center">
+                        </div>
+                    </div>
+                    <div class="needle-wrapper">
+                        <img alt="" id="gauge-needle-peak" src="https://aemmeci.github.io/amc01.github.io/img/tiny_needle.svg" class="gauge-needle">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="histogram-div card">
+            <h2 class="card-title">Historical data</h2>
+            <div class="card-body">
+                <div id="histogram-plot"></div>
+                <div class="histogram-buttons">
+                    <button class="histogram-btn active" data-period="last-change">Last change</button>
+                    <button class="histogram-btn" data-period="week">1 Week</button>
+                    <button class="histogram-btn" data-period="month">1 Month</button>
+                    <button class="histogram-btn" data-period="all">All</button>
+                </div>
+            </div>
+        </div>
+        <div class="lf-div card">
+            <h2 class="card-title">LF</h2>
+            <div class="card-body">
+                <div id="lf-plot"></div>
+            </div>
+        </div>
+        <div class="logo-div">
+            <img src="https://aemmeci.github.io/amc01.github.io/img/RopeWatcher-ByAMC-White.png" alt="RopeWatcher by AMC white transparent logo">
+        </div>
+        <div class="check-div card">
+            <div class="card-title">Data Check</div>
+            <div class="card-body">
+                <div class="row">
+                    <i class="bi bi-check-lg" id="check-icon"></i>
+                    <h3>Last Data integrity</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script id="ropes-datas" type="application/json"></script>
+    <script>
+    // Charge les scripts un par un, en attendant que chacun soit exécuté avant de charger le suivant
+        function loadScriptsSequentially(urls, onDone) {
+            let i = 0;
+            function next() {
+                if (i >= urls.length) {
+                    if (onDone) onDone();
+                    return;
+                }
+                const script = document.createElement('script');
+                script.src = urls[i++];
+                script.charset = 'utf-8';
+                script.onload = next;
+                document.body.appendChild(script);
+            }
+            next();
+        }
+
+        fetch("https://aemmeci.github.io/amc01.github.io/DATA/{{ page.engine_id }}.json")
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            const ropesData = data;
+
+            // Rendre les données disponibles globalement pour les scripts externes
+            window.jsonDatas = ropesData;
+
+            // Refléter les données dans le DOM pour référence/debug
+            document.getElementById("ropes-datas").textContent = JSON.stringify(ropesData, null, 4);
+
+            // Les scripts suivants dépendent de window.jsonDatas : on ne les charge qu'une fois les données prêtes
+            loadScriptsSequentially([
+                "https://aemmeci.github.io/amc01.github.io/scripts/dashboard-gauge.js",
+                "https://aemmeci.github.io/amc01.github.io/scripts/dashboard-lf-graph.js",
+                "https://aemmeci.github.io/amc01.github.io/scripts/dashboard-histogram.js",
+                "https://aemmeci.github.io/amc01.github.io/scripts/graphics.js"
+            ]);
+        })
+        .catch(err => console.error("Failed to load rope data:", err));
+    </script>
+</body>
+
+</html>
