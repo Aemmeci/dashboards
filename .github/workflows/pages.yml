@@ -8,6 +8,7 @@ on:
       - "_posts/**"
       - "*.html"
       - "*.md"
+      - "assets/**"
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -16,6 +17,8 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
 
     steps:
       - uses: actions/checkout@v4
@@ -26,9 +29,10 @@ jobs:
           bundler-cache: true
 
       - name: Build Jekyll
-        run: bundle exec jekyll build -d _site
+        run: bundle exec jekyll build --destination _site
 
-      - uses: actions/upload-pages-artifact@v2
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
           path: _site
 
@@ -39,5 +43,11 @@ jobs:
       pages: write
       id-token: write
 
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
     steps:
-      - uses: actions/deploy-pages@v2
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
