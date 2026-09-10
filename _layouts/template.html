@@ -135,7 +135,6 @@
         fetch("https://aemmeci.github.io/dashboards/DATA/{{ page.engine_id }}.json")
         .then(response => response.json())
         .then(data => {
-            console.log(data);
             const ropesData = data;
 
             // Rendre les données disponibles globalement pour les scripts externes

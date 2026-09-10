@@ -37,27 +37,14 @@
         </div> -->
         
     </div>
-    <script id="datas" type="engines">
-        {
-            "arcelormittal": "https://aemmeci.github.io/dashboards/pages/arcelormittal",
-            "burgo": "https://aemmeci.github.io/dashboards/pages/burgo",
-            "cassioli": "https://aemmeci.github.io/dashboards/pages/cassioli",
-            "certex | Denmark": "https://aemmeci.github.io/dashboards/pages/certex/denmark",
-            "certex | Norway": "https://aemmeci.github.io/dashboards/pages/certex/norway",
-            "certex | Sweden": "https://aemmeci.github.io/dashboards/pages/certex/sweden",
-            "certex | UK": "https://aemmeci.github.io/dashboards/pages/certex/uk",
-            "cogne acciai": "https://aemmeci.github.io/dashboards/pages/cogne_acciai",
-            "e80": "https://aemmeci.github.io/dashboards/pages/e80",
-            "eps service": "https://aemmeci.github.io/dashboards/pages/eps_service",
-            "kajima": "https://aemmeci.github.io/dashboards/pages/kajima",
-            "novelis": "https://aemmeci.github.io/dashboards/pages/novelis",
-            "nucor": "https://aemmeci.github.io/dashboards/pages/nucor",
-            "plan | aggregato": "https://aemmeci.github.io/dashboards/pages/plan/aggregato",
-            "plan | celle mat": "https://aemmeci.github.io/dashboards/pages/plan/celle_mat",
-            "speira": "https://aemmeci.github.io/dashboards/pages/speira",
-            "sud africa": "https://aemmeci.github.io/dashboards/pages/sud_africa",
-            "volvo": "https://aemmeci.github.io/dashboards/pages/volvo"
-        }
+    <script id="datas" type="engines"></script>
+    <script>
+        fetch("https://aemmeci.github.io/dashboards/DATA/LINKS/all.json")
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById("datas").textContent = JSON.stringify(data, null, 4);
+        })
+        .catch(err => console.error("Failed to load rope data:", err));
     </script>
     <script>
         engines = JSON.parse(document.getElementById('datas').textContent);
