@@ -44,72 +44,71 @@
         .then(data => {
             document.getElementById("datas").textContent = JSON.stringify(data, null, 4);
         })
-        .catch(err => console.error("Failed to load rope data:", err));
-    </script>
-    <script>
-        engines = JSON.parse(document.getElementById('datas').textContent);
-        const engineMenu = document.getElementById('engines-menu');
-        const iframeContainer = document.querySelector('.iframe');
-        const iframe = document.querySelector('iframe');
-        const title = document.querySelector('title');
-        const h1 = document.querySelector('h1');
-        const defaultEngine = 0;
-        let refreshInterval = null;
+        .then(() => {
+            engines = JSON.parse(document.getElementById('datas').textContent);
+            const engineMenu = document.getElementById('engines-menu');
+            const iframeContainer = document.querySelector('.iframe');
+            const iframe = document.querySelector('iframe');
+            const title = document.querySelector('title');
+            const h1 = document.querySelector('h1');
+            const defaultEngine = 0;
+            let refreshInterval = null;
 
-        // Hide loader and show iframe when fully loaded
-        iframe.addEventListener('load', () => {
-            const loader = document.querySelector('.loader');
-            loader.style.display = 'none';
-            iframe.style.opacity = '1';
-        });
-
-        function startAutoRefresh() {
-            // Clear existing interval if any
-            if (refreshInterval) {
-                clearInterval(refreshInterval);
-            }
-            // Start new interval
-            refreshInterval = setInterval(() => {
+            // Hide loader and show iframe when fully loaded
+            iframe.addEventListener('load', () => {
                 const loader = document.querySelector('.loader');
+                loader.style.display = 'none';
+                iframe.style.opacity = '1';
+            });
+
+            function startAutoRefresh() {
+                // Clear existing interval if any
+                if (refreshInterval) {
+                    clearInterval(refreshInterval);
+                }
+                // Start new interval
+                refreshInterval = setInterval(() => {
+                    const loader = document.querySelector('.loader');
+                    loader.style.display = 'block';
+                    iframe.style.opacity = '0';
+                    const currentSrc = iframe.src;
+                    iframe.src = currentSrc;
+                }, 300000); // 60000 ms = 60 seconds
+            }
+
+            function updateRopeSelected(engine_index) {
+                const loader = document.querySelector('.loader')
                 loader.style.display = 'block';
                 iframe.style.opacity = '0';
-                const currentSrc = iframe.src;
-                iframe.src = currentSrc;
-            }, 300000); // 60000 ms = 60 seconds
-        }
-
-        function updateRopeSelected(engine_index) {
-            const loader = document.querySelector('.loader')
-            loader.style.display = 'block';
-            iframe.style.opacity = '0';
-            iframe.src = engines[engine_index];
-            h1.textContent = engine_index.toUpperCase();
-            title.textContent = engine_index.toUpperCase() + " | Rope Watcher";
-            // Restart the auto-refresh timer
-            startAutoRefresh();
-        }
-
-        function setActiveSpan(selectedSpan) {
-            const spans = engineMenu.querySelectorAll('span');
-            spans.forEach(span => {
-                span.classList.remove('active');
-            });
-            selectedSpan.classList.add('active');
-        }
-
-        Object.keys(engines).forEach(key => {
-            const span = document.createElement('span');
-            span.onclick = () => {
-                updateRopeSelected(key);
-                setActiveSpan(span);
+                iframe.src = engines[engine_index];
+                h1.textContent = engine_index.toUpperCase();
+                title.textContent = engine_index.toUpperCase() + " | Rope Watcher";
+                // Restart the auto-refresh timer
+                startAutoRefresh();
             }
-            span.textContent = key.toUpperCase()
-            engineMenu.appendChild(span);
-        });
-        // Set default rope
-        updateRopeSelected((Object.keys(engines))[defaultEngine]);
-        setActiveSpan(engineMenu.querySelectorAll('span')[defaultEngine]);
 
+            function setActiveSpan(selectedSpan) {
+                const spans = engineMenu.querySelectorAll('span');
+                spans.forEach(span => {
+                    span.classList.remove('active');
+                });
+                selectedSpan.classList.add('active');
+            }
+
+            Object.keys(engines).forEach(key => {
+                const span = document.createElement('span');
+                span.onclick = () => {
+                    updateRopeSelected(key);
+                    setActiveSpan(span);
+                }
+                span.textContent = key.toUpperCase()
+                engineMenu.appendChild(span);
+            });
+            // Set default rope
+            updateRopeSelected((Object.keys(engines))[defaultEngine]);
+            setActiveSpan(engineMenu.querySelectorAll('span')[defaultEngine]);
+        })
+        .catch(err => console.error("Failed to load rope data:", err));
     </script>
 
 </body>
