@@ -132,7 +132,8 @@
             next();
         }
 
-        fetch("https://aemmeci.github.io/dashboards/DATA/{{ page.engine_id }}.json")
+        const cacheBust = Math.floor(Date.now() / 30000); 
+        fetch("https://aemmeci.github.io/dashboards/DATA/{{ page.engine_id }}.json?v=" + cacheBust)
         .then(response => response.json())
         .then(data => {
             const ropesData = data;
