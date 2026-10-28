@@ -5,10 +5,10 @@
         "construction": "6x36",
         "installation": "01/05/2024",
         "last_acquisition": {
-            "amount": 5.839,
+            "amount": 0.0,
             "day": "28/10/2026",
-            "hour": "12:27:03",
-            "integrity": true
+            "hour": "12:33:07",
+            "integrity": false
         },
         "max_amount": 50.0,
         "lf_min_scale": 2.0,
