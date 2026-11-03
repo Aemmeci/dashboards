@@ -164392,9 +164392,9 @@
         "construction": "8xK19S+EPIWRC",
         "installation": "23/08/2026",
         "last_acquisition": {
-            "amount": 32.836,
+            "amount": 50.0,
             "day": "03/11/2026",
-            "hour": "20:01:48",
+            "hour": "21:03:17",
             "integrity": true
         },
         "max_amount": 82.5,
