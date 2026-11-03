@@ -5,9 +5,9 @@
         "construction": "DIEPA PZ371",
         "installation": "12/03/2026",
         "last_acquisition": {
-            "amount": 13.721,
-            "day": "31/10/2026",
-            "hour": "13:09:51",
+            "amount": 14.509,
+            "day": "03/11/2026",
+            "hour": "14:03:57",
             "integrity": true
         },
         "max_amount": 25.311,
@@ -12779,9 +12779,9 @@
         "construction": "DIEPA PZ371",
         "installation": "12/03/2026",
         "last_acquisition": {
-            "amount": 7.515,
-            "day": "31/10/2026",
-            "hour": "13:09:51",
+            "amount": 7.264,
+            "day": "03/11/2026",
+            "hour": "14:03:57",
             "integrity": true
         },
         "max_amount": 17.487,
@@ -25553,9 +25553,9 @@
         "construction": "DIEPA PZ371",
         "installation": "08/06/2026",
         "last_acquisition": {
-            "amount": 0.656,
-            "day": "31/10/2026",
-            "hour": "13:09:51",
+            "amount": 0.841,
+            "day": "03/11/2026",
+            "hour": "14:03:57",
             "integrity": true
         },
         "max_amount": 21.815,
@@ -38279,9 +38279,9 @@
         "construction": "DIEPA PZ371",
         "installation": "08/06/2026",
         "last_acquisition": {
-            "amount": 7.02,
-            "day": "31/10/2026",
-            "hour": "13:09:51",
+            "amount": 8.021,
+            "day": "03/11/2026",
+            "hour": "14:03:57",
             "integrity": true
         },
         "max_amount": 21.918,
