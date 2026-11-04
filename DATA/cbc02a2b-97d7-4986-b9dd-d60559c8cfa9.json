@@ -3,14 +3,14 @@
         "name": "Rope 1",
         "diameter": "14 mm",
         "construction": "8xK19S+EPIWRC",
-        "installation": "01/05/2024",
+        "installation": "24/08/2026",
         "last_acquisition": {
-            "amount": 29.357,
+            "amount": 30.816,
             "day": "04/11/2026",
-            "hour": "12:04:17",
+            "hour": "13:04:35",
             "integrity": true
         },
-        "max_amount": 82.5,
+        "max_amount": 50.0,
         "lf_min_scale": 1.5,
         "lf_max_scale": 3.2,
         "low_threshold": 0.3,
@@ -120717,7 +120717,7 @@
         "last_acquisition": {
             "amount": 50.0,
             "day": "04/11/2026",
-            "hour": "12:04:17",
+            "hour": "13:04:35",
             "integrity": true
         },
         "max_amount": 50.0,
@@ -241709,7 +241709,7 @@
         "last_acquisition": {
             "amount": 50.0,
             "day": "04/11/2026",
-            "hour": "12:04:17",
+            "hour": "13:04:35",
             "integrity": true
         },
         "max_amount": 50.0,
@@ -341432,9 +341432,9 @@
         "construction": "8xK19S+EPIWRC",
         "installation": "28/10/2026",
         "last_acquisition": {
-            "amount": 8.746,
+            "amount": 7.536,
             "day": "04/11/2026",
-            "hour": "12:04:17",
+            "hour": "13:04:35",
             "integrity": true
         },
         "max_amount": 9.607,
