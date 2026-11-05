@@ -5,9 +5,9 @@
         "construction": "",
         "installation": "07/04/2026",
         "last_acquisition": {
-            "amount": 28.434,
+            "amount": 23.565,
             "day": "05/11/2026",
-            "hour": "14:03:22",
+            "hour": "15:02:02",
             "integrity": true
         },
         "max_amount": 28.434,
@@ -31048,9 +31048,9 @@
         "construction": "",
         "installation": "08/08/2026",
         "last_acquisition": {
-            "amount": 12.191,
+            "amount": 12.212,
             "day": "05/11/2026",
-            "hour": "14:03:22",
+            "hour": "15:02:02",
             "integrity": true
         },
         "max_amount": 19.665,
