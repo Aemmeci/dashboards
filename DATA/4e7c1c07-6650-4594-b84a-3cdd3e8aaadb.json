@@ -5,9 +5,9 @@
         "construction": "DIEPA PZ371",
         "installation": "12/03/2026",
         "last_acquisition": {
-            "amount": 9.166,
+            "amount": 13.581,
             "day": "06/11/2026",
-            "hour": "05:02:19",
+            "hour": "06:06:20",
             "integrity": true
         },
         "max_amount": 25.311,
@@ -12779,9 +12779,9 @@
         "construction": "DIEPA PZ371",
         "installation": "12/03/2026",
         "last_acquisition": {
-            "amount": 7.406,
+            "amount": 7.379,
             "day": "06/11/2026",
-            "hour": "05:02:19",
+            "hour": "06:06:20",
             "integrity": true
         },
         "max_amount": 17.487,
