@@ -5,9 +5,9 @@
         "construction": "6x36",
         "installation": "23/08/2026",
         "last_acquisition": {
-            "amount": 50.0,
+            "amount": 33.198,
             "day": "06/11/2026",
-            "hour": "21:33:57",
+            "hour": "22:24:53",
             "integrity": true
         },
         "max_amount": 50.0,
@@ -54622,7 +54622,7 @@
         "last_acquisition": {
             "amount": 50.0,
             "day": "06/11/2026",
-            "hour": "21:33:57",
+            "hour": "22:24:53",
             "integrity": true
         },
         "max_amount": 82.5,
@@ -164394,7 +164394,7 @@
         "last_acquisition": {
             "amount": 50.0,
             "day": "06/11/2026",
-            "hour": "21:33:57",
+            "hour": "22:24:53",
             "integrity": true
         },
         "max_amount": 82.5,
