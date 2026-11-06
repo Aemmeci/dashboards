@@ -5,12 +5,12 @@
         "construction": "",
         "installation": "07/04/2026",
         "last_acquisition": {
-            "amount": 21.894,
+            "amount": 30.0,
             "day": "06/11/2026",
-            "hour": "05:11:50",
+            "hour": "06:04:00",
             "integrity": true
         },
-        "max_amount": 28.434,
+        "max_amount": 30.0,
         "lf_min_scale": 2.0,
         "lf_max_scale": 2.9,
         "low_threshold": 0.3,
@@ -31048,9 +31048,9 @@
         "construction": "",
         "installation": "08/08/2026",
         "last_acquisition": {
-            "amount": 13.14,
+            "amount": 12.244,
             "day": "06/11/2026",
-            "hour": "05:11:50",
+            "hour": "06:04:00",
             "integrity": true
         },
         "max_amount": 19.665,
