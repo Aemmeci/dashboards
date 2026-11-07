@@ -7,7 +7,7 @@
         "last_acquisition": {
             "amount": 10.955,
             "day": "07/11/2026",
-            "hour": "03:02:02",
+            "hour": "04:02:02",
             "integrity": true
         },
         "max_amount": 32.545,
@@ -63122,7 +63122,7 @@
         "last_acquisition": {
             "amount": 0.0,
             "day": "07/11/2026",
-            "hour": "03:02:02",
+            "hour": "04:02:02",
             "integrity": false
         },
         "max_amount": 0.0,
