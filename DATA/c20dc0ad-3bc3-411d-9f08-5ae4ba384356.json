@@ -5,9 +5,9 @@
         "construction": "SPIN12KP",
         "installation": "27/10/2026",
         "last_acquisition": {
-            "amount": 14.721,
+            "amount": 14.208,
             "day": "08/11/2026",
-            "hour": "14:02:02",
+            "hour": "15:02:02",
             "integrity": true
         },
         "max_amount": 32.545,
@@ -63122,7 +63122,7 @@
         "last_acquisition": {
             "amount": 0.0,
             "day": "08/11/2026",
-            "hour": "14:02:02",
+            "hour": "15:02:02",
             "integrity": false
         },
         "max_amount": 0.0,
