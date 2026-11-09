@@ -5,9 +5,9 @@
         "construction": "8xK19S+EPIWRC",
         "installation": "24/08/2026",
         "last_acquisition": {
-            "amount": 30.504,
+            "amount": 31.38,
             "day": "09/11/2026",
-            "hour": "16:18:43",
+            "hour": "17:10:25",
             "integrity": true
         },
         "max_amount": 50.0,
@@ -120717,7 +120717,7 @@
         "last_acquisition": {
             "amount": 50.0,
             "day": "09/11/2026",
-            "hour": "16:18:43",
+            "hour": "17:10:25",
             "integrity": true
         },
         "max_amount": 50.0,
@@ -241709,7 +241709,7 @@
         "last_acquisition": {
             "amount": 50.0,
             "day": "09/11/2026",
-            "hour": "16:18:43",
+            "hour": "17:10:25",
             "integrity": true
         },
         "max_amount": 50.0,
@@ -341432,9 +341432,9 @@
         "construction": "8xK19S+EPIWRC",
         "installation": "28/10/2026",
         "last_acquisition": {
-            "amount": 9.109,
+            "amount": 9.114,
             "day": "09/11/2026",
-            "hour": "16:18:43",
+            "hour": "17:10:25",
             "integrity": true
         },
         "max_amount": 10.284,
