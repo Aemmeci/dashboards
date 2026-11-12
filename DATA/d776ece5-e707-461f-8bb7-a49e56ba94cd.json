@@ -5,12 +5,12 @@
         "construction": "6xK31WS+IWRC",
         "installation": "17/02/2026",
         "last_acquisition": {
-            "amount": 1.01,
+            "amount": 25.325,
             "day": "11/11/2026",
             "hour": "15:35:05",
             "integrity": true
         },
-        "max_amount": 5.067,
+        "max_amount": 25.325,
         "lf_min_scale": 1.5,
         "lf_max_scale": 3.2,
         "low_threshold": 0.45,
@@ -557,7 +557,7 @@
             "08/11/2026": 0.0,
             "09/11/2026": 0.0,
             "10/11/2026": 0.0,
-            "11/11/2026": 0.01363
+            "11/11/2026": 0.341893
         },
         "lf": [
             2.4,
@@ -168516,12 +168516,12 @@
         "construction": "6xK31WS+IWRC",
         "installation": "17/02/2026",
         "last_acquisition": {
-            "amount": 0.802,
+            "amount": 28.812,
             "day": "11/11/2026",
             "hour": "15:35:05",
             "integrity": true
         },
-        "max_amount": 5.838,
+        "max_amount": 28.812,
         "lf_min_scale": 1.5,
         "lf_max_scale": 3.2,
         "low_threshold": 0.45,
@@ -169068,7 +169068,7 @@
             "08/11/2026": 0.0,
             "09/11/2026": 0.0,
             "10/11/2026": 0.0,
-            "11/11/2026": 0.010832
+            "11/11/2026": 0.388959
         },
         "lf": [
             2.371,
