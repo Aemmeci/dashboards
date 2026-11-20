@@ -5,10 +5,10 @@
         "construction": "TBD",
         "installation": "16/11/2026",
         "last_acquisition": {
-            "amount": 6.606,
+            "amount": 0.0,
             "day": "20/11/2026",
-            "hour": "22:01:14",
-            "integrity": true
+            "hour": "22:06:43",
+            "integrity": false
         },
         "max_amount": 82.5,
         "lf_min_scale": 2.0,
